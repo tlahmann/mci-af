@@ -273,3 +273,4 @@ TSWLatexianTemp*
 #### CUSTOM
 # ignore pdf while developing
 *.pdf
+!/papers/*.pdf
