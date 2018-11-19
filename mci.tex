@@ -5,37 +5,26 @@
 \begin{document}
 \noindent
 \large\textbf{Anwendungsfach Mensch Computer Interaktion} \hfill Betreuer: Dennis Wolf \\
-\normalsize Böhm, Sabrina; Porta, Luca; Lahmann, Tobias \hfill Date: 20.11.2018 \\
+\normalsize Böhm, Sabrina; Porta, Luca; Lahmann, Tobias \hfill Date: 26.11.2018 \\
 
 % \section*{Abstract}
 % Hier sollte ein Abstract stehen, vielleicht reichen die folgenden Sections aber auch schon ohne einen 'formellen' Abstract.
 
 \section*{Problemstellung}
-Autofahrer sind im Straßenverkehr durch unterschiedlichste Elemente im und um das eigene Fahrzeug herum abgelenkt. Wichtige Ereignisse des Straßenverkehrs können übersehen werden. Durch Augmentierung wichtiger Hinweise auf der Windschutzscheibe, wie beispielsweise Geschwindigkeit des eigenen Fahrzeugs, Straßenschilder der aktuellen Route oder Zusatzinformationen, wie die aktuelle Radiostation, soll untersucht werden, ob der Fahrer durch die Technologie unterstützt wird oder ob er nur abgelenkt beziehungsweise überfordert wird.
 
-Werden Informationen, wie beschrieben, zusätzlich zum gemeinen Fahrgeschehen angezeigt, können allerdings auch gegenteilige Effekte auftreten. Der Fahrer kann durch die Masse der Information überfordert werden und dadurch eine weniger gute, wenn nicht sogar schlechtere Leistung aufweisen. Durch die übermäßige Anzahl an Reizen und Informationen können Aufmerksamkeit und Sicherheit im Straßenverkehr nachlassen. 
 
 \section*{Related Work}
-Im Artikel von Yumiko et al.~\cite{VisAttention} Werden Visuelle Hinweise in einer Simulierten Fahr-Situation untersucht im Hinblick auf die Aufmerksamkeit der Probanden. Es wird untersucht, ob diese sich im Nachhinein noch an bestimmte Ereignisse und Objekte der Umgebung erinnern und in welchem Umfang.
 
-\cite{seppelt2017attend, yeh2001cueReliability, chi05bonanni, murphyChutorian2010awareness, green1995hazard}
-
-Zu Verwandter Forschung zur bestehenden Problematik finden sich wenige relevante Artikel. Untersucht man die Kognitionstechnische Sicht der Problemstellung werden psychologische Aspekte untersucht. Durch Eye-Tracking oder Fragebögen muss hier untersucht werden, welche Einflüsse Informationen auf der Windschutzscheibe haben.
-
-Tonnis et al. haben in ihrer Studie untersucht, ob Fahrer mittels Augmented Reality auf Hindernisse, speziell Autos, die im toten Winkel beim Fahren auftauchen, besser angezeigt werden können.~\cite{tonnis2005attention} Hierdurch wird aufgezeigt, dass Fahrassistenzsysteme auch mittels AR unterstützt und erweitert werden können. In ihrer Studie wurden zwei unterschiedliche Methoden der Visualisierung untersucht. Zum einen eine Anzeige aus der Vogelperspektive mit Sicht aufs Auto und einer anzeige, auf welcher Seite sich Hindernisse befinden. Zum Anderen mittels 3D animierten Pfeil, welcher in die Richtung weist in der sich das Hindernis befindet. Nicht untersucht wurden eine realistische Darstellung aus der Vogelperspektive, sowie eine Darstellung von mehreren Hindernissen. 
-
-Die Gruppe um Holger Regenbrecht haben eine Reihe an AR Projekten aus der Automobil- und Flugbranche zusammengetragen und unter anderem über Fahrsicherheitstraining, welche durch see-through head mounted devices unterstütz werden, geschrieben~\cite{regenbrecht2005projects}. Die Vorteile dieser Vorgehensweise können auf der Hand liegen, betrachtet man die Probleme, auf die man stößt, wenn ein Fahrsicherheitstraining unter realen bedingungen durchgeführt wird. Die Risiken einem Hindernis auszuweichen, welches plötzlich auf der Straße auftaucht können gravierende bedenken beschwören. Einem 'Kind' auszuweichen wird durch die virtuelle Realität zu einem sicheren und einfach wiederholbaren und dadurch trainierbar Vorgang. Die untersuchung der Vorteile von augmentierter Realität wurden hier leider nicht untersucht. 
 
 \section*{Lösungsansatz}
-Es können unterschiedliche Parameter untersucht werden. Hierzu zählen beispielsweise Durchsichtigkeit augmentierter Komponenten, Form, Schriftart,  Anordnung und/oder Größe von UI Elementen. Zudem Farbe, temporale Veränderung oder andere visuelle Hinweise. Diese sollen auf der Windschutzscheibe dargestellt werden. Durch eine vergleichende Studie sollen unterschiedliche Implementierungen auf ihre Tauglichkeit untersucht werden. 
+
 
 \section*{Implementierung}
-Die Implementierung kann mittels bestehender Hardware des Instituts für Medieninformatik durchgeführt werden. Ein Fahrsimulator wird nicht vollständig entwickelt, sondern durch ein Display erweitert, welcher auf die Windschutzscheibe des Simulators projizieren kann. Die bestehende Hardware wird minimalinvasiv behandelt um eine möglichst realitätsnahe Gesamtsituation zu erhalten. 
+HTC Vive\footnote{~HTC Vive~\url{https://www.vive.com}}
 
-Auf Softwareseite kann entweder eine digitale Schnittstelle mittels Unity 3D\footnote{~Unity3d~\url{https://unity3d.com}} oder mittels Wivw Silab\footnote{~Silab~\url{https://wivw.de/de/silab}} erstellt werden. Die genauen Spezifikationen hierfür müssen noch definiert werden.
+Auf Softwareseite soll eine digitale Umgebung mittels Unity 3D\footnote{~Unity3d~\url{https://unity3d.com}} erstellt werden.
 
 \section*{Testaufbau}
-Verglichen werden 2 Gruppen von Probanden. Diese unterteilen sich entweder in eine Gruppe mit und eine Gruppe ohne Augmented Reality Ablenkung oder in zwei Gruppen mit Verdeckung des Sichtfelds mit unterschiedlicher Ausprägung der Verdeckung.
 
 \section*{Zeitplan}
 Die Daten beziehen sich auf den Zeitpunkt zu dem der jeweilige Schritt abgeschlossen sein sollte.
@@ -54,8 +43,6 @@ Die Daten beziehen sich auf den Zeitpunkt zu dem der jeweilige Schritt abgeschlo
 \bibitem{yeh2001cueReliability} Yeh, Michelle, and Christopher D. Wickens. "Display signaling in augmented reality: Effects of cue reliability and image realism on attention allocation and trust calibration." Human Factors 43.3 (2001): 355-365.
 \bibitem{chi05bonanni} Bonanni, Leonardo, Chia-Hsun Lee, and Ted Selker. "Attention-based design of augmented reality interfaces." CHI'05 extended abstracts on Human factors in computing systems. ACM, 2005.
 \bibitem{tonnis2005attention} Tonnis, Marcus, et al. "Experimental evaluation of an augmented reality visualization for directing a car driver's attention." Mixed and Augmented Reality, 2005. Proceedings. Fourth IEEE and ACM International Symposium on. IEEE, 2005.
-\bibitem{regenbrecht2005projects} Regenbrecht, Holger, Gregory Baratoff, and Wilhelm Wilke. "Augmented reality projects in the automotive and aerospace industries." IEEE Computer Graphics and Applications 25.6 (2005): 48-56.
-\bibitem{murphyChutorian2010awareness} Murphy-Chutorian, Erik, and Mohan Manubhai Trivedi. "Head pose estimation and augmented reality tracking: An integrated system and evaluation for monitoring driver awareness." IEEE Transactions on intelligent transportation systems 11.2 (2010): 300-311.
 \bibitem{green1995hazard} Green, Paul. "A driver interface for a road hazard warning system: Development and preliminary evaluation." Proceedings of the Second World Congress on Intelligent Transportation Systems. Vol. 4. 1995.
 \end{thebibliography}
 
