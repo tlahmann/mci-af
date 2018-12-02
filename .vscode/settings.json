@@ -1,0 +1,23 @@
+{
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "pdflatex*2",
+            "tools": [
+                "pdflatex",
+                "pdflatex"
+            ]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "pdflatex",
+            "command": "pdflatex.exe",
+            "args": [
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-synctex=1",
+                "\"mci\".tex"
+            ]
+        }
+    ],
+}
