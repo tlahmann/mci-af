@@ -2,6 +2,8 @@
 \usepackage{fullpage} % changes the margin
 \usepackage{url} % enable urls in document
 \usepackage{ntheorem}
+\usepackage{graphicx}
+\usepackage{subcaption}
 \usepackage[utf8]{inputenc}
 \theoremseparator{:}
 \newtheorem{hyp}{Hypothese}
@@ -91,14 +93,29 @@ Sitzend werden Probanden erst in einen entspannten Zustand versetzt. In diesem s
 
 Nachfolgend wird der Teilnehmer aus diesem Zustand geholt und mit einer Aufgabe konfrontiert. Während der Erledigung dieser werden unterschiedliche Parameter (Blickrichtung, Zeit und Fehlerrate der Erledigung der Aufgabe) aufgezeichnet und später ausgewertet.
 
-
 \subsubsection*{Aufgaben}
 Die folgenden Aufgaben können implementiert werden um den Nutzer zu beschäftigen und seine Leistungsfähigkeit zu ermitteln:
 \begin{enumerate}
-    \item \textbf{Stroop-Effekt} Im Mittelpunkt des Blickfeldes wird eine ausgeschriebene Farbe angezeigt. Die Textfarbe des Worts muss nicht zwangsläufig die der ausgeschriebenen Farbe sein. Der Proband soll als Eingabe die Textfarbe auswählen indem er mit dem Controller auf einem Interface die richtige Auswahl trifft.
+    \item \textbf{Stroop-Effekt} Im Mittelpunkt des Blickfeldes wird eine ausgeschriebene Farbe angezeigt. Die Textfarbe des Worts muss nicht zwangsläufig die der ausgeschriebenen Farbe sein. Der Proband soll als Eingabe die Textfarbe auswählen indem er mit dem Controller auf einem Interface die richtige Auswahl trifft. Beispiel kann in Figure~\ref{fig:stroop_test} gesehen werden.
     \item \textbf{Zahlenfolge} Verteilt über das Blickfeld des Probanden werden Zahlen angezeigt. Die Abstände zwischen den Zahlen sind nicht gleichverteilt und werden idealerweise so gewählt, dass eine Verwechslungsgefahr besteht. Aufsteigend sollen die Zahlen selektiert und so geordnet werden. (123 $\rightarrow$ 324 $\rightarrow$ 823 $\rightarrow$ 1237 ...)
-    \item \textbf{Senso / Simon} Nach vorlage des bekannten Spiels werden Sequenzen auf einer 4-Felder-Farbmatrix vorgegeben, die vom Probanden wiederholt werden müssen.
+    \item \textbf{Senso / Simon} Nach vorlage des bekannten Spiels werden Sequenzen auf einer 4-Felder-Farbmatrix vorgegeben, die vom Probanden wiederholt werden müssen. Beispiel kann in Figure~\ref{fig:simon} gesehen werden.
 \end{enumerate}
+
+\begin{figure}
+	\centering
+	\begin{subfigure}{0.4\textwidth} % width of left subfigure
+		\includegraphics[width=\textwidth]{./figures/Reversed_stroop_test.jpg}
+        \caption{Stroop Test, ElvisLin CC BY-SA 4.0. \url{https://commons.wikimedia.org/wiki/File:Reversed_stroop_test.jpg}} % subcaption
+        \label{fig:stroop_test}
+	\end{subfigure}
+	\vspace{1em} % here you can insert horizontal or vertical space
+	\begin{subfigure}{0.534\textwidth} % width of right subfigure
+		\includegraphics[width=\textwidth]{./figures/Simon_game.jpg}
+		\caption{Senso / Simon, Larry D. Moore CC BY-SA 3.0. \url{https://commons.wikimedia.org/wiki/File:Simon_game.jpg}} % subcaption
+        \label{fig:simon}
+	\end{subfigure}
+	\caption{Beispiele für die Spiele mit denen die Teilnehmer konfrontiert werden.} % caption for whole figure
+\end{figure}
 
 \section*{Zeitplan}
 Die Daten beziehen sich auf den Zeitpunkt zu dem der jeweilige Schritt abgeschlossen sein sollte.
@@ -123,5 +140,7 @@ Die Daten beziehen sich auf den Zeitpunkt zu dem der jeweilige Schritt abgeschlo
 \bibitem{dinges1985assessing} Dinges, David F., Martin T. Orne, and Emily Carota Orne. "Assessing performance upon abrupt awakening from naps during quasi-continuous operations." Behavior research methods, instruments, \& computers 17.1 (1985): 37-45.
 \bibitem{kraemer2000time} Kraemer, Susanne, et al. "Time-of-day variations of indicators of attention: performance, physiologic parameters, and self-assessment of sleepiness." Biological psychiatry 48.11 (2000): 1069-1080.
 \end{thebibliography}
+
+\listoffigures	% Abbildungsverzeichnis
 
 \end{document}
