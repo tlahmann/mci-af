@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \theoremseparator{:}
 \newtheorem{hyp}{Hypothese}
 
@@ -53,6 +54,10 @@ Schlafentzug verursacht tiefere Kurzschlaf-Phasen~\cite{dinges1985assessing}. So
 
 Abhängig von der Tageszeit existieren Unterschiede in der Performance, so wie der Selbsteinschätzung und anderer psychologischer Parameter bei voll ausgeschlafenen Probanden (12 Stunden Schlaf)~\cite{kraemer2000time}.
 
+Bis zu 2 Stunden nach dem Aufwachen kann die subjektive Aufmerksamkeit und die kognitive Leistungsfähigkeit noch beeinträchtigt sein~\cite{jewett1999time}. Eine herunterregulierung der Körpertemperatur und der damit einhergehende geringere geistige Metabolismus könnte der Auslöser sein für den Zustand der Schlafträgheit~\cite{dinges1990you}. Sollte dies stimmen kann erwartet werden, dass jegliche Aktivität, die die Körpertemperatur erhöht dem schlaffen Gefühl entgegenwirkt, das nach dem Schlafen einige Zeit einsetzt und erst mit der Zeit abgebaut wird~\cite{jewett1999time}. Jewett et. al. fanden heraus, dass aber weder die Helligkeit der Umgebung noch andere Aktivitäten, die kurz nach dem Aufwachen erledigt wurden (Essen, duschen, etc.) signifikant die Aufmerksamkeit noch die Schlafträgheit oder deren Abbau beeinflussten~\cite{jewett1999time}.
+
+In einer Situation von Müdigkeit, die direkt nach dem Aufwachen einsetzt und erst über die Zeit abgebaut wird konnten Probanden einer Studie noch einfache soziale Interaktion durchführen~\cite{dinges1990you}. Die funktionale Deafferenzierung, wie sie von Broughton genannt wurde~\cite{broughton1968sleep} um die niedrigen Hirnaktivitäten nach dem Aufwachen zu beschreiben, erschweren die Aufbringung der mentalen Kapazitäten für komplexe Aufgaben nach dem Erwachen. Daher müssen, in all den Situationen, welche eine erhöhte Leistungsfähigkeit benötigen, die unumgänglichen Effekte der Schlafträgheit im Vorfeld beachtet und denen, die diese Aufgabe erledigen sollen, einfache Tools zur Unterstützung gegeben werden~\cite{ferrara2000sleep}. Aktuell könnten alarmierende Faktoren verwendet werden um diese Ziele zu erreichen, aber weitere Forschung muss bestätigen welcher der Faktoren am effizientesten ist~\cite{ferrara2000sleep}.
+
 \section*{Lösungsansatz}
 In einer virtuellen Umgebung werden Probanden dazu aufgefordert sich zu entspannen und, nach Möglichkeit, ohne Ablenkung zu verweilen. Das Ziel ist es den Nutzer in einen Zustand der Trägheit zu versetzten, wie er nach dem Schlafen auftreten kann. In diesem Zustand könnten Informationen nur schwer aufgenommen werden und eine Aufgabe, die in diesem Zeitraum gestellt wird könnte so mit geringerem Erfolg erledigt werden, als wenn der Nutzer voll aufnahmefähig ist. 
 
@@ -87,12 +92,12 @@ Fragebögen werden über das Limesurvey online Fragebogen Tool der Universität 
 }} gestellt und beantwortet. 
 
 \subsubsection*{Aufwachen}
-Probanden können auf unterschiedliche Arten aufgeweckt werden
+Probanden können auf unterschiedliche Arten aufgeweckt werden~\cite{jewett1999time, ferrara2000sleep}
 \begin{itemize}
-    \item \textbf{Töne} Alarm-Sounds oder Musik~[cite needed]
-    \item \textbf{Licht} Helle Umgebungen wecken Personen auf~[cite needed]
-    \item \textbf{Temperatur} Eine kalte Umgebung verursacht erhöhte Aufmerksamkeit~[cite needed]
-    \item \textbf{Bewegung} Jemand der geschüttelt wird wacht ebenfalls auf~[cite needed]
+    \item \textbf{Töne}
+    \item \textbf{Licht}
+    \item \textbf{Temperatur}
+    \item \textbf{Bewegung}
 \end{itemize}
 
 \section*{Testaufbau}
@@ -101,7 +106,10 @@ Sitzend werden Probanden erst in einen entspannten Zustand versetzt. In diesem s
 Nachfolgend wird der Teilnehmer aus diesem Zustand geleitet und mit einer Aufgabe konfrontiert. Während der Erledigung dieser werden unterschiedliche Parameter (Blickrichtung, Zeit und Fehlerrate der Erledigung der Aufgabe) aufgezeichnet und später ausgewertet.
 
 \subsubsection*{Aufgaben}
-Die folgenden Aufgaben können implementiert werden um den Nutzer zu beschäftigen und seine Leistungsfähigkeit zu ermitteln:
+Aufgaben sollten allgemein die Aufnahme- und Leistungsfähigkeit der Studienteilnehmer überprüfen. Um die Aufgaben erledigen zu können sollten keinerlei Erfahrung mit Virtual-Reality Geräten vorausgesetzt werden. Die Übungen müssen einfach verständlich und nach möglichkeit ohne Spielerfahrung machbar sein. Um die Spiele zu entwickeln können aber auch Toolboxes und Frameworks herangezogen werden, so zum beispiel auch~\cite{devisch2018mini}.
+% Die validierung der Spiele gestaltet sich als schwierig, oder findet jemand noch Quellen? Kann man auch sagen, da es sich nicht um spiele handelt, gestaltet man Aufgaben, die (abstrakt) nahe an eine reale Tätigkeit herankommen? Oder kann man argumentieren, dass hier die gewählten Aufgaben einer realen Tätigkeit entsprechen?
+
+Um dies zu testen können die folgenden Aufgaben implementiert werden:
 \begin{enumerate}
     \item \textbf{Stroop-Effekt} Im Mittelpunkt des Blickfeldes wird eine ausgeschriebene Farbe angezeigt. Die Textfarbe des Worts muss nicht zwangsläufig die der ausgeschriebenen Farbe sein. Der Proband soll als Eingabe die Textfarbe auswählen indem er mit dem Controller auf einem Interface die richtige Auswahl trifft. Beispiel kann in Figure~\ref{fig:stroop_test} gesehen werden.
     \item \textbf{Zahlenfolge} Verteilt über das Blickfeld des Probanden werden Zahlen angezeigt. Die Abstände zwischen den Zahlen sind nicht gleichverteilt und werden idealerweise so gewählt, dass eine Verwechslungsgefahr besteht. Aufsteigend sollen die Zahlen selektiert und so geordnet werden. (123 $\rightarrow$ 324 $\rightarrow$ 823 $\rightarrow$ 1237 ...)
@@ -147,6 +155,11 @@ Die Daten beziehen sich auf den Zeitpunkt zu dem der jeweilige Schritt abgeschlo
 \bibitem{dinges1985assessing} Dinges, David F., Martin T. Orne, and Emily Carota Orne. "Assessing performance upon abrupt awakening from naps during quasi-continuous operations." Behavior research methods, instruments, \& computers 17.1 (1985): 37-45.
 \bibitem{kraemer2000time} Kraemer, Susanne, et al. "Time-of-day variations of indicators of attention: performance, physiologic parameters, and self-assessment of sleepiness." Biological psychiatry 48.11 (2000): 1069-1080.
 \bibitem{van2002blueprints} Van Merriënboer, Jeroen JG, Richard E. Clark, and Marcel BM De Croock. "Blueprints for complex learning: The 4C/ID-model." Educational technology research and development 50.2 (2002): 39-61.
+\bibitem{jewett1999time} Jewett, Megan E., et al. "Time course of sleep inertia dissipation in human performance and alertness." Journal of sleep research 8.1 (1999): 1-8.
+\bibitem{dinges1990you} Dinges, David F. "Are you awake? Cognitive performance and reverie during the hypnopompic state." Sleep and cognition. Washington, DC: American Psychological Association (1990): 159-75.
+\bibitem{ferrara2000sleep} Ferrara, Michele, and Luigi De Gennaro. "The sleep inertia phenomenon during the sleep-wake transition: theoretical and operational issues." Aviation, space, and environmental medicine 71.8 (2000): 843-848.
+\bibitem{broughton1968sleep} Broughton, Roger J. "Sleep Disorders: Disorders of Arousal?: Enuresis, somnambulism, and nightmares occur in confusional states of arousal, not in" dreaming sleep."." Science 159.3819 (1968): 1070-1078.
+\bibitem{devisch2018mini} Devisch, Oswald, et al. "Mini is beautiful: Playing serious mini-games to facilitate collective learning on complex urban processes." (2018).
 \end{thebibliography}
 
 \listoffigures	% Abbildungsverzeichnis
