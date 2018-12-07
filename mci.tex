@@ -54,14 +54,14 @@ Schlafentzug verursacht tiefere Kurzschlaf-Phasen~\cite{dinges1985assessing}. So
 Abhängig von der Tageszeit existieren Unterschiede in der Performance, so wie der Selbsteinschätzung und anderer psychologischer Parameter bei voll ausgeschlafenen Probanden (12 Stunden Schlaf)~\cite{kraemer2000time}.
 
 \section*{Lösungsansatz}
-In einer virtuellen Umgebung werden Probanden dazu aufgefordert sich zu entspannen und, nach Möglichkeit, ohne Ablenkung zu verweilen. Im Anschluss werden die Nutzer auf unterschiedliche Arten aus dieser Ruhephase begleitet und ihnen eine Aufgabe gestellt. 
+In einer virtuellen Umgebung werden Probanden dazu aufgefordert sich zu entspannen und, nach Möglichkeit, ohne Ablenkung zu verweilen. Das Ziel ist es den Nutzer in einen Zustand der Trägheit zu versetzten, wie er nach dem Schlafen auftreten kann. In diesem Zustand könnten Informationen nur schwer aufgenommen werden und eine Aufgabe, die in diesem Zeitraum gestellt wird könnte so mit geringerem Erfolg erledigt werden, als wenn der Nutzer voll aufnahmefähig ist. 
 
-Eine Gruppe der Nutzer wird `sanft geweckt' indem die virtuelle Umgebung langsam und bedacht erhellt wird, zudem kann dieser Vorgang mit unterschiedlichen anderen Sinnen unterstützt werden. Die Aufgabenstellung erscheint iterativ und wird mit jedem Schritt anspruchsvoller, bis die volle Schwierigkeit erreicht wurde. 
-Die andere Gruppe der Nutzer wird hingegen `schnell geweckt'. Hierbei wird die Helligkeit der Virtuellen Umgebung plötzlich erhöht. Auch hier können unterschiedliche Sinne angesprochen werden um möglicherweise den Stressfaktor beim Probanden zu erhöhen. Die Nutzer werden direkt nach dem Aufwachen mit der vollen Schwierig\-keit einer Aufgabe konfrontiert und müssen diese lösen.
+Im Anschluss an die initiale Ruhephase werden die Nutzer auf unterschiedliche Arten `auf\-geweckt' und ihnen wird eine oder mehrere Aufgaben gestellt. Eine Gruppe der Nutzer wird `sanft geweckt' indem die virtuelle Umgebung langsam und bedacht erhellt wird, zudem kann dieser Vorgang mit unterschiedlichen anderen Sinnen unterstützt werden. Die Aufgabenstellung erscheint iterativ und wird mit jedem Schritt anspruchsvoller, bis die volle Schwierigkeit erreicht wurde. 
+Die andere Gruppe der Nutzer wird hingegen `schnell geweckt'. Hierbei wird die Helligkeit der Virtuellen Umgebung plötzlich erhöht. Auch hier können unterschiedliche Sinne angesprochen werden um möglicherweise den Stressfaktor beim Probanden zu erhöhen. Die Nutzer werden direkt nach dem Aufwachen mit der vollen Schwierigkeit einer Aufgabe konfrontiert und müssen diese lösen.
 
 Im nächsten Schritt des Projekts soll untersucht werden auf welche Arten die Nutzer der beiden Gruppen in dem Erledigen von Aufgaben unterstützt werden können. Hierbei werden vor allem gestalterische sowie aufmerksamkeitssteuernde Aspekte untersucht. 
 
-Alle Nutzer der virtuellen Umgebung können hier dahingehend untersucht werden, mit welchen Fehlerraten sowie welcher Geschwindigkeit die gestellten Aufgaben erledigt werden. Nachfolgend können standardisierte Fragebögen herangezogen werden um das Befinden und die Einschätzung des Nutzers zu untersuchen.
+Die Nutzer beider Gruppen können hier dahingehend untersucht werden, mit welchen Fehlerraten sowie welcher Geschwindigkeit die gestellten Aufgaben erledigt werden. Nachfolgend können standardisierte Fragebögen herangezogen werden um das Befinden und die Einschätzung des Nutzers zu untersuchen.
 
 Eye-Tracking wird verwendet, um zu untersuchen in welchem Müdigkeit-Stadium sich die Probanden befinden.
 
@@ -77,11 +77,11 @@ Wir stellen grundlegend die folgenden Hypothesen auf:
 und
 
 \begin{hyp}[H\ref{hyp:gestaltung}]\label{hyp:gestaltung}
-    Die visuelle Gestaltung einer Aufgabe kann Menschen helfen, diese in geringerer Zeit und mit weniger Fehlern zu erledigen. 
+    Prozedurale Informationen (4C-ID)~\cite{van2002blueprints} bewirken, dass Benutzer eine Aufgabe schneller, sowie mit einer geringeren Fehlerrate erledigen können.
 \end{hyp}
 
 \section*{Implementierung}
-Auf Softwareseite soll eine digitale Umgebung mittels Unity 3D\footnote{~Unity3D~\url{https://unity3d.com}} erstellt werden. Das gewählte Interface zur Untersuchung der beschriebenen Problemstellung ist die HTC Vive\footnote{~HTC Vive~\url{https://www.vive.com}} mit den zugehörigen Controllern. Bewegung innerhalb der digitalen Umgebung ist, bis auf Kopfbewegungen, nicht vorgesehen, da die Probanden in einem sitzenden Zustand untersucht werden. Die Eingabemethoden zur Bewältigung der gestellten Aufgaben werden mit Zeigeoperationen innerhalb der virtuellen Umgebung realisiert. Eine Implementierung zum Nachverfolgen der Augenbewegung von Probanden (Eye-Tracking) wird nicht selbst durchgeführt, sondern vom Institut für Medieninformatik übernommen. 
+Auf Softwareseite soll eine digitale Umgebung mittels Unity 3D\footnote{~Unity3D~\url{https://unity3d.com}} erstellt werden. Das gewählte Interface zur Untersuchung der beschriebenen Problemstellung ist die HTC Vive\footnote{~HTC Vive~\url{https://www.vive.com}} mit den zugehörigen Controllern. Bewegung innerhalb der digitalen Umgebung ist, bis auf Kopfbewegungen, nicht vorgesehen, da die Probanden in einem sitzenden Zustand untersucht werden. Die Eingabemethoden zur Bewältigung der gestellten Aufgaben werden mit Zeigeoperationen innerhalb der virtuellen Umgebung realisiert. Eine Implementierung zum Nachverfolgen der Augenbewegung von Probanden (Eye-Tracking) wird nicht selbst durchgeführt, sondern auf bestehende Implementierungen zurückgegriffen. 
 
 Fragebögen werden über das Limesurvey online Fragebogen Tool der Universität Ulm\footnote{~Limesurvey~\url{https://surveys.informatik.uni-ulm.de/limesurvey/
 }} gestellt und beantwortet. 
@@ -96,9 +96,9 @@ Probanden können auf unterschiedliche Arten aufgeweckt werden
 \end{itemize}
 
 \section*{Testaufbau}
-Sitzend werden Probanden erst in einen entspannten Zustand versetzt. In diesem sollen sie möglichst ohne Ablenkung verweilen bis sich eine Gelassenheit einstellt. Diese kann von entspanntem Sitzen bis hin zum Schlaf führen, eine genaue Zeitspanne hierfür kann zwischen Probanden variieren und muss in Tests bestimmt werden.
+Sitzend werden Probanden erst in einen entspannten Zustand versetzt. In diesem sollen sie möglichst ohne Ablenkung verweilen bis sich eine Gelassenheit oder Trägheit einstellt. Diese kann von entspanntem Sitzen bis hin zum Schlaf führen, eine genaue Zeitspanne hierfür kann zwischen Probanden variieren und muss in Tests bestimmt werden.
 
-Nachfolgend wird der Teilnehmer aus diesem Zustand geholt und mit einer Aufgabe konfrontiert. Während der Erledigung dieser werden unterschiedliche Parameter (Blickrichtung, Zeit und Fehlerrate der Erledigung der Aufgabe) aufgezeichnet und später ausgewertet.
+Nachfolgend wird der Teilnehmer aus diesem Zustand geleitet und mit einer Aufgabe konfrontiert. Während der Erledigung dieser werden unterschiedliche Parameter (Blickrichtung, Zeit und Fehlerrate der Erledigung der Aufgabe) aufgezeichnet und später ausgewertet.
 
 \subsubsection*{Aufgaben}
 Die folgenden Aufgaben können implementiert werden um den Nutzer zu beschäftigen und seine Leistungsfähigkeit zu ermitteln:
@@ -146,6 +146,7 @@ Die Daten beziehen sich auf den Zeitpunkt zu dem der jeweilige Schritt abgeschlo
 \bibitem{wilkinson1971performance} Wilkinson, Robert T., and M. Stretton. "Performance after awakening at different times of night." Psychonomic Science 23.4 (1971): 283-285.
 \bibitem{dinges1985assessing} Dinges, David F., Martin T. Orne, and Emily Carota Orne. "Assessing performance upon abrupt awakening from naps during quasi-continuous operations." Behavior research methods, instruments, \& computers 17.1 (1985): 37-45.
 \bibitem{kraemer2000time} Kraemer, Susanne, et al. "Time-of-day variations of indicators of attention: performance, physiologic parameters, and self-assessment of sleepiness." Biological psychiatry 48.11 (2000): 1069-1080.
+\bibitem{van2002blueprints} Van Merriënboer, Jeroen JG, Richard E. Clark, and Marcel BM De Croock. "Blueprints for complex learning: The 4C/ID-model." Educational technology research and development 50.2 (2002): 39-61.
 \end{thebibliography}
 
 \listoffigures	% Abbildungsverzeichnis
