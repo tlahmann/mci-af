@@ -2,7 +2,7 @@ import os
 # importing csv module 
 import csv 
 
-rootdir = "D:/Data/Dropbox/Study/11.Semester/awf/_StudyResults"
+rootdir = "D:\\Data\\Dropbox\\Study\\10.Semester\\Mensch-Computer Interaktion\\mci-af\\_StudyResults"
 extension = 'csv'
 
 def getInvCount(arr, n): 

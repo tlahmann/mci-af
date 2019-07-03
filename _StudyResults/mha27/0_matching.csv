@@ -1,0 +1,11 @@
+utc_now_ticks; elapsed; should_hit; hit; correct
+636965416321766205; 3453; Yellow; SphereYellow; True
+636965416350061765; 6283; Blue; SphereBlue; True
+636965416383063479; 9584; Green; SphereGreen; True
+636965416399167732; 11194; Red; SphereRed; True
+636965416412605397; 12538; Yellow; SphereYellow; True
+636965416428941006; 14171; Blue; SphereBlue; True
+636965416442704656; 15547; Yellow; SphereYellow; True
+636965416458916744; 17169; Yellow; SphereYellow; True
+636965416476029549; 18880; Red; SphereRed; True
+636965416494133337; 20690; Blue; SphereBlue; True
