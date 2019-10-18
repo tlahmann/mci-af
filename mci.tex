@@ -61,11 +61,12 @@ Schlafentzug verursacht tiefere Kurzschlaf-Phasen~\cite{dinges1985assessing}. So
 
 Abhängig von der Tageszeit existieren Unterschiede in der Performance, so wie der Selbsteinschätzung und anderer psychologischer Parameter bei voll ausgeschlafenen Probanden (12 Stunden Schlaf)~\cite{kraemer2000time}.
 
-Bis zu 2 Stunden nach dem Aufwachen kann die subjektive Aufmerksamkeit und die kognitive Leistungsfähigkeit noch beeinträchtigt sein~\cite{jewett1999time}. Eine herunterregulierung der Körpertemperatur und der damit einhergehende geringere geistige Leistungsfähigkeit könnte der Auslöser sein für den Zustand der Schlafträgheit~\cite{dinges1990you}. Sollte dies stimmen kann erwartet werden, dass jegliche Aktivität, die die Körpertemperatur erhöht dem schlaffen Gefühl entgegenwirkt, das nach dem Schlafen einige Zeit einsetzt und erst mit der Zeit abgebaut wird~\cite{jewett1999time}. Jewett et. al. fanden heraus, dass aber weder die Helligkeit der Umgebung noch andere Aktivitäten, die kurz nach dem Aufwachen erledigt wurden (Essen, duschen, etc.) signifikant die Aufmerksamkeit noch die Schlafträgheit oder deren Abbau beeinflussten~\cite{jewett1999time}.
+Bis zu 2 Stunden nach dem Aufwachen kann die subjektive Aufmerksamkeit und die kognitive Leistungsfähigkeit noch beeinträchtigt sein~\cite{jewett1999time}. Eine Herunterregulierung der Körpertemperatur und der damit einhergehende geringere geistige Leistungsfähigkeit könnte der Auslöser sein für den Zustand der Schlafträgheit~\cite{dinges1990you}. Sollte dies stimmen kann erwartet werden, dass jegliche Aktivität, die die Körpertemperatur erhöht dem schlaffen Gefühl entgegenwirkt, das nach dem Schlafen einige Zeit einsetzt und erst mit der Zeit abgebaut wird~\cite{jewett1999time}. Jewett et. al. fanden heraus, dass aber weder die Helligkeit der Umgebung noch andere Aktivitäten, die kurz nach dem Aufwachen erledigt wurden (Essen, duschen, etc.) signifikant die Aufmerksamkeit noch die Schlafträgheit oder deren Abbau beeinflussten~\cite{jewett1999time}.
 
 In einer Situation von Müdigkeit, die direkt nach dem Aufwachen einsetzt und erst über die Zeit abgebaut wird konnten Probanden einer Studie noch einfache soziale Interaktion durchführen~\cite{dinges1990you}. Die funktionale Deafferenzierung, wie sie von Broughton genannt wurde~\cite{broughton1968sleep} um die niedrigen Hirnaktivitäten nach dem Aufwachen zu beschreiben, erschweren die Aufbringung der mentalen Kapazitäten für komplexe Aufgaben nach dem Erwachen. Daher müssen, in all den Situationen, welche eine erhöhte Leistungsfähigkeit benötigen, die unumgänglichen Effekte der Schlafträgheit im Vorfeld beachtet und denen, die diese Aufgabe erledigen sollen, einfache Tools zur Unterstützung gegeben werden~\cite{ferrara2000sleep}. Aktuell könnten alarmierende Faktoren verwendet werden um diese Ziele zu erreichen, aber weitere Forschung muss bestätigen welcher der Faktoren am effizientesten ist~\cite{ferrara2000sleep}.
 
 \section*{Lösungsansatz}
+\subsection*{Idee}
 In einer virtuellen Umgebung werden Probanden dazu aufgefordert sich zu entspannen und, nach Möglichkeit, ohne Ablenkung zu verweilen. Das Ziel ist es den Nutzer in einen Zustand der Trägheit zu versetzten, wie er nach dem Schlafen auftreten kann. In diesem Zustand könnten Informationen nur schwer aufgenommen werden und eine Aufgabe, die in diesem Zeitraum gestellt wird könnte so mit geringerem Erfolg erledigt werden, als wenn der Nutzer voll aufnahmefähig ist. 
 
 Im Anschluss an die initiale Ruhephase werden die Nutzer auf unterschiedliche Arten `auf\-geweckt' und ihnen wird eine oder mehrere Aufgaben gestellt. Eine Gruppe der Nutzer wird `sanft geweckt' indem die virtuelle Umgebung langsam und bedacht erhellt wird, zudem kann dieser Vorgang mit unterschiedlichen anderen Sinnen unterstützt werden. Die Aufgabenstellung erscheint iterativ und wird mit jedem Schritt anspruchsvoller, bis die volle Schwierigkeit erreicht wurde. 
@@ -92,7 +93,7 @@ und
     Prozedurale Informationen (4C-ID)~\cite{van2002blueprints} bewirken, dass Benutzer eine Aufgabe schneller, sowie mit einer geringeren Fehlerrate erledigen können.
 \end{hyp}
 
-\section*{Implementierung}
+\subsection*{Implementierung}
 Auf Softwareseite soll eine digitale Umgebung mittels Unity 3D\footnote{~Unity3D~\url{https://unity3d.com}} erstellt werden. Das gewählte Interface zur Untersuchung der beschriebenen Problemstellung ist die HTC Vive\footnote{~HTC Vive~\url{https://www.vive.com}} mit den zugehörigen Controllern. Bewegung innerhalb der digitalen Umgebung ist, bis auf Kopfbewegungen, nicht vorgesehen, da die Probanden in einem sitzenden Zustand untersucht werden. Die Eingabemethoden zur Bewältigung der gestellten Aufgaben werden mit Zeigeoperationen innerhalb der virtuellen Umgebung realisiert. Eine Implementierung zum Nachverfolgen der Augenbewegung von Probanden (Eye-Tracking) wird nicht selbst durchgeführt, sondern auf bestehende Implementierungen zurückgegriffen. 
 
 Fragebögen werden über das Limesurvey online Fragebogen Tool der Universität Ulm\footnote{~Limesurvey~\url{https://surveys.informatik.uni-ulm.de/limesurvey/
@@ -103,11 +104,9 @@ Probanden können auf unterschiedliche Arten aufgeweckt werden~\cite{jewett1999t
 \begin{itemize}
     \item \textbf{Töne}
     \item \textbf{Licht}
-    \item \textbf{Temperatur}
-    \item \textbf{Bewegung}
 \end{itemize}
 
-\section*{Testaufbau}
+\subsection{Testaufbau}
 Sitzend werden Probanden erst in einen entspannten Zustand versetzt. In diesem sollen sie möglichst ohne Ablenkung verweilen bis sich eine Gelassenheit oder Trägheit einstellt. Diese kann von entspanntem Sitzen bis hin zum Schlaf führen, eine genaue Zeitspanne hierfür kann zwischen Probanden variieren und muss in Tests bestimmt werden.
 
 Nachfolgend wird der Teilnehmer aus diesem Zustand geleitet und mit einer Aufgabe konfrontiert. Während der Erledigung dieser werden unterschiedliche Parameter aufgezeichnet und später ausgewertet. Die erfassten Parameter sind die folgenden:
@@ -129,19 +128,19 @@ Die erste Studie soll ungefähr 30 Minuten umfassen, hierfür werden die Teilneh
 
 Die Fragebögen, die wir heranziehen sind zum einen der NASA TLX und ...
 
-Es handelt sich um eine between subject Studie. Im ersten durchlauf erfassen wir die genannten Parameter unter der betrachtung der Zeit in der die virtuelle Umgebung erhellt wird. Die genauen Zeiten werden in einer Testphase während des Implementierens eingegrenzt.
+Es handelt sich um eine between subject Studie. Im ersten durchlauf erfassen wir die genannten Parameter unter der Betrachtung der Zeit in der die virtuelle Umgebung erhellt wird. Die genauen Zeiten werden in einer Testphase während des Implementierens eingegrenzt.
 
 Zudem werden die Probanden entweder mit Ton oder einer in das VR-Headset eingebauten Temperatureinheit `geweckt'. Auch dieser Parameter wird in einer Testphase experimentell angenähert.
 
 \subsubsection*{Aufgaben}
-Aufgaben sollten allgemein die Aufnahme- und Leistungsfähigkeit der Studienteilnehmer überprüfen. Um die Aufgaben erledigen zu können sollten keinerlei Erfahrung mit Virtual-Reality Geräten vorausgesetzt werden. Die Übungen müssen einfach verständlich und nach möglichkeit ohne Spielerfahrung machbar sein. Um die Spiele zu entwickeln können aber auch Toolboxes und Frameworks herangezogen werden, so zum beispiel auch~\cite{devisch2018mini}.
+Aufgaben sollten allgemein die Aufnahme- und Leistungsfähigkeit der Studienteilnehmer überprüfen. Um die Aufgaben erledigen zu können sollten keinerlei Erfahrung mit Virtual-Reality Geräten vorausgesetzt werden. Die Übungen müssen einfach verständlich und nach Möglichkeit ohne Spielerfahrung machbar sein. Um die Spiele zu entwickeln können aber auch Toolboxes und Frameworks herangezogen werden, so zum Beispiel auch~\cite{devisch2018mini}.
 % Die validierung der Spiele gestaltet sich als schwierig, oder findet jemand noch Quellen? Kann man auch sagen, da es sich nicht um spiele handelt, gestaltet man Aufgaben, die (abstrakt) nahe an eine reale Tätigkeit herankommen? Oder kann man argumentieren, dass hier die gewählten Aufgaben einer realen Tätigkeit entsprechen?
 
 Um dies zu testen können die folgenden Aufgaben implementiert werden:
 \begin{enumerate}
     \item \textbf{Stroop-Effekt} Im Mittelpunkt des Blickfeldes wird eine ausgeschriebene Farbe angezeigt. Die Textfarbe des Worts muss nicht zwangsläufig die der ausgeschriebenen Farbe sein. Der Proband soll als Eingabe die Textfarbe auswählen indem er mit dem Controller auf einem Interface die richtige Auswahl trifft. Beispiel kann in Figure~\ref{fig:stroop_test} gesehen werden.
     \item \textbf{Zahlenfolge} Verteilt über das Blickfeld des Probanden werden Zahlen angezeigt. Die Abstände zwischen den Zahlen sind nicht gleichverteilt und werden idealerweise so gewählt, dass eine Verwechslungsgefahr besteht. Aufsteigend sollen die Zahlen selektiert und so geordnet werden. (123 $\rightarrow$ 324 $\rightarrow$ 823 $\rightarrow$ 1237 ...)
-    \item \textbf{Senso / Simon} Nach vorlage des bekannten Spiels werden Sequenzen auf einer 4-Felder-Farbmatrix vorgegeben, die vom Probanden wiederholt werden müssen. Beispiel kann in Figure~\ref{fig:simon} gesehen werden.
+    \item \textbf{Senso / Simon} Nach Vorlage des bekannten Spiels werden Sequenzen auf einer 4-Felder-Farbmatrix vorgegeben, die vom Probanden wiederholt werden müssen. Beispiel kann in Figure~\ref{fig:simon} gesehen werden.
 \end{enumerate}
 
 \begin{figure}
@@ -160,6 +159,8 @@ Um dies zu testen können die folgenden Aufgaben implementiert werden:
 	\caption{Beispiele für die Spiele mit denen die Teilnehmer konfrontiert werden.} % caption for whole figure
 \end{figure}
 
+\section*{Durchführung der Studie}
+
 \section*{Zeitplan}
 Die Daten beziehen sich auf den Zeitpunkt zu dem der jeweilige Schritt abgeschlossen sein sollte.
 \begin{itemize}
@@ -173,6 +174,12 @@ Die Daten beziehen sich auf den Zeitpunkt zu dem der jeweilige Schritt abgeschlo
     \item \textbf{Juni 2019} Auswertung der Ergebnisse von zweiter Studie
     \item \textbf{September 2019} Dokumentation der Ergebnisse und des Vorgehens
 \end{itemize}
+
+\section*{Auswertung der Ergebnisse}
+
+\section*{Diskussion}
+
+\section*{Schlussfolgerung}
 
 \begin{thebibliography}{9}
 \bibitem{yumiko2017VisAttention} Shinohara, Yumiko, et al. "Visual Attention During Simulated Autonomous Driving in the US and Japan." Proceedings of the 9th International Conference on Automotive User Interfaces and Interactive Vehicular Applications. ACM, 2017.
