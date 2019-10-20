@@ -118,7 +118,7 @@
 }
 
 \newcommand\copyrightinfo{
-	\copyright~\@jahr~\@author\\[.5em]
+	\copyright~\@jahr~\@authorA,~\@authorB,~\@authorC\\[.5em]
 	This work is licensed under the Creative Commons \textbf{Attribution-NonCommercial-ShareAlike 3.0 Unported} License. 
 	To view a copy of this license, visit \url{http://creativecommons.org/licenses/by-nc-sa/3.0/}.
 }
