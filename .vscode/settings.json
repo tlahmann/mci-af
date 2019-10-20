@@ -1,8 +1,9 @@
 {
     "latex-workshop.latex.recipes": [
         {
-            "name": "pdflatex*2",
+            "name": "bibtex -> pdflatex*2",
             "tools": [
+                "bibtex",
                 "pdflatex",
                 "pdflatex"
             ]
@@ -16,8 +17,24 @@
                 "-interaction=nonstopmode",
                 "-file-line-error",
                 "-synctex=1",
-                "\"mci\".tex"
+                "\"MCI-Resync-Documentation\".tex"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex.exe",
+            "args": [
+                "-terse",
+                "MCI-Resync-Documentation"
             ]
         }
+    ],
+    "spellright.language": [
+        "de"
+    ],
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "plaintext"
     ],
 }

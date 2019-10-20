@@ -1,0 +1,107 @@
+\chapter{Lösungsansatz}
+\subsection{Idee}
+In einer virtuellen Umgebung werden Probanden dazu aufgefordert sich zu entspannen und, nach Möglichkeit, ohne Ablenkung zu verweilen. Das Ziel ist es den Nutzer in einen Zustand der Trägheit zu versetzten, wie er nach dem Schlafen auftreten kann. In diesem Zustand könnten Informationen nur schwer aufgenommen werden und eine Aufgabe, die in diesem Zeitraum gestellt wird könnte so mit geringerem Erfolg erledigt werden, als wenn der Nutzer voll aufnahmefähig ist. 
+
+Im Anschluss an die initiale Ruhephase werden die Nutzer auf unterschiedliche Arten `auf\-geweckt' und ihnen wird eine oder mehrere Aufgaben gestellt. Eine Gruppe der Nutzer wird `sanft geweckt' indem die virtuelle Umgebung langsam und bedacht erhellt wird, zudem kann dieser Vorgang mit unterschiedlichen anderen Sinnen unterstützt werden. Die Aufgabenstellung erscheint iterativ und wird mit jedem Schritt anspruchsvoller, bis die volle Schwierigkeit erreicht wurde. 
+Die andere Gruppe der Nutzer wird hingegen `schnell geweckt'. Hierbei wird die Helligkeit der Virtuellen Umgebung plötzlich erhöht. Auch hier können unterschiedliche Sinne angesprochen werden um möglicherweise den Stressfaktor beim Probanden zu erhöhen. Die Nutzer werden direkt nach dem Aufwachen mit der vollen Schwierigkeit einer Aufgabe konfrontiert und müssen diese lösen.
+
+Im nächsten Schritt des Projekts soll untersucht werden auf welche Arten die Nutzer der beiden Gruppen in dem Erledigen von Aufgaben unterstützt werden können. Hierbei werden vor allem gestalterische sowie aufmerksamkeitssteuernde Aspekte untersucht. 
+
+Die Nutzer beider Gruppen können hier dahingehend untersucht werden, mit welchen Fehlerraten sowie welcher Geschwindigkeit die gestellten Aufgaben erledigt werden. Nachfolgend können standardisierte Fragebögen herangezogen werden um das Befinden und die Einschätzung des Nutzers zu untersuchen.
+
+Eye-Tracking wird verwendet, um zu untersuchen in welchem Müdigkeit-Stadium sich die Probanden befinden.
+
+Wir stellen grundlegend die folgenden Hypothesen auf:
+% \begin{hyp}[H\ref{hyp:schneller}]\label{hyp:schneller}
+% 	Menschen die langsam geweckt werden können sich in kürzerer Zeit auf eine gestellte Aufgabe einstellen, als Menschen, die abrupt aus dem Schlaf gerissen werden.
+% \end{hyp}
+
+% \begin{hyp}[H\ref{hyp:erfolgreicher}]\label{hyp:erfolgreicher}
+% 	Menschen die langsam geweckt werden können eine gestellte Aufgabe mit weniger Fehlern erledigen, als Menschen, die abrupt aus dem Schlaf gerissen werden.
+% \end{hyp}
+
+und
+
+% \begin{hyp}[H\ref{hyp:gestaltung}]\label{hyp:gestaltung}
+%     Prozedurale Informationen (4C-ID)~\cite{van2002blueprints} bewirken, dass Benutzer eine Aufgabe schneller, sowie mit einer geringeren Fehlerrate erledigen können.
+% \end{hyp}
+
+\subsubsection{Aufwachen}
+Probanden können auf unterschiedliche Arten aufgeweckt werden~\cite{jewett1999time, ferrara2000sleep}
+\begin{itemize}
+    \item Töne
+    \item Licht
+\end{itemize}
+
+\subsection{Testaufbau}
+Sitzend werden Probanden erst in einen entspannten Zustand versetzt. In diesem sollen sie möglichst ohne Ablenkung verweilen bis sich eine Gelassenheit oder Trägheit einstellt. Diese kann von entspanntem Sitzen bis hin zum Schlaf führen, eine genaue Zeitspanne hierfür kann zwischen Probanden variieren und muss in Tests bestimmt werden.
+
+Nachfolgend wird der Teilnehmer aus diesem Zustand geleitet und mit einer Aufgabe konfrontiert. Während der Erledigung dieser werden unterschiedliche Parameter aufgezeichnet und später ausgewertet. Die erfassten Parameter sind die folgenden:
+
+\begin{itemize}
+    \item Zeit in der eine Aufgabe erledigt wird
+    \item Fehlerrate bei der Erledigung der Aufgabe
+    \item Blickrichtung
+\end{itemize}
+
+Die erste Studie soll ungefähr 30 Minuten umfassen, hierfür werden die Teilnehmer mit fünf Euro entlohnt. Der Ablauf der Studie Umfasst folgende Punkte:
+
+\begin{enumerate}
+    \item \textbf{5 Minuten} Vorbereitung und Einführung in den Studienablauf inklusive der Bedienung der VR-Umgebung
+    \item \textbf{15 Minuten} Beruhigungsphase bis hin zum Schlafen
+    \item \textbf{3-5 Minuten} Aufgaben lösen
+    \item \textbf{5 Minuten} Fragebögen beantworten
+\end{enumerate}
+
+Die Fragebögen, die wir heranziehen sind zum einen der NASA TLX und ...
+
+Es handelt sich um eine between subject Studie. Im ersten durchlauf erfassen wir die genannten Parameter unter der Betrachtung der Zeit in der die virtuelle Umgebung erhellt wird. Die genauen Zeiten werden in einer Testphase während des Implementierens eingegrenzt.
+
+Zudem werden die Probanden entweder mit Ton oder einer in das VR-Headset eingebauten Temperatureinheit `geweckt'. Auch dieser Parameter wird in einer Testphase experimentell angenähert.
+
+\subsubsection{Aufgaben}
+Aufgaben sollten allgemein die Aufnahme- und Leistungsfähigkeit der Studienteilnehmer überprüfen. Um die Aufgaben erledigen zu können sollten keinerlei Erfahrung mit Virtual-Reality Geräten vorausgesetzt werden. Die Übungen müssen einfach verständlich und nach Möglichkeit ohne Spielerfahrung machbar sein. Um die Spiele zu entwickeln können aber auch Toolboxes und Frameworks herangezogen werden, so zum Beispiel auch~\cite{devisch2018mini}.
+% Die validierung der Spiele gestaltet sich als schwierig, oder findet jemand noch Quellen? Kann man auch sagen, da es sich nicht um spiele handelt, gestaltet man Aufgaben, die (abstrakt) nahe an eine reale Tätigkeit herankommen? Oder kann man argumentieren, dass hier die gewählten Aufgaben einer realen Tätigkeit entsprechen?
+
+Um dies zu testen können die folgenden Aufgaben implementiert werden:
+\begin{enumerate}
+    \item \textbf{Stroop-Effekt} Im Mittelpunkt des Blickfeldes wird eine ausgeschriebene Farbe angezeigt. Die Textfarbe des Worts muss nicht zwangsläufig die der ausgeschriebenen Farbe sein. Der Proband soll als Eingabe die Textfarbe auswählen indem er mit dem Controller auf einem Interface die richtige Auswahl trifft. Beispiel kann in Figure~\ref{fig:stroop_test} gesehen werden.
+    \item \textbf{Zahlenfolge} Verteilt über das Blickfeld des Probanden werden Zahlen angezeigt. Die Abstände zwischen den Zahlen sind nicht gleichverteilt und werden idealerweise so gewählt, dass eine Verwechslungsgefahr besteht. Aufsteigend sollen die Zahlen selektiert und so geordnet werden. (123 $\rightarrow$ 324 $\rightarrow$ 823 $\rightarrow$ 1237 ...)
+    \item \textbf{Senso / Simon} Nach Vorlage des bekannten Spiels werden Sequenzen auf einer 4-Felder-Farbmatrix vorgegeben, die vom Probanden wiederholt werden müssen. Beispiel kann in Figure~\ref{fig:simon} gesehen werden.
+\end{enumerate}
+
+% \begin{figure}
+% 	\centering
+% 	\begin{subfigure}[c]{0.5\textwidth} % width of left subfigure
+% 		\includegraphics[width=\textwidth]{./images/Reversed_stroop_test.jpg}
+%         \caption{Stroop Test, ElvisLin CC BY-SA 4.0. \url{https://commons.wikimedia.org/wiki/File:Reversed_stroop_test.jpg}} % subcaption
+%         \label{fig:stroop_test}
+% 	\end{subfigure}
+% 	\vspace{1em} % here you can insert horizontal or vertical space
+% 	\begin{subfigure}[c]{0.5\textwidth} % width of right subfigure
+% 		\includegraphics[width=\textwidth]{./images/Simon_game.jpg}
+% 		\caption{Senso / Simon, Larry D. Moore CC BY-SA 3.0. \url{https://commons.wikimedia.org/wiki/File:Simon_game.jpg}} % subcaption
+%         \label{fig:simon}
+% 	\end{subfigure}
+% 	\caption{Beispiele für die Spiele mit denen die Teilnehmer konfrontiert werden.} % caption for whole figure
+% \end{figure}
+
+\begin{figure}
+    % \centering
+    \begin{subfigure}{0.3\textwidth}
+        \includegraphics[width=\textwidth]{./images/Simon_game.jpg}
+        \caption{A gull}
+        \label{fig:gull}
+    \end{subfigure}%
+    \begin{subfigure}{0.3\textwidth}
+        \includegraphics[width=\textwidth]{./images/Simon_game.jpg}
+        \caption{A tiger}
+        \label{fig:tiger}
+    \end{subfigure}
+    \begin{subfigure}{0.3\textwidth}
+        \includegraphics[width=\textwidth]{./images/Simon_game.jpg}
+        \caption{A mouse}
+        \label{fig:mouse}
+    \end{subfigure}
+    \caption{Pictures of animals}\label{fig:animals}
+\end{figure}
