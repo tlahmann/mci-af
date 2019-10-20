@@ -19,138 +19,19 @@
 \usepackage{amsmath}
 \usepackage{eurosym}
 \usepackage{caption}
-%\usepackage{capt-of}
-%\usepackage{changepage}
-\usepackage{microtype}
 
 \newcolumntype{x}{>{\raggedright\arraybackslash}X}
 \newcolumntype{y}{>{\raggedleft\arraybackslash}X}
 
 \usepackage{ntheorem}
 \theoremseparator{:}
-\newtheorem{hyp}{Hypothesis}
-
-\newcommand{\divider}{
-	\begin{center}
-		\small
-		$\ast$~$\ast$~$\ast$
-	\end{center}
-}
-
-\usepackage[dvipsnames]{xcolor}
-%\documentclass[xcolor=dvipsnames]{beamer}
-\usepackage{listings}
-% Inline code command
-\def\code#1{\texttt{#1}}
-
-% Question numbering
-\newcounter{questionCounter}[chapter]% Hypothesis counter
-% Representation of hypothesis counter: H-<chap>.<hypCNT>
-\renewcommand{\thequestionCounter}{Q\arabic{questionCounter}}
-\newcommand{\question}[1]{%
-	\refstepcounter{questionCounter}% Step hypothesis counter
-	\thequestionCounter% Print hypothesis counter
-%	\label{#1} % Mark with label
-}
-
-\usepackage{color}
-\definecolor{background}{HTML}{F5F5F5}
-\definecolor{jsonStr}{HTML}{800000}
-\definecolor{stringColor}{HTML}{a36900}
-\definecolor{delim}{RGB}{20,105,176}
-\definecolor{punct}{RGB}{20,105,176}
-\colorlet{numb}{magenta!60!black}
-
-\lstdefinelanguage{JavaScript} {
-	morekeywords={
-		break,const,continue,delete,do,while,export,for,in,function,
-		if,else,import,in,instanceOf,label,let,new,return,switch,this,
-		throw,try,catch,typeof,var,void,with,yield
-	},
-	sensitive=false,
-	morecomment=[l]{//},
-	morecomment=[s]{/*}{*/},
-	morestring=[b]",
-	morestring=[d]'
-}
-
-\lstdefinelanguage{json}{
-	numbers=left,
-	numberstyle=\scriptsize,
-	stepnumber=1,
-	numbersep=8pt,
-	showstringspaces=false,
-	breaklines=true,
-	frame=lines,
-	backgroundcolor=\color{background},
-	morestring=[b]",
-	morestring=[d]',
-	stringstyle=\ttfamily\color{jsonStr},
-	literate=
-		*{0}{{{\color{numb}0}}}{1}
-		{1}{{{\color{numb}1}}}{1}
-		{2}{{{\color{numb}2}}}{1}
-		{3}{{{\color{numb}3}}}{1}
-		{4}{{{\color{numb}4}}}{1}
-		{5}{{{\color{numb}5}}}{1}
-		{6}{{{\color{numb}6}}}{1}
-		{7}{{{\color{numb}7}}}{1}
-		{8}{{{\color{numb}8}}}{1}
-		{9}{{{\color{numb}9}}}{1}
-		{:}{{{\color{punct}{:}}}}{1}
-		{,}{{{\color{punct}{,}}}}{1}
-		{\{}{{{\color{delim}{\{}}}}{1}
-		{\}}{{{\color{delim}{\}}}}}{1}
-		{[}{{{\color{delim}{[}}}}{1}
-		{]}{{{\color{delim}{]}}}}{1},
-}
-
-\lstset{
-	frame=tb,
-	framesep=5pt,
-	basicstyle=\ttfamily\singlespacing\fontsize{9}{11}\selectfont,
-	numbers=left,
-	numberstyle=\scriptsize,
-	showstringspaces=false,
-	keywordstyle=\ttfamily\bfseries\color{Blue},
-	identifierstyle=\ttfamily,
-	stringstyle=\ttfamily\color{stringColor},
-	commentstyle=\color{OliveGreen},
-	rulecolor=\color{Gray},
-	backgroundcolor=\color{background},
-	xleftmargin=5pt, % the distynce of the frame on the left side
-	xrightmargin=5pt, % .. right side
-	aboveskip=\bigskipamount,
-	belowskip=\bigskipamount
-}
-
-% TRANSSCRIPT
-\newlength{\transcriptlen}
-
-\NewDocumentCommand {\setmessage} { mo } {%
-	\IfNoValueTF{#2}
-	{\expandafter\newcommand\csname#1\endcsname{\item[#1:]}}%
-	{\expandafter\newcommand\csname#1\endcsname{\item[#2:]}}%
-	\IfNoValueTF{#2}
-	{\settowidth{\transcriptlen}{#1}}%
-	{\settowidth{\transcriptlen}{#2}}%
-}
-
-\setmessage{tut}[Tutorial Message]
-
-\DeclareCaptionType{myText}[Text][List of Texts]
-
-%\setlength{\belowcaptionskip}{50pt plus 0pt minus 5pt}
-
-%\usepackage[marginpar]{todo}
+\newtheorem{hyp}{Hypothese}
 
 % Default ist serifenlose-Schrift (Helvetica), wenn Serifenschrift (Palatino)
 % gewünscht ist, einfach folgende Commands auskommentieren.
 \renewcommand{\sfdefault}{phv}
 \renewcommand{\rmdefault}{phv}
 \renewcommand{\ttdefault}{pcr}
-
-
 
 \newcommand{\projectName}{Resync}
 \newcommand{\projectSubline}{Resync}
@@ -165,6 +46,7 @@
 \emailB{luca.porta@uni-ulm.de}
 \authorC{Tobias Lahmann}
 \emailC{tobias.lahmann@uni-ulm.de}
+\matnr{828398}			% Matrikelnummer
 
 \type{Anwendungsfach} 	%Art der Arbeit, z.B. Diplomarbeit, Masterarbeit,Bachelorarbeit
 \jahr{2019}
@@ -172,7 +54,7 @@
 \fakultaet{Engineering, \\Computer Science and Psychology}
 \institut{Institute of Media Informatics}
 
-\gutachterA{Prof. Dr.-Ing. Michael Weber}
+\gutachterA{Prof. Dr. Enrico Rukzio}
 %\gutachterB{Prof. ...}
 \betreuer{Dennis Wolf, M.Sc.}
 
@@ -186,7 +68,7 @@
 
 \clearpage
 \thispagestyle{empty}
-{	\small\textsf
+{	\small\sffamily
 	\flushleft
 	~\vfill
 	Last updated: \today\\[1cm]

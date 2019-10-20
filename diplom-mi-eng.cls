@@ -22,7 +22,7 @@
 	urlcolor=black
 ]{hyperref}		% Links im PDF
 
-%\RequirePackage{ngerman}
+% \RequirePackage{ngerman}
 \RequirePackage[sc]{mathpazo}		% Palatino
 \RequirePackage{helvet}				% Helvetica
 \RequirePackage{booktabs}			% Schönere Tables
@@ -90,7 +90,7 @@
 			\vspace{.5cm}
 			%\hspace*{100.5mm}\parbox[t]{60mm}{
 				\begin{flushright}
-					\textsf\bfseries Ulm University \textbar \mdseries ~89069 Ulm \textbar
+					\sffamily\bfseries Ulm University \textbar \mdseries ~89069 Ulm \textbar
 					~Germany\\\vspace{1.25cm}
 					\bfseries Faculty of \@fakultaet\\ \mdseries \@institut
 				\end{flushright}
@@ -120,20 +120,7 @@
 \newcommand\copyrightinfo{
 	\copyright~\@jahr~\@author\\[.5em]
 	This work is licensed under the Creative Commons \textbf{Attribution-NonCommercial-ShareAlike 3.0 Unported} License. 
-	To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/ .
-}
-
-\newcommand\declaration{
-	\ihead{Name: \@author}
-	\ohead{Matriculation Number: \@matnr}
-	\ofoot{\pagemark}	
-	\vspace*{2cm}	
-	\minisec{Declaration}
-	\vspace{.5cm}
-	I, \@author, matriculation number \@matnr, hereby declare that I created this work on my own. 
-	Except where referenced and credited to the original author, I have not used the material of others in my work.\\[1cm]
-	\hspace*{2cm} Ulm, \dotfill\\
-	\hspace*{10cm} {\footnotesize \@author}
+	To view a copy of this license, visit \url{http://creativecommons.org/licenses/by-nc-sa/3.0/}.
 }
 
 \RequirePackage{scrlayer-scrpage}
