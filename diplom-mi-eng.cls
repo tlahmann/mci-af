@@ -90,26 +90,26 @@
 			\vspace{.5cm}
 			%\hspace*{100.5mm}\parbox[t]{60mm}{
 				\begin{flushright}
-					\sffamily\bfseries Ulm University \textbar \mdseries ~89069 Ulm \textbar
+					\sffamily\bfseries Universität Ulm \textbar \mdseries ~89069 Ulm \textbar
 					~Germany\\\vspace{1.25cm}
-					\bfseries Faculty of \@fakultaet\\ \mdseries \@institut
+					\bfseries Fakultät für \@fakultaet\\ \mdseries \@institut
 				\end{flushright}
 			%}
 			\vspace{2cm}
 			\normalfont\Huge\bfseries\@title\\[.25cm]
 			\normalsize
-				\mdseries\@type~at Ulm University\\[1cm]
-				\bfseries Presented by:\\
+				\mdseries\@type~an der Universität Ulm\\[1cm]
+				\bfseries Vorgelegt von:\\
 				\mdseries\@authorA\\
 				\@emailA\\[.25cm]
 				\mdseries\@authorB\\
 				\@emailB\\[.25cm]
 				\mdseries\@authorC\\
 				\@emailC\\[.5cm]
-				\bfseries Examiner:\\
+				\bfseries Gutachter:\\
 				\mdseries\@gutachterA\\
 				\@gutachterB\\[.5cm]
-				\bfseries Advisor:\\
+				\bfseries Betreuer:\\
 				\mdseries\@betreuer\\[1cm]
 				\bfseries \@jahr
 			
@@ -118,9 +118,9 @@
 }
 
 \newcommand\copyrightinfo{
-	\copyright~\@jahr~\@authorA,~\@authorB,~\@authorC\\[.5em]
-	This work is licensed under the Creative Commons \textbf{Attribution-NonCommercial-ShareAlike 3.0 Unported} License. 
-	To view a copy of this license, visit \url{http://creativecommons.org/licenses/by-nc-sa/3.0/}.
+	Diese Arbeit ist lizensiert unter der Creative Commons
+	\textbf{Namensnennung-Keine kommerzielle Nutzung-Weitergabe unter gleichen Bedingungen
+		3.0 Deutschland} Lizenz. Nähere Informationen finden Sie unter \url{http://creativecommons.org/licenses/by-nc-sa/3.0/}.
 }
 
 \RequirePackage{scrlayer-scrpage}
