@@ -22,7 +22,7 @@
 	urlcolor=black
 ]{hyperref}		% Links im PDF
 
-% \RequirePackage{ngerman}
+\RequirePackage{ngerman}
 \RequirePackage[sc]{mathpazo}		% Palatino
 \RequirePackage{helvet}				% Helvetica
 \RequirePackage{booktabs}			% Schönere Tables
