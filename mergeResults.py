@@ -2,7 +2,7 @@ import os
 # importing csv module 
 import csv 
 
-rootdir = "D:\\Data\\Dropbox\\Study\\10.Semester\\Mensch-Computer Interaktion\\mci-af\\_StudyResults"
+rootdir = "D:\\Data\\Dropbox\\Study\\mci-af\\_StudyResults"
 extension = 'csv'
 
 def getInvCount(arr, n): 
@@ -74,7 +74,7 @@ def getParticipantScores(partId):
 headers = []
 rows = []
 
-with open(os.path.join(rootdir, 'resync.csv'), 'r') as csvfile:
+with open(os.path.join(rootdir, 'resync2.csv'), 'r') as csvfile:
     # creating a csv reader object 
     csvreader = csv.DictReader(csvfile, delimiter=';')
     headers = [e.lstrip() for e in csvreader.fieldnames]
@@ -91,7 +91,7 @@ with open(os.path.join(rootdir, 'resync.csv'), 'r') as csvfile:
         # df.loc[df['column_name'] == some_value]
         # print(row)
 
-with open(os.path.join(rootdir, 'resync_clean.csv'), 'w+') as csvfile:
+with open(os.path.join(rootdir, 'resync2_clean.csv'), 'w+') as csvfile:
     csvwriter = csv.DictWriter(csvfile, delimiter=';', fieldnames=headers)
     csvwriter.writeheader()
 
