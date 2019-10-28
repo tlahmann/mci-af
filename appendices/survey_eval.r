@@ -129,16 +129,16 @@ if (plot) {
   )
   bp <- ggplot(df_plot, aes(x = "", y = value, fill = group)) +
     geom_bar(width = 1, stat = "identity")
-  pie <- bp + coord_polar("y", start = 0) +
+  bp <- bp + coord_polar("y", start = 0) +
     blank_theme +
     labs(x = "", y = "") +
     guides(fill = guide_legend(title = "Gender")) +
     theme(plot.title = element_text(size = 12, face = "bold"),
       legend.title=element_text(size=20), 
       legend.text=element_text(size=16),
-      axis.text.x=element_blank())
-  pie + scale_fill_manual(values = c("#4575b4", "#d73027", "#ffffbf"))
-
+      axis.text.x=element_blank()) +
+    scale_fill_manual(values = c("#4575b4", "#d73027", "#ffffbf"))
+  ggsave("gender.pdf", bp, NULL, NULL, 1, 7, 5)
 
   ### Plot VR experience
   t <- table(df_results["experienceVR"])
@@ -161,6 +161,7 @@ if (plot) {
       legend.text=element_text(size=16),
       axis.text.x=element_blank())
   pie + scale_fill_manual(values = c("#d73027", "#fc8d59", "#fee090", "#ffffbf", "#e0f3f8", "#91bfdb", "#4575b4"))
+  ggsave("expVr.pdf", pie, NULL, NULL, 1, 7, 5)
 
   ### Plot AR experience
   t <- table(df_results["experienceAR"])
@@ -183,6 +184,7 @@ if (plot) {
       legend.text=element_text(size=16),
       axis.text.x=element_blank())
   pie + scale_fill_manual(values = c("#d73027", "#fc8d59", "#fee090", "#ffffbf", "#e0f3f8", "#91bfdb", "#4575b4"))
+  ggsave("expAr.pdf", pie, NULL, NULL, 1, 7, 5)
 
   # # "Collection Count", "Sam Pleasure", "Sam Arousal", "Sam Dominance"
   # df_plot <-
@@ -204,11 +206,13 @@ if (plot) {
                         "group" = "Player")
   # Change automatically color by groups
   bp <-
+    # theme_classic() +
     ggplot(df_plot, aes(x = group, y = var, fill = group)) +
     geom_boxplot() +
     labs(x = "", y = "Age") +
     theme(legend.position = "none", text = element_text(size = 20))
-  bp + scale_fill_manual(values = c("#009269", "#4A5745", "#941c20")) + coord_flip()
+  bp + scale_fill_manual(values = c("#009269")) + coord_flip()
+  ggsave("age.pdf", bp, NULL, NULL, 1, 7, 5)
   
   rm(df_plot)
   rm(bp)
