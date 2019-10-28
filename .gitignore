@@ -275,3 +275,7 @@ TSWLatexianTemp*
 *.pdf
 !/papers/*.pdf
 !/images/*.pdf
+!/appendices/*.pdf
+
+# Ignore latexindent
+__latexindent_temp.tex
