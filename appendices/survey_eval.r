@@ -1,8 +1,8 @@
 # set the working directory
 setwd(
-  "D:\\Data\\Dropbox\\Study\\mci-af\\appendices"
+  "D:\\Data\\study\\12.Semester\\mci-af\\appendices"
 )
-.libPaths("C:/Users/Tobias/Documents/R/win-library/3.4")
+.libPaths("C:/Users/tobia/Documents/R/win-library/3.6")
 
 #### Variables
 ##################
@@ -49,9 +49,9 @@ names(df_results)[names(df_results) == "How.much.experience.do.you.have.with.vir
 
 # Change data selection
 df_results$gender <- as.character(df_results$gender)
-df_results$gender[df_results$gender == "A1"] <- "female"
-df_results$gender[df_results$gender == "A2"] <- "male"
-df_results$gender[df_results$gender == "A3"] <- "diverse"
+df_results$gender[df_results$gender == "A1"] <- "[A1] female"
+df_results$gender[df_results$gender == "A2"] <- "[A2] male"
+df_results$gender[df_results$gender == "A3"] <- "[A3] diverse"
 
 df_results$experienceVR <- as.character(df_results$experienceVR)
 df_results$experienceVR[df_results$experienceVR == "A1"] <- "[A1] No experience at all"
@@ -114,27 +114,30 @@ if (plot) {
     panel.border = element_blank(),
     panel.grid=element_blank(),
     axis.ticks = element_blank(),
-    plot.title=element_text(size=20, face="bold")
+    plot.title=element_text(size=40, face="bold")
     )
     
   ### Plot Gender
+  t <- table(df_results["gender"])
+  g <- c("[A2] male", "[A1] female", "[A3] divers")
+  v <- c(t[g[1]], t[g[2]], t[g[3]])
+  v[is.na(v)] <- 0
+  v <- as.numeric(as.character(v))
   df_plot <- data.frame(
-    group = c("male", "female"),
-    value = c(
-      table(df_results["gender"])[[2]],
-      table(df_results["gender"])[[1]]
-    )
+    group = g,
+    value = v
   )
   bp <- ggplot(df_plot, aes(x = "", y = value, fill = group)) +
     geom_bar(width = 1, stat = "identity")
   pie <- bp + coord_polar("y", start = 0) +
+    blank_theme +
     labs(x = "", y = "") +
     guides(fill = guide_legend(title = "Gender")) +
-    theme(text = element_text(size = 20))
-  pie +
-      geom_text(aes(y = value / 3 + c(0, cumsum(value)[-length(value)]),
-                      label = percent(value / length(df_results$gender))), size = 6) +
-    scale_fill_manual(values = c("#d73027", "#4575b4", "#ffffbf"))
+    theme(plot.title = element_text(size = 12, face = "bold"),
+      legend.title=element_text(size=20), 
+      legend.text=element_text(size=16),
+      axis.text.x=element_blank())
+  pie + scale_fill_manual(values = c("#4575b4", "#d73027", "#ffffbf"))
 
 
   ### Plot VR experience
@@ -153,7 +156,10 @@ if (plot) {
     blank_theme +
     labs(x = "", y = "") +
     guides(fill = guide_legend(title = "Experience (VR)")) +
-    theme(axis.text.x=element_blank())
+    theme(plot.title = element_text(size = 12, face = "bold"),
+      legend.title=element_text(size=20), 
+      legend.text=element_text(size=16),
+      axis.text.x=element_blank())
   pie + scale_fill_manual(values = c("#d73027", "#fc8d59", "#fee090", "#ffffbf", "#e0f3f8", "#91bfdb", "#4575b4"))
 
   ### Plot AR experience
@@ -172,7 +178,10 @@ if (plot) {
     blank_theme +
     labs(x = "", y = "") +
     guides(fill = guide_legend(title = "Experience (AR)")) +
-    theme(axis.text.x=element_blank()) 
+    theme(plot.title = element_text(size = 12, face = "bold"),
+      legend.title=element_text(size=20), 
+      legend.text=element_text(size=16),
+      axis.text.x=element_blank())
   pie + scale_fill_manual(values = c("#d73027", "#fc8d59", "#fee090", "#ffffbf", "#e0f3f8", "#91bfdb", "#4575b4"))
 
   # # "Collection Count", "Sam Pleasure", "Sam Arousal", "Sam Dominance"
