@@ -1,5 +1,29 @@
 \chapter{Implementierung}
-Auf Softwareseite soll eine digitale Umgebung mittels Unity 3D\footnote{~Unity3D~\url{https://unity3d.com}} erstellt werden. Das gewählte Interface zur Untersuchung der beschriebenen Problemstellung ist die HTC Vive\footnote{~HTC Vive~\url{https://www.vive.com}} mit den zugehörigen Controllern. Bewegung innerhalb der digitalen Umgebung ist, bis auf Kopfbewegungen, nicht vorgesehen, da die Probanden in einem sitzenden Zustand untersucht werden. Die Eingabemethoden zur Bewältigung der gestellten Aufgaben werden mit Zeigeoperationen innerhalb der virtuellen Umgebung realisiert. Eine Implementierung zum Nachverfolgen der Augenbewegung von Probanden (Eye-Tracking) wird nicht selbst durchgeführt, sondern auf bestehende Implementierungen zurückgegriffen. 
 
-Fragebögen werden über das Limesurvey online Fragebogen Tool der Universität Ulm\footnote{~Limesurvey~\url{https://surveys.informatik.uni-ulm.de/limesurvey/
-}} gestellt und beantwortet. 
+Softwareseitig haben wir eine digitale Testumgebung mit der Unity 3D\footnote{~Unity3D~\url{https://unity3d.com}} Game-Engine erstellt. Für die Untersuchung der Hypothesen wurde eine ruhige Umgebung benötigt, die die Probanden in der richtigen Art und Weise dabei unterstützt in einen schlafähnlichen Zustand zu gelangen. 
+Das gewählte Interface für die hier durchgeführten Untersuchungen ist die HTC Vive\footnote{~HTC Vive~\url{https://www.vive.com}} mit den zugehörigen Controllern. 
+Bewegung (Locomotion) ist, bis auf Kopfbewegungen, innerhalb der digitalen Umgebung nicht vorgesehen, da die Teilnehmer sitzend Aufgaben erledigen. 
+Die Eingabemethoden zur Bewältigung der gestellten Aufgaben werden mit Zeigeoperationen innerhalb der virtuellen Umgebung realisiert. 
+
+\section{Codekonventionen und Syntax}
+
+Um eine einheitliche Code-Qualität zu gewährleisten haben wir einige Konventionen festgelegt. Diese sollen außerdem sicherstellen, dass Code, der von unterschiedlichen Entwicklern produziert wurde von allen Beteiligten schnell verstanden und verändert werden kann.
+Ein Auszug aus diesen Konventionen kann in der folgenden Auflistung gesehen werden: 
+\begin{itemize}
+    \item Verwende `PascalCasing' für Klassen- und Methodennamen
+    \item Verwende `camelCasing' for method arguments and local variables
+    \item Verwende Substantive oder Substantiv-Ausdrücke als Klassennamen.
+    \item Interfaces soll ein großes `I' vorangestellt werden. Interfacenamen sind Substantive (-Ausdrücke) oder Adjektive.
+    \item \ldots
+\end{itemize}
+
+Diese halten sich an die offiziellen .NET Codekonventionen von Microsoft~\cite{online:condeConventions}.
+
+\section{Projektstruktur}
+
+Bei der Implementierung des Projekts Haben wir einen Modularen Ansatz gewählt. Einzelne Abschnitte, wie beispielsweise die `Schlafphase' oder die Durchführung von Aufgaben sind in einzelne Unity-Objekte verpackt worden, welche automatisch die für sie relevanten Abläufe durchführen. 
+
+Manche Komponenten müssen auch auf den globalen zustand zugreifen und alle Komponenten müssen Daten erfassen und abspeichern. Um diesen Punkt zu lösen und die Modularität nicht zu zerstören wird das Unity Eventsystem genutzt und als Schnittstelle zwischen einer globalen Manager-Komponente und den einzelnen kleinen Teilen verwendet. 
+Diese globale Komponente übernimmt neben dem Gesamtablauf auch die Speicherung der Bewegungsinformationen des Probanden. 
+
+Um eine mögliche unruhige durchführung der Studie zu untersuchen wird der Vorwärts-Vektor des HMD sowie die Position dieses innerhalb der Virtuellen Umgebung aufgezeichnet. 
