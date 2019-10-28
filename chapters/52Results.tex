@@ -5,11 +5,12 @@
 	
 	\setlength\tabcolsep{3pt}
 	\renewcommand{\arraystretch}{1.4}% for the vertical padding
-	\begin{tabularx}{\textwidth}{ | x || x | x | x |}
+	\begin{tabularx}{\textwidth}{ | x || r | r | }
 		\hline
-		           & Männlich & Weiblich & Divers \\ \hline\hline
-		Absolutwerte   & 33       & 12       & 0                     \\ \hline
-		Prozentwerte & 73.3\%   & 26.7\%   & 0\%                   \\ \hline
+		Geschlecht & Absolutwerte 	& Prozentwerte \\ \hline\hline
+		Männlich & 33 & 73.3\% \\ \hline
+		Weiblich & 12 & 26.7\% \\ \hline
+		Divers & 0 & 0.0\% \\ \hline
 	\end{tabularx}
 \end{table*}
 
@@ -31,11 +32,16 @@
 	
 	\setlength\tabcolsep{3pt}
 	\renewcommand{\arraystretch}{1.4}% for the vertical padding
-	\begin{tabularx}{\textwidth}{ | x | x | x | x | x | x | x | }
+	\begin{tabularx}{\textwidth}{ | x || r | r | }
 		\hline
-		[A1] No experience at all & [A2] Almost no experience & [A3] Less than average experience & [A4] Some experience & [A5] More than average experience  & [A6] Experienced & [A7] Very highly experienced \\ \hline\hline
-		10  & 15  & 3    & 10     & 2 & 2 & 3              \\ \hline
-		22.2\%  & 33.3\%  & 6.7\%    & 22.2\%     & 4.4\% & 4.4\% & 6.7\%              \\ \hline
+		Studienfach 						& Absolutwerte 	& Prozentwerte \\ \hline\hline
+		[A1] No experience at all 			& 10 			& 22.2\% \\ \hline
+		[A2] Almost no experience 			& 15 			& 33.3\% \\ \hline
+		[A3] Less than average experience 	& 3 			& 6.7\% \\ \hline
+		[A4] Some experience 				& 10 			& 22.2\% \\ \hline
+		[A5] More than average experience 	& 2 			& 4.4\% \\ \hline
+		[A6] Experienced 					& 2 			& 4.4\% \\ \hline
+		[A7] Very highly experienced 		& 3 			& 6.7\% \\ \hline
 	\end{tabularx}
 \end{table*}
 
@@ -44,24 +50,53 @@
 	
 	\setlength\tabcolsep{3pt}
 	\renewcommand{\arraystretch}{1.4}% for the vertical padding
-	\begin{tabularx}{\textwidth}{ | x | x | x | x | x | x | x | }
+	\begin{tabularx}{\textwidth}{ | x || r | r | }
 		\hline
-		[A1] No experience at all & [A2] Almost no experience & [A3] Less than average experience & [A4] Some experience & [A5] More than average experience  & [A6] Experienced & [A7] Very highly experienced \\ \hline\hline
-		17  & 10  & 7    & 8     & 2 & 1   & 0           \\ \hline
-		37.7\%  & 22.2\%  & 15.5\%    & 17.7\%     & 4.4\% & 2.2\%   & 0.0\%           \\ \hline
+		Studienfach 						& Absolutwerte 	& Prozentwerte \\ \hline\hline
+		[A1] No experience at all 			& 17 			& 37.7\% \\ \hline
+		[A2] Almost no experience 			& 10 			& 22.2\% \\ \hline
+		[A3] Less than average experience 	& 7 			& 15.5\% \\ \hline
+		[A4] Some experience 				& 8 			& 17.7\% \\ \hline
+		[A5] More than average experience 	& 2 			& 4.4\% \\ \hline
+		[A6] Experienced 					& 1 			& 2.2\% \\ \hline
+		[A7] Very highly experienced 		& 0 			& 0.0\% \\ \hline
 	\end{tabularx}
 \end{table*}
+
+\begin{figure}
+	% \centering
+	\begin{subfigure}{0.48\textwidth}
+		\includegraphics[width=\textwidth]{./appendices/expVr}
+		\caption{Grafische Representation der Antworten zur Frage 'How much experience do you have with VR?'.}
+		\label{fig:expVr}
+	\end{subfigure}%
+	\hfill
+	\begin{subfigure}{0.48\textwidth}
+		\includegraphics[width=\textwidth]{./appendices/expAr}
+		\caption{Grafische Representation der Antworten zur Frage 'How much experience do you have with AR?'.}
+		\label{fig:expAr}
+	\end{subfigure}
+	\caption{Erfahrungen mit virtueller und augmentierter Realität der Studienteilnehmer} % caption for whole figure
+\end{figure}
 
 \begin{table*}
 	\caption{Verteilung der Antworten zur Frage 'What subject, if any, did you study or are you currently studying?'.}~\label{tab:sc_results_age}
 	
 	\setlength\tabcolsep{3pt}
 	\renewcommand{\arraystretch}{1.4}% for the vertical padding
-	\begin{tabularx}{\textwidth}{ | x | x | x | x | x | x | x | x | x | x | }
+	\begin{tabularx}{\textwidth}{ | x || r | r | }
 		\hline
-		Biologie & Informatik & Informationssystemtechnik & Mathematik & Medieninformatik & Physik & Psychologie & Software Engineering & Wirtschaftsmathematik & Wirtschaftsphysik \\ \hline\hline
-		1  & 8  & 1    & 1     & 18 & 3 & 2 & 8 & 1 & 2           \\ \hline
-		2.2\%  & 17.8\%  & 2.2\%    & 2.2\%     & 40\% & 6.7\% & 4.4\% & 17.8\% & 2.2\% & 4.4\%           \\ \hline
+		Studienfach & Absolutwerte & Prozentwerte \\ \hline\hline
+		Biologie & 1 & 2.2\% \\ \hline
+		Informatik & 8 & 17.8\% \\ \hline
+		Informationssystemtechnik & 1 & 2.2\% \\ \hline
+		Mathematik & 1 & 2.2\% \\ \hline
+		Medieninformatik & 18 & 40\% \\ \hline
+		Physik & 3 & 6.7\% \\ \hline
+		Psychologie & 2 & 4.4\% \\ \hline
+		Software Engineering & 8 & 17.8\% \\ \hline
+		Wirtschaftsmathematik & 1 & 2.2\% \\ \hline
+		Wirtschaftsphysik & 2 & 4.4\% \\ \hline
 	\end{tabularx}
 \end{table*}
 
