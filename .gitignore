@@ -275,7 +275,8 @@ TSWLatexianTemp*
 *.pdf
 !/papers/*.pdf
 !/images/*.pdf
-!/appendices/*.pdf
+# Ignore changes in the study results visualizations for the moment
+# !/appendices/*.pdf
 
 # Ignore latexindent
 __latexindent_temp.tex
