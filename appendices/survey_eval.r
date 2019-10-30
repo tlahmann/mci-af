@@ -6,7 +6,7 @@ setwd(
 
 #### Variables
 ##################
-plot <- TRUE
+plot <- FALSE
 file <- c("results-survey512856.csv", "results-survey382784.csv", "results-surveyCombined.csv")
 
 #### Basic import
@@ -64,6 +64,16 @@ df_results$gender <- as.character(df_results$gender)
 df_results$gender[df_results$gender == "A1"] <- "[A1] female"
 df_results$gender[df_results$gender == "A2"] <- "[A2] male"
 df_results$gender[df_results$gender == "A3"] <- "[A3] diverse"
+
+# df_results$experienceAR[df_results$experienceAR == "A1"] <- 1
+# df_results$experienceAR[df_results$experienceAR == "A2"] <- 2
+# df_results$experienceAR[df_results$experienceAR == "A3"] <- 3
+# df_results$experienceAR[df_results$experienceAR == "A4"] <- 4
+# df_results$experienceAR[df_results$experienceAR == "A5"] <- 5
+# df_results$experienceAR[df_results$experienceAR == "A6"] <- 6
+# df_results$experienceAR[df_results$experienceAR == "A7"] <- 7
+# df_results$experienceAR <- as.numeric(df_results$experienceAR)
+# print(stat.desc(df_results["experienceAR"]))
 
 df_results$experienceVR <- as.character(df_results$experienceVR)
 df_results$experienceVR[df_results$experienceVR == "A1"] <- "[A1] No experience at all"
