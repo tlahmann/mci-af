@@ -51,6 +51,17 @@ library(tidyr)
 ##################################
 ##################################
 
+blank_theme <- theme_minimal()+
+  theme(
+  axis.title.x = element_blank(),
+  axis.title.y = element_blank(),
+  panel.border = element_blank(),
+  # panel.grid=element_blank(),
+  axis.ticks = element_blank(),
+  plot.title=element_text(size=40, face="bold")
+  )
+
+
 #### SAM
 df_plot <- rbind.fill(
   data.frame(
@@ -72,6 +83,7 @@ df_plot <-
 bp <-
   ggplot(data = df_plot, aes(x = sam, y = val)) +
   geom_boxplot(aes(fill = group), position = position_dodge(1)) +
+  blank_theme +
   #coord_cartesian(ylim = c(0, 9)) +
   labs(x = "Sam Dimension", y = "Reaction") +
   guides(fill = guide_legend(title = "Fade duration")) +
@@ -98,6 +110,7 @@ df_plot <-
 bp <-
   ggplot(data = df_plot, aes(x = sam, y = val)) +
   geom_boxplot(aes(fill = group), position = position_dodge(1)) +
+  blank_theme +
   #coord_cartesian(ylim = c(0, 9)) +
   labs(x = "Sam Dimension", y = "Reaction") +
   guides(fill = guide_legend(title = "Fade duration")) +
