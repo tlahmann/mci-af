@@ -139,7 +139,7 @@ if (plot) {
     axis.title.x = element_blank(),
     axis.title.y = element_blank(),
     panel.border = element_blank(),
-    panel.grid=element_blank(),
+    # panel.grid=element_blank(),
     axis.ticks = element_blank(),
     plot.title=element_text(size=40, face="bold")
     )
@@ -164,7 +164,7 @@ if (plot) {
       legend.title=element_text(size=20), 
       legend.text=element_text(size=16),
       axis.text.x=element_blank()) +
-    scale_fill_manual(values = c("#4575b4", "#d73027", "#ffffbf"))
+    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#ffffbf"))
   ggsave("gender.pdf", bp, NULL, NULL, 1, 7, 5)
 
   ### Plot VR experience
@@ -186,8 +186,8 @@ if (plot) {
     theme(plot.title = element_text(size = 12, face = "bold"),
       legend.title=element_text(size=20), 
       legend.text=element_text(size=16),
-      axis.text.x=element_blank())
-  pie + scale_fill_manual(values = c("#d73027", "#fc8d59", "#fee090", "#ffffbf", "#e0f3f8", "#91bfdb", "#4575b4"))
+      axis.text.x=element_blank()) +
+    scale_fill_manual(values = c("#d53e4f", "#fc8d59", "#fee08b", "#ffffbf", "#e6f598", "#99d594", "#3288bd"))
   ggsave("expVr.pdf", pie, NULL, NULL, 1, 7, 5)
 
   ### Plot AR experience
@@ -209,8 +209,8 @@ if (plot) {
     theme(plot.title = element_text(size = 12, face = "bold"),
       legend.title=element_text(size=20), 
       legend.text=element_text(size=16),
-      axis.text.x=element_blank())
-  pie + scale_fill_manual(values = c("#d73027", "#fc8d59", "#fee090", "#ffffbf", "#e0f3f8", "#91bfdb", "#4575b4"))
+      axis.text.x=element_blank()) +
+    scale_fill_manual(values = c("#d53e4f", "#fc8d59", "#fee08b", "#ffffbf", "#e6f598", "#99d594", "#3288bd"))
   ggsave("expAr.pdf", pie, NULL, NULL, 1, 7, 5)
 
   ## Plot Age
@@ -221,9 +221,10 @@ if (plot) {
     # theme_classic() +
     ggplot(df_plot, aes(x = group, y = var, fill = group)) +
     geom_boxplot() +
+    blank_theme+
     labs(x = "", y = "Age") +
-    theme(legend.position = "none", text = element_text(size = 20))
-  bp + scale_fill_manual(values = c("#009269")) + coord_flip()
+    theme(legend.position = "none", text = element_text(size = 20)) +
+    scale_fill_manual(values = c("#ffffbf")) + coord_flip()
   ggsave("age.pdf", bp, NULL, NULL, 1, 7, 5)
   
 
@@ -234,9 +235,15 @@ if (plot) {
     v[is.na(v)] <- 0
     v <- as.numeric(as.character(v))
     df_plot <- data.frame(group = g, value = v)
-    p<-ggplot(data=df_plot, aes(x=group, y=value)) +
-      geom_bar(stat="identity")
-    ggsave(paste(i, ".pdf", sep=""), p, NULL, NULL, 1, 7, 5)
+    p<-ggplot(
+      data=df_plot, 
+      aes(x=group, y=value, fill=group)) +
+      geom_bar(stat="identity",
+      show.legend = FALSE)+
+      blank_theme+
+      labs(x = "Agreement", y = "Count")+
+      scale_fill_manual(values = c("#d53e4f", "#fc8d59", "#fee08b", "#ffffbf", "#e6f598", "#99d594", "#3288bd"))
+    ggsave(paste(i, ".pdf", sep=""), p, NULL, NULL, 1, 12, 5)
   }
   rm(i)
 
