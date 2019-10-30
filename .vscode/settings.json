@@ -33,6 +33,7 @@
         "de"
     ],
     "spellright.documentTypes": [
+        "latex",
         "markdown",
         "plaintext"
     ],
