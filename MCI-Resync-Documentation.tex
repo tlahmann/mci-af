@@ -35,6 +35,7 @@
 \newcommandx{\todoLuc}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
 \newcommandx{\todoTob}[2][1=]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
 \newcommandx{\todoAll}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
+\newcommand{\todos}{\newpage\listoftodos[Todos]}
 
 % Default ist serifenlose-Schrift (Helvetica), wenn Serifenschrift (Palatino)
 % gewünscht ist, einfach folgende Commands auskommentieren.
@@ -117,7 +118,7 @@
 
 \input{chapters/70Conclusion}
 
-%\todos
+\todos
 
 \appendix		% Ab hier Appendices einbinden
 \include{appendices/95Appendices}
