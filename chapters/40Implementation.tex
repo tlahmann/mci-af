@@ -10,10 +10,10 @@ Die Eingabemethoden zur Bewältigung der gestellten Aufgaben werden mit Zeigeope
 Um eine einheitliche Code-Qualität zu gewährleisten haben wir einige Konventionen festgelegt. Diese sollen außerdem sicherstellen, dass Code, der von unterschiedlichen Entwicklern produziert wurde von allen Beteiligten schnell verstanden und verändert werden kann.
 Ein Auszug aus diesen Konventionen kann in der folgenden Auflistung gesehen werden: 
 \begin{itemize}
-    \item Verwende `PascalCasing' für Klassen- und Methodennamen
-    \item Verwende `camelCasing' für Methoden-Argumente und lokale Variablen
+    \item Verwende "`PascalCasing"' für Klassen- und Methodennamen
+    \item Verwende "`camelCasing"' für Methoden-Argumente und lokale Variablen
     \item Verwende Substantive oder Substantiv-Ausdrücke als Klassennamen.
-    \item Interfaces soll ein großes `I' vorangestellt werden. Interfacenamen sind Substantive (-Ausdrücke) oder Adjektive.
+    \item Interfaces soll ein großes "`I"' vorangestellt werden. Interfacenamen sind Substantive (-Ausdrücke) oder Adjektive.
     \item \ldots
 \end{itemize}
 
@@ -21,7 +21,7 @@ Diese halten sich an die offiziellen .NET Codekonventionen von Microsoft~\cite{o
 
 \subsection{Projektstruktur}
 
-Bei der Implementierung des Projekts Haben wir einen Modularen Ansatz gewählt. Einzelne Abschnitte, wie beispielsweise die `Schlafphase' oder die Durchführung von Aufgaben sind in einzelne Unity-Objekte verpackt worden, welche automatisch die für sie relevanten Abläufe durchführen. 
+Bei der Implementierung des Projekts Haben wir einen Modularen Ansatz gewählt. Einzelne Abschnitte, wie beispielsweise die "`Schlafphase"' oder die Durchführung von Aufgaben sind in einzelne Unity-Objekte verpackt worden, welche automatisch die für sie relevanten Abläufe durchführen. 
 
 Manche Komponenten müssen auch auf den globalen zustand zugreifen und alle Komponenten müssen Daten erfassen und abspeichern. Um diesen Punkt zu lösen und die Modularität nicht zu zerstören wird das Unity Eventsystem genutzt und als Schnittstelle zwischen einer globalen Manager-Komponente und den einzelnen kleinen Teilen verwendet. 
 Diese globale Komponente übernimmt neben dem Gesamtablauf auch die Speicherung der Bewegungsinformationen des Probanden. 
