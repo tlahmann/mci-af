@@ -1,35 +1,41 @@
 \chapter{Lösungsansatz}
-Für die bereits geschilderte Thematik ergaben sich eine Reihe an unterschiedlichen Ansätzen, welche für eine Realisierung der Studie förderlich waren. Unser Ansatz sieht wie folgt aus. 
 
-\todoAll{Hier Einleitung...}
+Im Folgenden werden unsere Herangehensweisen an das Problem beschrieben. Wir untersuchen den Übergang zwischen einem schläfrigen Zustand, ohne kognitive Beanspruchung, und einem wachen Zustand, in dem Aufgaben von der Testperson übernommen werden können. Hierzu bietet sich aus zeitlichen Gründen eine Untersuchung mittels virtueller Realität an. Wir betrachten außerdem eine Reihe von Aufgaben, die in VR durchgeführt werden und einen Bezug auf reale Situationen im Kontext Autofahren aufweisen.
 
 \section{Idee}
-In einer virtuellen Umgebung werden Probanden dazu aufgefordert sich zu entspannen und, nach Möglichkeit, ohne Ablenkung zu verweilen. Das Ziel ist es den Nutzer in einen Zustand der Trägheit zu versetzten, wie er nach dem Schlafen auftreten kann. In diesem Zustand könnten Informationen nur schwer aufgenommen werden und eine Aufgabe, die in diesem Zeitraum gestellt wird könnte so mit geringerem Erfolg erledigt werden, als wenn der Nutzer voll aufnahmefähig ist.
 
-Im Anschluss an die initiale Ruhephase werden die Nutzer auf unterschiedliche Arten "`auf\-geweckt' und ihnen wird eine oder mehrere Aufgaben gestellt. Eine Gruppe der Nutzer wird "`sanft geweckt' indem die virtuelle Umgebung langsam und bedacht erhellt wird, zudem kann dieser Vorgang mit unterschiedlichen anderen Sinnen unterstützt werden. Die Aufgabenstellung erscheint iterativ und wird mit jedem Schritt anspruchsvoller, bis die volle Schwierigkeit erreicht wurde.
-Die andere Gruppe der Nutzer wird hingegen "`schnell geweckt"'. Hierbei wird die Helligkeit der Virtuellen Umgebung plötzlich erhöht. Auch hier können unterschiedliche Sinne angesprochen werden um möglicherweise den Stressfaktor beim Probanden zu erhöhen. Die Nutzer werden direkt nach dem Aufwachen mit der vollen Schwierigkeit einer Aufgabe konfrontiert und müssen diese lösen.
+Wir möchten die Teilnehmer der Studie dazu bringen einen Zustand zu erreichen in dem das fehlerfreie Erledigen von Aufgaben eine gewisse geistige Anstrengung aufweist. Dies ist vergleichbar damit, dass im Straßenverkehr das autonome Fahren dem Fahrer erlaubt seine Aufmerksamkeit von der Straße zu nehmen, seinen Sitz zu kippen und die Augen zu schließen. Sollte der Fahrer daraufhin von seinem Fahrzeug aufgefordert werden in eine Situation einzugreifen und eine Entscheidung zu treffen, wie Beispielsweise einen schwierigen Abschnitt der Strecke selbst zu Fahren, oder eine Entscheidung zu treffen, muss das Fahrzeug den Fahrer aufwecken und informieren. In diesem Zustand könnten Informationen nur schwer aufgenommen werden und eine Aufgabe, die in diesem Zeitraum gestellt wird könnte so mit geringerem Erfolg erledigt werden, als wenn der Fahrer voll aufnahmefähig ist.
 
-Im nächsten Schritt des Projekts soll untersucht werden auf welche Arten die Nutzer der beiden Gruppen in dem Erledigen von Aufgaben unterstützt werden können. Hierbei werden vor allem gestalterische sowie aufmerksamkeitssteuernde Aspekte untersucht.
+\todoAll{Dieses Paper könnte interessant sein, warum Entscheidungen von Menschen getroffen werden sollten... \cite{awad2018moral}. Es geht prinzipiell nur darum diese Entscheidung von einem neuronalen Netz übernehmen zu lassen und ich habe bis jetzt nicht rein geschaut, aber vielleicht stehen ja auch noch interessante Sachen drin. Für die Interessierten: 'Moral Machine' bei google eingeben -tl}
 
-Die Nutzer beider Gruppen können hier dahingehend untersucht werden, mit welchen Fehlerraten sowie welcher Geschwindigkeit die gestellten Aufgaben erledigt werden. Nachfolgend können standardisierte Fragebögen herangezogen werden um das Befinden und die Einschätzung des Nutzers zu untersuchen.
+Wir untersuchen in dieser Arbeit nicht die Auswirkungen des Schlafens, oder des Mangels an Schlaf auf das Gehirn, sondern viel mehr die Überführung von einem trägen oder schläfrigen Zustand in einen Wachen. 
 
-Wir stellen grundlegend die folgenden Hypothesen auf:
-\begin{hyp}[H\ref{hyp:schneller}]\label{hyp:schneller}
+Um eine möglichst kontrollierbare Testumgebung mit vergleichbaren Ergebnissen zu haben nutzen wir VR in einem separaten Raum der Universität Ulm. Hier werden die Teilnehmer gebeten mit dem VR-HMD in einer initialen Phase zu entspannen. Das Ziel ist es die beschriebene Situation der geringeren Aufnahmefähigkeit und Schläfrigkeit zu erzeugen, wie er auch nach dem Schlafen auftreten kann. 
+
+Im Anschluss an die Ruhephase werden die Nutzer auf unterschiedliche Arten "`aufgeweckt' und ihnen werden drei Aufgaben gestellt. Die von uns untersuchten Arten des Weckens sind Licht und Ton. Wobei die Einstellung des Lichts noch in zwei weitere Gruppen unterteilt ist. Für Gruppe eins wird das licht innerhalb von 5 Sekunden von 0\% Intensität auf 100\% erhöht, bei Gruppe zwei geschieht dies Über einen Zeitraum von 20 Sekunden. 
+Allen drei Gruppen werden im Anschluss die Aufgaben iterativ präsentiert.
+
+\todoTob{Überleitung in die Hypothesen}
+
+Auf dieser Grundlage formulieren und untersuchen wir die folgenden Hypothese auf:
+
+\begin{hyp}[H\ref{hyp:lichtSchneller}]\label{hyp:lichtSchneller}
+	Menschen, die mit Licht geweckt werden, können sich in kürzerer Zeit auf eine gestellte Aufgabe einstellen, als Menschen, die mit Ton geweckt werden.
+\end{hyp}
+
+\begin{hyp}[H\ref{hyp:lichtErfolgreicher}]\label{hyp:lichtErfolgreicher}
+	Menschen die mit Licht geweckt werden, können eine gestellte Aufgabe mit weniger Fehlern erledigen, als Menschen, die mit Ton geweckt werden.
+\end{hyp}
+
+\begin{hyp}[H\ref{hyp:langKurzSchneller}]\label{hyp:langKurzSchneller}
 	Menschen die langsam geweckt werden können sich in kürzerer Zeit auf eine gestellte Aufgabe einstellen, als Menschen, die abrupt aus dem Schlaf gerissen werden.
 \end{hyp}
 
-\begin{hyp}[H\ref{hyp:erfolgreicher}]\label{hyp:erfolgreicher}
+und 
+
+\begin{hyp}[H\ref{hyp:langKurzErfolgreicher}]\label{hyp:langKurzErfolgreicher}
 	Menschen die langsam geweckt werden können eine gestellte Aufgabe mit weniger Fehlern erledigen, als Menschen, die abrupt aus dem Schlaf gerissen werden.
 \end{hyp}
-
-und
-
-\begin{hyp}[H\ref{hyp:gestaltung}]\label{hyp:gestaltung}
-	Prozedurale Informationen (4C-ID)~\cite{van2002blueprints} bewirken, dass Benutzer eine Aufgabe schneller, sowie mit einer geringeren Fehlerrate erledigen können.
-\end{hyp}
-\todoAll{Ist diese hypothese noch aktuell? Wir haben ja eigentlich keine prozeduralen Informationen in der Studie untersucht... also raus?}
-\todoLuc{Warum haben wir gewisse Paramter ausgesucht}
-\todoLuc{Warum diese Musik und dieses Weltraum szenario gewähhlt?Weil dunkel entspannend etc}
 
 \subsection{Aufwachen}
 Probanden können auf unterschiedliche Arten aufgeweckt werden~\cite{jewett1999time, ferrara2000sleep}
@@ -38,6 +44,7 @@ Probanden können auf unterschiedliche Arten aufgeweckt werden~\cite{jewett1999t
 	\item \textbf{Licht}
 \end{itemize}
 \todoAll{Beschreiben... und noch auf verwandte Forschung eingehen}
+\todoLuc{Warum haben wir gewisse Paramter ausgesucht}
 
 \section{Testaufbau}
 Sitzend werden Probanden erst in einen entspannten Zustand versetzt. In diesem verweilen sie möglichst ohne Ablenkung, bis sich eine Gelassenheit oder Trägheit einstellt. Diese kann von entspanntem Sitzen bis hin zum Schlaf führen, eine genaue Zeitspanne hierfür kann zwischen Probanden variieren und muss in Tests bestimmt werden.
@@ -50,7 +57,7 @@ Nachfolgend wird der Teilnehmer aus diesem Zustand geleitet und mit einer Aufgab
 	\item Blickrichtung
 \end{itemize}\todoTob{Redundant mit der Implementierung... wo soll das am ehesten hin?}
 
-Die erste Studie umfasst ungefähr 30 Minuten , hierfür werden die Teilnehmer mit fünf Euro entlohnt. Der Ablauf der Studie Umfasst folgende Punkte:
+Die erste Studie umfasst ungefähr 30 Minuten, hierfür werden die Teilnehmer mit fünf Euro entlohnt. Der Ablauf der Studie Umfasst folgende Punkte:
 
 \begin{enumerate}
 	\item \textbf{5 Minuten} Vorbereitung und Einführung in den Studienablauf inklusive der Bedienung der VR-Umgebung
@@ -59,7 +66,7 @@ Die erste Studie umfasst ungefähr 30 Minuten , hierfür werden die Teilnehmer m
 	\item \textbf{5 Minuten} Fragebögen beantworten
 \end{enumerate}
 
-Die Fragebögen, die wir heranziehen sind zum einen der NASA TLX und ...
+Die Fragebögen, die wir heranziehen sind zum einen der NASA TLX und ... \todoAll{Raus damit? Oder beschreiben}
 
 Es handelt sich um eine between subject Studie. Im ersten Durchlauf erfassen wir die genannten Parameter unter der Betrachtung der Zeit in der die virtuelle Umgebung erhellt wird. Die genauen Zeiten werden in einer Testphase während des Implementierens eingegrenzt.
 
@@ -86,7 +93,7 @@ Verteilt über das Blickfeld des Probanden werden Zahlen angezeigt. Die Abständ
 \end{figure}
 
 \subsubsection{Stroop-Effekt} 
-Im Mittelpunkt des Blickfeldes wird eine ausgeschriebene Farbe angezeigt. Die Textfarbe des Worts muss nicht zwangsläufig die der ausgeschriebenen Farbe sein. Der Proband soll als Eingabe die Textfarbe auswählen indem er mit dem Controller auf einem Interface die richtige Auswahl trifft. Beispiel kann in Figure~\ref{fig:stroop_test} gesehen werden. Diese Aufgabe dient dem Testen von ungewohnten Aufgaben, welche dem Anwender in der Regel nicht vertraut sind und auf welche sich der Proband in kürzester Zeit einstellen muss.
+Im Mittelpunkt des Blickfeldes wird eine ausgeschriebene Farbe angezeigt. Die Textfarbe des Worts muss nicht zwangsläufig die der ausgeschriebenen Farbe sein. Der Proband soll als Eingabe die Textfarbe auswählen indem er mit dem Controller auf einem Interface die richtige Auswahl trifft. Beispiel kann in Figure~\ref{fig:matching} gesehen werden. Diese Aufgabe dient dem Testen von ungewohnten Aufgaben, welche dem Anwender in der Regel nicht vertraut sind und auf welche sich der Proband in kürzester Zeit einstellen muss.
 
 \begin{figure}
 	\centering
