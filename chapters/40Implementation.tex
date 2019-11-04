@@ -21,12 +21,12 @@ Diese halten sich an die offiziellen .NET Codekonventionen von Microsoft~\cite{o
 
 \subsection{Projektstruktur}
 
-Bei der Implementierung des Projekts Haben wir einen Modularen Ansatz gewählt. Einzelne Abschnitte, wie beispielsweise die "`Schlafphase"' oder die Durchführung von Aufgaben sind in einzelne Unity-Objekte verpackt worden, welche automatisch die für sie relevanten Abläufe durchführen. 
+Bei der Implementierung des Projekts Haben wir einen Modularen Ansatz gewählt. Einzelne Abschnitte, wie beispielsweise die Ruhephase oder die Durchführung von Aufgaben sind in einzelne Unity-Objekte verpackt worden, welche automatisch die für sie relevanten Abläufe durchführen. 
 
 Manche Komponenten müssen auch auf den globalen zustand zugreifen und alle Komponenten müssen Daten erfassen und abspeichern. Um diesen Punkt zu lösen und die Modularität nicht zu zerstören wird das Unity Eventsystem genutzt und als Schnittstelle zwischen einer globalen Manager-Komponente und den einzelnen kleinen Teilen verwendet. 
 Diese globale Komponente übernimmt neben dem Gesamtablauf auch die Speicherung der Bewegungsinformationen des Probanden. 
 
-Um festzustellen, ob Studienteilnehmer eher unruhig waren während der "`Schlafphase"'\todoAll{wording} wird der Vorwärts-Vektor des HMD sowie die Position dieses innerhalb der Virtuellen Umgebung aufgezeichnet.
+Um festzustellen, ob Studienteilnehmer eher unruhig waren während der Ruhephase wird der Vorwärts-Vektor des HMD sowie die Position dieses innerhalb der Virtuellen Umgebung aufgezeichnet.
 
 Für die Aufgaben werden die folgenden werte erfasst:
 \begin{itemize}
