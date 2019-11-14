@@ -2,7 +2,7 @@ import os
 # importing csv module 
 import csv 
 
-rootdir = "D:\\Data\\Dropbox\\Study\\mci-af\\_StudyResults"
+rootdir = ".\\_StudyResults"
 extension = 'csv'
 
 def getInvCount(arr, n): 
@@ -56,7 +56,7 @@ def getParticipantScores(partId):
                         lt = [e for e in csvreader]
                         ls = [e[4].lstrip() for e in lt]
                         time = max([int(e[1]) for e in lt])
-                        ob = {'matchingMis': sum([0 if 'True' else 1 for x in ls]), 'matchingTime': time}
+                        ob = {'matchingMis': sum(['False' in x for x in ls]), 'matchingTime': time}
                         part.update(ob)
                 if file.endswith('counting.csv'):
                     # reading csv file 
@@ -74,7 +74,7 @@ def getParticipantScores(partId):
 headers = []
 rows = []
 
-with open(os.path.join(rootdir, 'resync2.csv'), 'r') as csvfile:
+with open(os.path.join(rootdir, 'resync_clean.csv'), 'r') as csvfile:
     # creating a csv reader object 
     csvreader = csv.DictReader(csvfile, delimiter=';')
     headers = [e.lstrip() for e in csvreader.fieldnames]
@@ -91,7 +91,7 @@ with open(os.path.join(rootdir, 'resync2.csv'), 'r') as csvfile:
         # df.loc[df['column_name'] == some_value]
         # print(row)
 
-with open(os.path.join(rootdir, 'resync2_clean.csv'), 'w+') as csvfile:
+with open(os.path.join(rootdir, 'resync_clean.csv'), 'w+') as csvfile:
     csvwriter = csv.DictWriter(csvfile, delimiter=';', fieldnames=headers)
     csvwriter.writeheader()
 
