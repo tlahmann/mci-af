@@ -80,18 +80,11 @@ blank_theme <- theme_minimal()+
 
 
 #### SAM
-df_plot <- rbind.fill(
-  data.frame(
-    "Pleasure" = df_results$SAM_pleasure_pre,
-    "Arousal" = df_results$SAM_arousal_pre,
-    "Dominance" = df_results$SAM_dominance_pre,
-    "group" = df_results$FadeSeconds
-  ), data.frame(
-    "Pleasure" = df_results2$SAM_pleasure_pre,
-    "Arousal" = df_results2$SAM_arousal_pre,
-    "Dominance" = df_results2$SAM_dominance_pre,
-    "group" = df_results2$FadeSeconds
-  )
+df_plot <- data.frame(
+  "Pleasure" = df_results$SAM_pleasure_pre,
+  "Arousal" = df_results$SAM_arousal_pre,
+  "Dominance" = df_results$SAM_dominance_pre,
+  "group" = df_results$FadeSeconds
 )
 df_plot$group <-
   factor(df_plot$group, c("20", "5", "-1"))
@@ -107,18 +100,11 @@ bp <-
   scale_fill_manual(values = c("#3288bd", "#d53e4f", "#ffffbf"))
 ggsave("SAMpre.pdf", bp, NULL, NULL, 1, 7, 5)
 
-df_plot <- rbind.fill(
-  data.frame(
-    "Pleasure" = df_results$SAM_pleasure_post,
-    "Arousal" = df_results$SAM_arousal_post,
-    "Dominance" = df_results$SAM_dominance_post,
-    "group" = df_results$FadeSeconds
-  ), data.frame(
-    "Pleasure" = df_results2$SAM_pleasure_post,
-    "Arousal" = df_results2$SAM_arousal_post,
-    "Dominance" = df_results2$SAM_dominance_post,
-    "group" = df_results2$FadeSeconds
-  )
+df_plot <- data.frame(
+  "Pleasure" = df_results$SAM_pleasure_post,
+  "Arousal" = df_results$SAM_arousal_post,
+  "Dominance" = df_results$SAM_dominance_post,
+  "group" = df_results$FadeSeconds
 )
 df_plot$group <-
   factor(df_plot$group, c("20", "5", "-1"))
@@ -133,6 +119,48 @@ bp <-
   guides(fill = guide_legend(title = "Fade duration")) +
   scale_fill_manual(values = c("#3288bd", "#d53e4f", "#ffffbf"))
 ggsave("SAMpost.pdf", bp, NULL, NULL, 1, 7, 5)
+
+## Ordering mistakes histogram
+df_plot <- data.frame(
+  group = df_results["Participant_ID"],
+  value = df_results["orderingMis"]
+)
+# Basic histogram
+p <- ggplot(df_plot, aes(x=orderingMis)) + 
+  geom_histogram(binwidth=1, colour="black", fill="#3288bd") +
+  blank_theme +
+  # geom_density(alpha=.2, fill="#FF6666") +
+  labs(x = "Count", y = "Time (ms)") +
+  guides(fill = guide_legend(title = "Errors for the completion of task 1: ordering"))
+ggsave("orderingMisHist.pdf", p, NULL, NULL, 1, 7, 5)
+
+## Matching mistakes histogram
+df_plot <- data.frame(
+  group = df_results["Participant_ID"],
+  value = df_results["matchingMis"]
+)
+# Basic histogram
+p <- ggplot(df_plot, aes(x=matchingMis)) + 
+  geom_histogram(binwidth=1, colour="black", fill="#3288bd") +
+  blank_theme +
+  # geom_density(alpha=.2, fill="#FF6666") +
+  labs(x = "Count", y = "Time (ms)") +
+  guides(fill = guide_legend(title = "Errors for the completion of task 1: matching"))
+ggsave("matchingMisHist.pdf", p, NULL, NULL, 1, 7, 5)
+
+## Counting mistakes histogram
+df_plot <- data.frame(
+  group = df_results["Participant_ID"],
+  value = df_results["countingMis"]
+)
+# Basic histogram
+p <- ggplot(df_plot, aes(x=countingMis)) + 
+  geom_histogram(binwidth=1, colour="black", fill="#3288bd") +
+  blank_theme +
+  # geom_density(alpha=.2, fill="#FF6666") +
+  labs(x = "Count", y = "Time (ms)") +
+  guides(fill = guide_legend(title = "Errors for the completion of task 1: counting"))
+ggsave("countingMisHist.pdf", p, NULL, NULL, 1, 7, 5)
 
 ## Ordering time histogram
 df_plot <- data.frame(
@@ -162,7 +190,7 @@ p <- ggplot(df_plot, aes(x=matchingTime)) +
   guides(fill = guide_legend(title = "Duration for the completion of task 2: matching"))
 ggsave("matchingTimeHist.pdf", p, NULL, NULL, 1, 7, 5)
 
-## Ordering time histogram
+## Counting time histogram
 df_plot <- data.frame(
   group = df_results["Participant_ID"],
   value = df_results["countingTime"]
@@ -175,6 +203,23 @@ p <- ggplot(df_plot, aes(x=countingTime)) +
   labs(x = "Count", y = "Time (ms)") +
   guides(fill = guide_legend(title = "Duration for the completion of task 3: counting"))
 ggsave("countingTimeHist.pdf", p, NULL, NULL, 1, 7, 5)
+
+
+####### Alarm duration
+## Counting time histogram
+dt <- df_results[df_results["AlarmDuration"] > 0,]
+df_plot <- data.frame(
+  group = dt["Participant_ID"],
+  value = dt["AlarmDuration"]
+)
+# Basic histogram
+p <- ggplot(df_plot, aes(x=AlarmDuration)) + 
+  geom_histogram(binwidth=0.5, colour="black", fill="#ffffbf") +
+  blank_theme +
+  labs(x = "Count", y = "Time (ms)") +
+  guides(fill = guide_legend(title = "Alarm Duration"))
+ggsave("alarmDurationHist.pdf", p, NULL, NULL, 1, 7, 5)
+rm(dt)
 
 rm(df_plot)
 rm(bp)
