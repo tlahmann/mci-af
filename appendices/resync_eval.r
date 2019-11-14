@@ -133,5 +133,47 @@ bp <-
   scale_fill_manual(values = c("#3288bd", "#d53e4f", "#ffffbf"))
 ggsave("SAMpost.pdf", bp, NULL, NULL, 1, 7, 5)
 
+## Ordering time histogram
+df_plot <- data.frame(
+  group = df_results["Participant_ID"],
+  value = df_results["orderingTime"]
+)
+# Basic histogram
+p <- ggplot(df_plot, aes(x=orderingTime)) + 
+  geom_histogram(binwidth=2000, colour="black", fill="#d53e4f") +
+  blank_theme +
+  geom_density(alpha=.2, fill="#FF6666") +
+  labs(x = "Count", y = "Time (ms)") +
+  guides(fill = guide_legend(title = "Duration for the completion of task 1: ordering"))
+ggsave("orderingTimeHist.pdf", p, NULL, NULL, 1, 7, 5)
+
+## Matching time histogram
+df_plot <- data.frame(
+  group = df_results["Participant_ID"],
+  value = df_results["matchingTime"]
+)
+# Basic histogram
+p <- ggplot(df_plot, aes(x=matchingTime)) + 
+  geom_histogram(binwidth=2000, colour="black", fill="#d53e4f") +
+  blank_theme +
+  geom_density(alpha=.2, fill="#FF6666") +
+  labs(x = "Count", y = "Time (ms)") +
+  guides(fill = guide_legend(title = "Duration for the completion of task 2: matching"))
+ggsave("matchingTimeHist.pdf", p, NULL, NULL, 1, 7, 5)
+
+## Ordering time histogram
+df_plot <- data.frame(
+  group = df_results["Participant_ID"],
+  value = df_results["countingTime"]
+)
+# Basic histogram
+p <- ggplot(df_plot, aes(x=countingTime)) + 
+  geom_histogram(binwidth=2000, colour="black", fill="#d53e4f") +
+  blank_theme +
+  geom_density(alpha=.2, fill="#FF6666") +
+  labs(x = "Count", y = "Time (ms)") +
+  guides(fill = guide_legend(title = "Duration for the completion of task 3: counting"))
+ggsave("countingTimeHist.pdf", p, NULL, NULL, 1, 7, 5)
+
 rm(df_plot)
 rm(bp)
