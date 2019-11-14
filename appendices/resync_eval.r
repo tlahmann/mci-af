@@ -18,6 +18,8 @@ df1 <-
 df2 <-
   read.csv(file[[2]], header = TRUE, sep = ";", stringsAsFactors = FALSE) 	# read in the first line as column labels with header=TRUE
 
+library(plyr)
+
 df_results <- rbind.fill(df1, df2)
 rm(df1)
 rm(df2)
@@ -40,7 +42,6 @@ print(length(df_results))
 ##################
 
 ## libs
-library(plyr)
 library(pastecs)
 # library(reshape)
 library(ggplot2)
