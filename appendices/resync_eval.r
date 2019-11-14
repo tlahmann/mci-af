@@ -13,10 +13,14 @@ file <- c("resync_clean.csv", "resync2_clean.csv")
 ##################
 
 # read in the csv file:
-df_results <-
+df1 <-
   read.csv(file[[1]], header = TRUE, sep = ";", stringsAsFactors = FALSE) 	# read in the first line as column labels with header=TRUE
-df_results2 <-
+df2 <-
   read.csv(file[[2]], header = TRUE, sep = ";", stringsAsFactors = FALSE) 	# read in the first line as column labels with header=TRUE
+
+df_results <- rbind.fill(df1, df2)
+rm(df1)
+rm(df2)
 
 # print to console the results of ls() call:
 print("Data objects:")
@@ -37,12 +41,24 @@ print(length(df_results))
 
 ## libs
 library(plyr)
-# library(pastecs)
+library(pastecs)
 # library(reshape)
 library(ggplot2)
 library(scales)
 library(tidyr)
 # library(matrixStats)
+
+# print(table(df_results["gender"]))
+options(scipen=100)
+options(digits=2)
+print(stat.desc(df_results["RSME"]))
+print(stat.desc(df_results["orderingMis"]))
+print(stat.desc(df_results["matchingMis"]))
+print(stat.desc(df_results["countingMis"]))
+
+print(stat.desc(df_results["orderingTime"]))
+print(stat.desc(df_results["matchingTime"]))
+print(stat.desc(df_results["countingTime"]))
 
 ##################################
 ##################################
