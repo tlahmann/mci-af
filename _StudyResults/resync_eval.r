@@ -1,6 +1,6 @@
 # set the working directory
 setwd(
-  "D:\\Data\\study\\12.Semester\\mci-af\\appendices"
+  "D:\\Data\\study\\12.Semester\\mci-af\\_StudyResults"
 )
 .libPaths("C:/Users/tobia/Documents/R/win-library/3.6")
 
