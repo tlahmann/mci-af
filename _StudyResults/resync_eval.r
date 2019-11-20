@@ -57,22 +57,22 @@ print(stat.desc(df_results["countingTime"]))
 
 print(stat.desc(df_results[df_results["AlarmDuration"] != -1, "AlarmDuration"]))
 
-# Stats for group 1
-# print(stat.desc(df_results[df_results["FadeSeconds"] == 5, "o1"]))
-# Stats for group 2
-# print(stat.desc(df_results[df_results["FadeSeconds"] == 20, "o1"]))
-
-# Print for group 3
-print(stat.desc(df_results[df_results["AlarmDuration"] != -1, "o1"]))
-print(stat.desc(df_results[df_results["AlarmDuration"] != -1, "o2"))
-print(stat.desc(df_results[df_results["AlarmDuration"] != -1, "o3"))
-print(stat.desc(df_results[df_results["AlarmDuration"] != -1, "o4"))
-print(stat.desc(df_results[df_results["AlarmDuration"] != -1, "o5"))
-print(stat.desc(df_results[df_results["AlarmDuration"] != -1, "o6"))
-print(stat.desc(df_results[df_results["AlarmDuration"] != -1, "o7"))
-print(stat.desc(df_results[df_results["AlarmDuration"] != -1, "o8"))
-print(stat.desc(df_results[df_results["AlarmDuration"] != -1, "o9"))
-print(stat.desc(df_results[df_results["AlarmDuration"] != -1, "o10"))
+for (i in c(5, 20, -1)) {
+  for (j in c(
+    "o1", "o2", "o3", "o4", "o5", "o6", "o7", "o8", "o9", "o10",
+    "m1", "m2", "m3", "m4", "m5", "m6", "m7", "m8", "m9", "m10",
+    "c1", "c2", "c3"
+    )) {
+    tmp <- stat.desc(df_results[df_results["FadeSeconds"] == i, j])
+    sts <- c(tmp["min"], tmp["max"], tmp["range"], tmp["median"], tmp["mean"], tmp["std.dev"])
+    # print(i + j)
+    print(sts)
+  }
+}
+rm(i)
+rm(j)
+rm(tmp)
+rm(sts)
 
 ##################################
 ##################################
@@ -91,6 +91,52 @@ if (plot) {
     axis.ticks = element_blank(),
     plot.title=element_text(size=40, face="bold")
     )
+
+  df2 <- data.frame(group=rep(c("5", "20", "-1"), each=10),
+                  task=factor(c("o1", "o2", "o3", "o4", "o5","o6", "o7", "o8", "o9", "o10")),
+                  val=c(
+                    median(df_results[df_results$FadeSeconds == 5, "o1"]), 
+                    median(df_results[df_results$FadeSeconds == 5, "o2"]),
+                    median(df_results[df_results$FadeSeconds == 5, "o3"]), 
+                    median(df_results[df_results$FadeSeconds == 5, "o4"]),
+                    median(df_results[df_results$FadeSeconds == 5, "o5"]), 
+                    median(df_results[df_results$FadeSeconds == 5, "o6"]),
+                    median(df_results[df_results$FadeSeconds == 5, "o7"]), 
+                    median(df_results[df_results$FadeSeconds == 5, "o8"]),
+                    median(df_results[df_results$FadeSeconds == 5, "o9"]), 
+                    median(df_results[df_results$FadeSeconds == 5, "o10"]),
+                    median(df_results[df_results$FadeSeconds == 20, "o1"]), 
+                    median(df_results[df_results$FadeSeconds == 20, "o2"]),
+                    median(df_results[df_results$FadeSeconds == 20, "o3"]), 
+                    median(df_results[df_results$FadeSeconds == 20, "o4"]),
+                    median(df_results[df_results$FadeSeconds == 20, "o5"]), 
+                    median(df_results[df_results$FadeSeconds == 20, "o6"]),
+                    median(df_results[df_results$FadeSeconds == 20, "o7"]), 
+                    median(df_results[df_results$FadeSeconds == 20, "o8"]),
+                    median(df_results[df_results$FadeSeconds == 20, "o9"]), 
+                    median(df_results[df_results$FadeSeconds == 20, "o10"]),
+                    median(df_results[df_results$FadeSeconds == -1, "o1"]), 
+                    median(df_results[df_results$FadeSeconds == -1, "o2"]),
+                    median(df_results[df_results$FadeSeconds == -1, "o3"]), 
+                    median(df_results[df_results$FadeSeconds == -1, "o4"]),
+                    median(df_results[df_results$FadeSeconds == -1, "o5"]), 
+                    median(df_results[df_results$FadeSeconds == -1, "o6"]),
+                    median(df_results[df_results$FadeSeconds == -1, "o7"]), 
+                    median(df_results[df_results$FadeSeconds == -1, "o8"]),
+                    median(df_results[df_results$FadeSeconds == -1, "o9"]), 
+                    median(df_results[df_results$FadeSeconds == -1, "o10"])
+                    )
+                  )
+  df2$task <- factor(df2$task,levels = c("o1", "o2", "o3", "o4", "o5","o6", "o7", "o8", "o9", "o10"))
+  bp <- ggplot(df2, aes(x=task, y=val, group=group)) +
+    geom_line(aes(color=group))+
+    geom_point(aes(color=group)) +
+    blank_theme +
+    #coord_cartesian(ylim = c(0, 9)) +
+    labs(x = "Sam Dimension", y = "Reaction") +
+    guides(fill = guide_legend(title = "Fade duration")) +
+    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#ffffbf"))
+  ggsave("timeTask1.pdf", bp, NULL, NULL, 1, 7, 5)
 
 
   #### SAM
