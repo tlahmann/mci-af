@@ -182,86 +182,80 @@ if (plot) {
 
   ## Ordering mistakes histogram
   df_plot <- data.frame(
-    group = df_results["Participant_ID"],
+    group = df_results["FadeSeconds"],
     value = df_results["orderingMis"]
   )
   # Basic histogram
-  p <- ggplot(df_plot, aes(x=orderingMis)) + 
-    geom_histogram(binwidth=1, colour="black", fill="#3288bd") +
-    blank_theme +
+  p <- ggplot(df_plot, aes(x=orderingMis, fill=factor(FadeSeconds), color=factor(FadeSeconds)))  + 
+    geom_histogram(binwidth=1, position="dodge") +
+    theme_minimal() +
     # geom_density(alpha=.2, fill="#FF6666") +
-    labs(x = "Count", y = "Time (ms)") +
-    guides(fill = guide_legend(title = "Errors for the completion of task 1: ordering"))
+    labs(x = "Mistakes", y = "Count")
   ggsave("orderingMisHist.pdf", p, NULL, NULL, 1, 7, 5)
 
   ## Matching mistakes histogram
   df_plot <- data.frame(
-    group = df_results["Participant_ID"],
+    group = df_results["FadeSeconds"],
     value = df_results["matchingMis"]
   )
   # Basic histogram
-  p <- ggplot(df_plot, aes(x=matchingMis)) + 
-    geom_histogram(binwidth=1, colour="black", fill="#3288bd") +
-    blank_theme +
+  p <- ggplot(df_plot, aes(x=matchingMis, fill=factor(FadeSeconds), color=factor(FadeSeconds)))  + 
+    geom_histogram(binwidth=1, position="dodge") +
+    theme_minimal() +
     # geom_density(alpha=.2, fill="#FF6666") +
-    labs(x = "Count", y = "Time (ms)") +
-    guides(fill = guide_legend(title = "Errors for the completion of task 1: matching"))
+    labs(x = "Mistakes", y = "Count")
   ggsave("matchingMisHist.pdf", p, NULL, NULL, 1, 7, 5)
 
   ## Counting mistakes histogram
   df_plot <- data.frame(
-    group = df_results["Participant_ID"],
+    group = df_results["FadeSeconds"],
     value = df_results["countingMis"]
   )
   # Basic histogram
-  p <- ggplot(df_plot, aes(x=countingMis)) + 
-    geom_histogram(binwidth=1, colour="black", fill="#3288bd") +
-    blank_theme +
+  p <- ggplot(df_plot, aes(x=countingMis, fill=factor(FadeSeconds), color=factor(FadeSeconds)))  + 
+    geom_histogram(binwidth=1, position="dodge") +
+    theme_minimal() +
     # geom_density(alpha=.2, fill="#FF6666") +
-    labs(x = "Count", y = "Time (ms)") +
-    guides(fill = guide_legend(title = "Errors for the completion of task 1: counting"))
+    labs(x = "Mistakes", y = "Count")
   ggsave("countingMisHist.pdf", p, NULL, NULL, 1, 7, 5)
 
   ## Ordering time histogram
   df_plot <- data.frame(
-    group = df_results["Participant_ID"],
+    group = df_results["FadeSeconds"],
     value = df_results["orderingTime"]
   )
   # Basic histogram
-  p <- ggplot(df_plot, aes(x=orderingTime)) + 
-    geom_histogram(binwidth=2000, colour="black", fill="#d53e4f") +
-    blank_theme +
-    geom_density(alpha=.2, fill="#FF6666") +
-    labs(x = "Count", y = "Time (ms)") +
-    guides(fill = guide_legend(title = "Duration for the completion of task 1: ordering"))
+  p <- ggplot(df_plot, aes(x=orderingTime, fill=factor(FadeSeconds), color=factor(FadeSeconds)))  + 
+    geom_histogram(binwidth=2000, position="dodge") +
+    theme_minimal() +
+    # geom_density(alpha=.2, fill="#FF6666") +
+    labs(x = "Time (ms)", y = "Count")
   ggsave("orderingTimeHist.pdf", p, NULL, NULL, 1, 7, 5)
 
   ## Matching time histogram
   df_plot <- data.frame(
-    group = df_results["Participant_ID"],
+    group = df_results["FadeSeconds"],
     value = df_results["matchingTime"]
   )
   # Basic histogram
-  p <- ggplot(df_plot, aes(x=matchingTime)) + 
-    geom_histogram(binwidth=2000, colour="black", fill="#d53e4f") +
-    blank_theme +
-    geom_density(alpha=.2, fill="#FF6666") +
-    labs(x = "Count", y = "Time (ms)") +
-    guides(fill = guide_legend(title = "Duration for the completion of task 2: matching"))
+  p <- ggplot(df_plot, aes(x=matchingTime, fill=factor(FadeSeconds), color=factor(FadeSeconds)))  + 
+    geom_histogram(binwidth=2000, position="dodge") +
+    theme_minimal() +
+    # geom_density(alpha=.2, fill="#FF6666") +
+    labs(x = "Time (ms)", y = "Count")
   ggsave("matchingTimeHist.pdf", p, NULL, NULL, 1, 7, 5)
 
   ## Counting time histogram
   df_plot <- data.frame(
-    group = df_results["Participant_ID"],
+    group = df_results["FadeSeconds"],
     value = df_results["countingTime"]
   )
   # Basic histogram
-  p <- ggplot(df_plot, aes(x=countingTime)) + 
-    geom_histogram(binwidth=2000, colour="black", fill="#d53e4f") +
-    blank_theme +
-    geom_density(alpha=.2, fill="#FF6666") +
-    labs(x = "Count", y = "Time (ms)") +
-    guides(fill = guide_legend(title = "Duration for the completion of task 3: counting"))
+  p <- ggplot(df_plot, aes(x=countingTime, fill=factor(FadeSeconds), color=factor(FadeSeconds)))  + 
+    geom_histogram(binwidth=2000, position="dodge") +
+    theme_minimal() +
+    # geom_density(alpha=.2, fill="#FF6666") +
+    labs(x = "Time (ms)", y = "Count")
   ggsave("countingTimeHist.pdf", p, NULL, NULL, 1, 7, 5)
 
 
