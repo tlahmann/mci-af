@@ -84,6 +84,15 @@ if(details){
   rm(sts)
 }
 
+df_sleep = c(8,8,10,10,10,10,10,11,12,12,12,13,13,14,12.5,12.5,12.5,
+            15,15,15,15,15,15,15,15,15,15,15,15,15,17.5,17,17,18,18,18,
+            18.5,19,20,20,20,20,20,20,30)
+
+df2 = c("Slept","Slept","Slept","Slept","Slept","Slept","Slept","Slept","Slept",
+        "Dozed",
+        "Meditated",
+        "Awake")
+
 ##################################
 ##################################
 ##########     PLOT   ############
@@ -370,6 +379,41 @@ if (plot) {
     scale_fill_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))
   ggsave("alarmDurationHist.pdf", p, NULL, NULL, 1, 7, 5)
   rm(dt)
+
+  ## Plot Age
+  df_plot <- data.frame("var" = df_sleep,
+                        "group" = "Participant")
+  # Change automatically color by groups
+  bp <-
+    # theme_classic() +
+    ggplot(df_plot, aes(x = group, y = var, fill = group)) +
+    geom_boxplot() +
+    blank_theme+
+    labs(x = "", y = "Age") +
+    theme(legend.position = "none", text = element_text(size = 20)) +
+    scale_fill_manual(values = c("#fc8d59")) + coord_flip()
+  ggsave("subjectiveSleepDuration.pdf", bp, NULL, NULL, 1, 7, 5)
+
+  ### Plot Gender
+  t <- table(df_results["gender"])
+  g <- c("Slept", "Dozed", "Meditated", "Awake")
+  v <- c(9, 12, 3, 21)
+  df_plot <- data.frame(
+    group = g,
+    value = v
+  )
+  bp <- ggplot(df_plot, aes(x = "", y = value, fill = group)) +
+    geom_bar(width = 1, stat = "identity")
+  bp <- bp + coord_polar("y", start = 0) +
+    blank_theme +
+    labs(x = "", y = "") +
+    guides(fill = guide_legend(title = "Sleep status")) +
+    theme(plot.title = element_text(size = 12, face = "bold"),
+      legend.title=element_text(size=20), 
+      legend.text=element_text(size=16),
+      axis.text.x=element_blank()) +
+    scale_fill_manual(values = c("#d53e4f", "#fee08b", "#e6f598", "#3288bd"))
+  ggsave("slept.pdf", bp, NULL, NULL, 1, 7, 5)
 
   rm(df_plot)
   rm(bp)
