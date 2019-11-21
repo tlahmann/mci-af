@@ -1,6 +1,6 @@
 # set the working directory
 setwd(
-  "D:\\Data\\study\\12.Semester\\mci-af\\appendices"
+  "D:\\Data\\study\\12.Semester\\mci-af\\_StudyResults"
 )
 .libPaths("C:/Users/tobia/Documents/R/win-library/3.6")
 
@@ -174,7 +174,7 @@ if (plot) {
       legend.title=element_text(size=20), 
       legend.text=element_text(size=16),
       axis.text.x=element_blank()) +
-    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#ffffbf"))
+    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))
   ggsave("gender.pdf", bp, NULL, NULL, 1, 7, 5)
 
   ### Plot VR experience
@@ -234,7 +234,7 @@ if (plot) {
     blank_theme+
     labs(x = "", y = "Age") +
     theme(legend.position = "none", text = element_text(size = 20)) +
-    scale_fill_manual(values = c("#ffffbf")) + coord_flip()
+    scale_fill_manual(values = c("#fc8d59")) + coord_flip()
   ggsave("age.pdf", bp, NULL, NULL, 1, 7, 5)
   
 

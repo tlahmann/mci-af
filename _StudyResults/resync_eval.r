@@ -147,8 +147,8 @@ if (plot) {
     theme_minimal() +
     labs(y = "Time (ms)", x = "Subtask", title="Ordering subtask times", fill = "Group", color="Group") +
     guides(fill = guide_legend(title = "Group")) +
-    scale_color_manual(values = c("#3288bd", "#d53e4f", "#B5B31D"))+
-    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#B5B31D"))
+    scale_color_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))+
+    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))
   ggsave("timeTask1.pdf", bp, NULL, NULL, 1, 7, 5)
 
   df2 <- data.frame(group=rep(c("Fade 5", "Fade 20", "Alarm"), each=10),
@@ -193,8 +193,8 @@ if (plot) {
     theme_minimal() +
     labs(y = "Time (ms)", x = "Subtask", title="Matching subtask times", fill = "Group", color="Group") +
     guides(fill = guide_legend(title = "Group")) +
-    scale_color_manual(values = c("#3288bd", "#d53e4f", "#B5B31D"))+
-    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#B5B31D"))
+    scale_color_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))+
+    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))
   ggsave("timeTask2.pdf", bp, NULL, NULL, 1, 7, 5)
 
   df2 <- data.frame(group=rep(c("Fade 5", "Fade 20", "Alarm"), each=3),
@@ -218,8 +218,8 @@ if (plot) {
     theme_minimal() +
     labs(y = "Time (ms)", x = "Subtask", title="Counting subtask times", fill = "Group", color="Group") +
     guides(fill = guide_legend(title = "Group")) +
-    scale_color_manual(values = c("#3288bd", "#d53e4f", "#B5B31D"))+
-    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#B5B31D"))
+    scale_color_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))+
+    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))
   ggsave("timeTask3.pdf", bp, NULL, NULL, 1, 7, 5)
 
   #### SAM
@@ -240,7 +240,7 @@ if (plot) {
     #coord_cartesian(ylim = c(0, 9)) +
     labs(x = "Sam Dimension", y = "Reaction") +
     guides(fill = guide_legend(title = "Group")) +
-    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#B5B31D"))
+    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))
   ggsave("SAMpre.pdf", bp, NULL, NULL, 1, 7, 5)
 
   df_plot <- data.frame(
@@ -260,7 +260,7 @@ if (plot) {
     #coord_cartesian(ylim = c(0, 9)) +
     labs(x = "Sam Dimension", y = "Reaction") +
     guides(fill = guide_legend(title = "Group")) +
-    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#B5B31D"))
+    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))
   ggsave("SAMpost.pdf", bp, NULL, NULL, 1, 7, 5)
 
   ## Ordering mistakes histogram
@@ -273,8 +273,8 @@ if (plot) {
     geom_histogram(color="grey", binwidth=1, position="dodge") +
     theme_minimal() +
     labs(x = "Mistakes", y = "Count", title="Ordering mistakes", fill = "Group", color="Group") +
-    scale_color_manual(values = c("#3288bd", "#d53e4f", "#B5B31D"))+
-    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#B5B31D"))
+    scale_color_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))+
+    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))
   ggsave("orderingMisHist.pdf", p, NULL, NULL, 1, 7, 5)
 
   ## Matching mistakes histogram
@@ -287,8 +287,8 @@ if (plot) {
     geom_histogram(color="grey", binwidth=1, position="dodge") +
     theme_minimal() +
     labs(x = "Mistakes", y = "Count", title="Matching mistakes", fill = "Group", color="Group") +
-    scale_color_manual(values = c("#3288bd", "#d53e4f", "#B5B31D"))+
-    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#B5B31D"))
+    scale_color_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))+
+    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))
   ggsave("matchingMisHist.pdf", p, NULL, NULL, 1, 7, 5)
 
   ## Counting mistakes histogram
@@ -301,8 +301,8 @@ if (plot) {
     geom_histogram(color="grey", binwidth=1, position="dodge") +
     theme_minimal() +
     labs(x = "Mistakes", y = "Count", title="Counting mistakes", fill = "Group", color="Group") +
-    scale_color_manual(values = c("#3288bd", "#d53e4f", "#B5B31D"))+
-    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#B5B31D"))
+    scale_color_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))+
+    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))
   ggsave("countingMisHist.pdf", p, NULL, NULL, 1, 7, 5)
 
   ## Ordering time histogram
@@ -315,8 +315,8 @@ if (plot) {
     geom_histogram(color="grey", binwidth=2000, position="dodge") +
     theme_minimal() +
     labs(x = "Time (ms)", y = "Count", title="Ordering time", fill = "Group", color="Group") +
-    scale_color_manual(values = c("#3288bd", "#d53e4f", "#B5B31D"))+
-    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#B5B31D"))
+    scale_color_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))+
+    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))
   ggsave("orderingTimeHist.pdf", p, NULL, NULL, 1, 7, 5)
 
   ## Matching time histogram
@@ -329,8 +329,8 @@ if (plot) {
     geom_histogram(color="grey", binwidth=2000, position="dodge") +
     theme_minimal() +
     labs(x = "Time (ms)", y = "Count", title="Matching time", fill = "Group", color="Group") +
-    scale_color_manual(values = c("#3288bd", "#d53e4f", "#B5B31D"))+
-    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#B5B31D"))
+    scale_color_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))+
+    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))
   ggsave("matchingTimeHist.pdf", p, NULL, NULL, 1, 7, 5)
 
   ## Counting time histogram
@@ -343,8 +343,8 @@ if (plot) {
     geom_histogram(color="grey", binwidth=2000, position="dodge") +
     theme_minimal() +
     labs(x = "Time (ms)", y = "Count", title="Counting time", fill = "Group", color="Group") +
-    scale_color_manual(values = c("#3288bd", "#d53e4f", "#B5B31D"))+
-    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#B5B31D"))
+    scale_color_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))+
+    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))
   ggsave("countingTimeHist.pdf", p, NULL, NULL, 1, 7, 5)
 
 
@@ -357,10 +357,10 @@ if (plot) {
   )
   # Basic histogram
   p <- ggplot(df_plot, aes(x=AlarmDuration)) + 
-    geom_histogram(binwidth=0.5, colour="black", fill="#B5B31D") +
+    geom_histogram(binwidth=0.5, colour="black", fill="#fc8d59") +
     blank_theme +
     labs(x = "Time (ms)", y = "Count", title="Alarm duration", fill = "Group") +
-    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#B5B31D"))
+    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))
   ggsave("alarmDurationHist.pdf", p, NULL, NULL, 1, 7, 5)
   rm(dt)
 
