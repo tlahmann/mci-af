@@ -56,7 +56,6 @@ for (j in c("orderingMis", "matchingMis", "countingMis")) {
     print(i)
     # print(stat.desc(df_results[df_results["FadeSeconds"] == i, j]))
     print(table(df_results[df_results["FadeSeconds"] == i, j]))
-
   }
 }
 print(stat.desc(df_results[df_results["FadeSeconds"] == i, "orderingTime"]))
@@ -380,19 +379,33 @@ if (plot) {
   ggsave("alarmDurationHist.pdf", p, NULL, NULL, 1, 7, 5)
   rm(dt)
 
-  ## Plot Age
+  ## Plot subjective Sleep duration
   df_plot <- data.frame("var" = df_sleep,
-                        "group" = "Participant")
+                        "g" = "Participant")
   # Change automatically color by groups
   bp <-
     # theme_classic() +
-    ggplot(df_plot, aes(x = group, y = var, fill = group)) +
+    ggplot(df_plot, aes(x = g, y = var, fill = g)) +
     geom_boxplot() +
     blank_theme+
     labs(x = "", y = "Age") +
     theme(legend.position = "none", text = element_text(size = 20)) +
     scale_fill_manual(values = c("#fc8d59")) + coord_flip()
   ggsave("subjectiveSleepDuration.pdf", bp, NULL, NULL, 1, 7, 5)
+
+  ## Plot RSME Boxplot
+  df_plot <- data.frame("var" = df_results["RSME"],
+                        "g" = "Participant")
+  # Change automatically color by groups
+  bp <-
+    # theme_classic() +
+    ggplot(df_plot, aes(x = g, y = RSME, fill = g)) +
+    geom_boxplot() +
+    blank_theme +
+    labs(x = "", y = "RSME") +
+    theme(legend.position = "none", text = element_text(size = 20)) +
+    scale_fill_manual(values = c("#fc8d59")) + coord_flip()
+  ggsave("rsme.pdf", bp, NULL, NULL, 1, 7, 5)
 
   ### Plot Gender
   t <- table(df_results["gender"])
