@@ -49,15 +49,19 @@ options(scipen=100)
 options(digits=2)
 print(stat.desc(df_results["RSME"]))
 
-for (i in c(5, 20, -1)) {
-  print(stat.desc(df_results[df_results["FadeSeconds"] != i, "orderingMis"]))
-  print(stat.desc(df_results[df_results["FadeSeconds"] != i, "matchingMis"]))
-  print(stat.desc(df_results[df_results["FadeSeconds"] != i, "countingMis"]))
 
-  print(stat.desc(df_results[df_results["FadeSeconds"] != i, "orderingTime"]))
-  print(stat.desc(df_results[df_results["FadeSeconds"] != i, "matchingTime"]))
-  print(stat.desc(df_results[df_results["FadeSeconds"] != i, "countingTime"]))
+for (j in c("orderingMis", "matchingMis", "countingMis")) {
+  print(j)
+  for (i in c(5, 20, -1)) {
+    print(i)
+    # print(stat.desc(df_results[df_results["FadeSeconds"] == i, j]))
+    print(table(df_results[df_results["FadeSeconds"] == i, j]))
+
+  }
 }
+print(stat.desc(df_results[df_results["FadeSeconds"] == i, "orderingTime"]))
+print(stat.desc(df_results[df_results["FadeSeconds"] == i, "matchingTime"]))
+print(stat.desc(df_results[df_results["FadeSeconds"] == i, "countingTime"]))
 
 print(stat.desc(df_results[df_results["AlarmDuration"] != -1, "AlarmDuration"]))
 
