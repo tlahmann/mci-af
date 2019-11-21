@@ -225,7 +225,7 @@ if (plot) {
 
   ## Plot Age
   df_plot <- data.frame("var" = df_results$age,
-                        "group" = "Player")
+                        "group" = "Participant")
   # Change automatically color by groups
   bp <-
     # theme_classic() +

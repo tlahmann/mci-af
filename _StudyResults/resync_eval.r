@@ -48,13 +48,16 @@ library(tidyr)
 options(scipen=100)
 options(digits=2)
 print(stat.desc(df_results["RSME"]))
-print(stat.desc(df_results["orderingMis"]))
-print(stat.desc(df_results["matchingMis"]))
-print(stat.desc(df_results["countingMis"]))
 
-print(stat.desc(df_results["orderingTime"]))
-print(stat.desc(df_results["matchingTime"]))
-print(stat.desc(df_results["countingTime"]))
+for (i in c(5, 20, -1)) {
+  print(stat.desc(df_results[df_results["FadeSeconds"] != i, "orderingMis"]))
+  print(stat.desc(df_results[df_results["FadeSeconds"] != i, "matchingMis"]))
+  print(stat.desc(df_results[df_results["FadeSeconds"] != i, "countingMis"]))
+
+  print(stat.desc(df_results[df_results["FadeSeconds"] != i, "orderingTime"]))
+  print(stat.desc(df_results[df_results["FadeSeconds"] != i, "matchingTime"]))
+  print(stat.desc(df_results[df_results["FadeSeconds"] != i, "countingTime"]))
+}
 
 print(stat.desc(df_results[df_results["AlarmDuration"] != -1, "AlarmDuration"]))
 
@@ -358,7 +361,7 @@ if (plot) {
   # Basic histogram
   p <- ggplot(df_plot, aes(x=AlarmDuration)) + 
     geom_histogram(binwidth=0.5, colour="black", fill="#fc8d59") +
-    blank_theme +
+    theme_minimal() +
     labs(x = "Time (ms)", y = "Count", title="Alarm duration", fill = "Group") +
     scale_fill_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))
   ggsave("alarmDurationHist.pdf", p, NULL, NULL, 1, 7, 5)
