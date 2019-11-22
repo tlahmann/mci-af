@@ -6,7 +6,7 @@ setwd(
 
 #### Variables
 ##################
-plot <- FALSE
+plot <- TRUE
 file <- c("results-survey512856.csv", "results-survey382784.csv", "results-surveyCombined.csv")
 
 #### Basic import
@@ -147,6 +147,7 @@ if (plot) {
   blank_theme <- theme_minimal()+
     theme(
     axis.title.x = element_blank(),
+    axis.text.x = element_text(size=18, angle=45, hjust=1),
     axis.title.y = element_blank(),
     panel.border = element_blank(),
     # panel.grid=element_blank(),
@@ -253,7 +254,7 @@ if (plot) {
       blank_theme+
       labs(x = "Agreement", y = "Count")+
       scale_fill_manual(values = c("#d53e4f", "#fc8d59", "#fee08b", "#ffffbf", "#e6f598", "#99d594", "#3288bd"))
-    ggsave(paste(i, ".pdf", sep=""), p, NULL, NULL, 1, 12, 5)
+    ggsave(paste(i, ".pdf", sep=""), p, NULL, NULL, 1, 12, 7)
   }
   rm(i)
 
