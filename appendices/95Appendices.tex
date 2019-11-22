@@ -242,94 +242,70 @@
 \end{table*}
 
 \begin{table*}
-	\caption{Statistik der Fehler von Aufgabe 1: Zahlenfolge.}~\label{tab:sc_results_ordering}
-	
-	\setlength\tabcolsep{3pt}
-	\renewcommand{\arraystretch}{1.4}% for the vertical padding
-	\begin{tabularx}{\textwidth}{ | x | x | x | x | x | x | }
-		\hline
-		Min  & Max   & Range & Median & Mean  & Standard Deviation \\ \hline\hline
-		0.00 & 45.00 & 45.00 & 0.00   & 4.24  & 11.31              \\ \hline
-	\end{tabularx}
-\end{table*}
-
-\begin{table*}
-	\caption{Statistik der Fehler von Aufgabe 2: Stroop-Effekt.}~\label{tab:sc_results_matching}
-	
-	\setlength\tabcolsep{3pt}
-	\renewcommand{\arraystretch}{1.4}% for the vertical padding
-	\begin{tabularx}{\textwidth}{ | x | x | x | x | x | x | }
-		\hline
-		Min  & Max   & Range & Median & Mean  & Standard Deviation \\ \hline\hline
-		0.00 & 10.00 & 10.00 & 0.00   & 1.29  & 2.87               \\ \hline
-	\end{tabularx}
-\end{table*}
-
-\begin{table*}
-	\caption{Statistik der Fehler von Aufgabe 3: Boxen zählen.}~\label{tab:sc_results_counting}
-	
-	\setlength\tabcolsep{3pt}
-	\renewcommand{\arraystretch}{1.4}% for the vertical padding
-	\begin{tabularx}{\textwidth}{ | x | x | x | x | x | x | }
-		\hline
-		Min  & Max   & Range & Median & Mean  & Standard Deviation \\ \hline\hline
-		0.00 & 2.00  & 2.00  & 0.00   & 0.31  & 0.60               \\ \hline
-	\end{tabularx}
-\end{table*}
-
-\begin{table*}
-	\caption{Statistik der Dauer bis zur Erledigung von Aufgabe 1: Zahlenfolge in Sekunden.}~\label{tab:times_results_ordering}
-	
-	\setlength\tabcolsep{3pt}
-	\renewcommand{\arraystretch}{1.4}% for the vertical padding
-	\begin{tabularx}{\textwidth}{ | x | x | x | x | x | x | }
-		\hline
-		Min   & Max   & Range & Median  & Mean   & Standard Deviation \\ \hline\hline
-		16.59 & 43.49 & 26.90 & 25.55   & 26.80  & 6.25               \\ \hline
-	\end{tabularx}
-\end{table*}
-
-\begin{table*}
-	\caption{Statistik der Dauer bis zur Erledigung von Aufgabe 2: Stroop-Effekt in Sekunden.}~\label{tab:times_results_ordering}
-	
-	\setlength\tabcolsep{3pt}
-	\renewcommand{\arraystretch}{1.4}% for the vertical padding
-	\begin{tabularx}{\textwidth}{ | x | x | x | x | x | x | }
-		\hline
-		Min   & Max   & Range & Median  & Mean   & Standard Deviation \\ \hline\hline
-		13.87 & 83.31 & 69.44 & 20.70   & 24.23  & 11.13              \\ \hline
-	\end{tabularx}
-\end{table*}
-
-\begin{table*}
-	\caption{Statistik der Dauer bis zur Erledigung von Aufgabe 3: Boxen zählen in Sekunden.}~\label{tab:times_results_ordering}
-	
-	\setlength\tabcolsep{3pt}
-	\renewcommand{\arraystretch}{1.4}% for the vertical padding
-	\begin{tabularx}{\textwidth}{ | x | x | x | x | x | x | }
-		\hline
-		Min   & Max   & Range & Median  & Mean   & Standard Deviation \\ \hline\hline
-		15.34 & 54.15 & 38.82 & 31.72   & 32.75  & 9.63               \\ \hline
-	\end{tabularx}
-\end{table*}
-
-\begin{table*}
-	\caption{Detaillierte Statistik der Zeiten zu Aufgabe 1: Zahlenfolge in Millisekunden.}~\label{tab:times_ordering}
+	\caption{Statistik der Fehler der Aufgaben.}~\label{tab:sc_results}
 	
 	\setlength\tabcolsep{3pt}
 	\renewcommand{\arraystretch}{1.4}% for the vertical padding
 	\begin{tabularx}{\textwidth}{ | l | x | x | x | x | x | x | }
 		\hline
-		Objekt 	& Min   & Max   & Range & Median  & Mean    & Standard Deviation \\ \hline\hline
-		1 		& 1626  & 23307 & 21681 & 5329    & 6418.36 & 3768.54            \\ \hline
-		2 		& 590   & 8618  & 8028  & 2466    & 2697.87 & 1551.57            \\ \hline
-		3 		& 1266  & 9550  & 8284  & 4054    & 4045.69 & 1753.47            \\ \hline
-		4 		& 745   & 16870 & 16125 & 1710    & 2358.60 & 2491.20            \\ \hline
-		5 		& 723   & 9141  & 8418  & 3565    & 4226.16 & 2076.30            \\ \hline
-		6 		& 668   & 5399  & 4731  & 1445    & 1553.13 & 751.37             \\ \hline
-		7 		& 456   & 3853  & 3397  & 1466    & 1773.02 & 842.58             \\ \hline
-		8 		& 723   & 3409  & 2686  & 1388    & 1605.80 & 649.10             \\ \hline
-		9 		& 422   & 2096  & 1674  & 1077    & 1164.02 & 425.17             \\ \hline
-		10 		& 545   & 1532  & 987   & 944     & 957.42  & 245.02             \\ \hline
+		Gruppe & Min   & Max   & Range & Median  & Mean   & Standard Deviation  \\ \hline\hline
+		\multicolumn{7}{| l |}{ Aufgabe 1: Zahlenfolge } 						\\ \hline
+		Alarm   & 0 & 45 & 45 & 0 & 10.50 & 18.10 \\ \hline
+		Fade 20 & 0 & 13 & 13 & 1 & 1.87 & 3.46 \\ \hline
+		Fade  5 & 0 & 2 & 2 & 0 & 0.40 & 0.74 \\ \hline
+		\multicolumn{7}{| l |}{ Aufgabe 2: Stroop-Effekt } 						\\ \hline
+		Alarm   & 0 & 9 & 9 & 0 & 1.20 & 2.83 \\ \hline
+		Fade 20 & 0 & 10 & 10 & 0 & 1.50 & 3.10 \\ \hline
+		Fade  5 & 0 & 9 & 9 & 0 & 1.20 & 2.83 \\ \hline
+		\multicolumn{7}{| l |}{ Aufgabe 3: Boxen zählen } 						\\ \hline
+		Alarm   & 0 & 1 & 1 & 0 & 0.33 & 0.49 \\ \hline
+		Fade 20 & 0 & 2 & 2 & 0 & 0.33 & 0.72 \\ \hline
+		Fade  5 & 0 & 2 & 2 & 0 & 0.27 & 0.59 \\ \hline
+	\end{tabularx}
+\end{table*}
+
+\begin{table*}
+	\caption{Statistik der Dauer bis zur endgültigen Erledigung der Aufgaben (in Sekunden).}~\label{tab:times_results}
+	
+	\setlength\tabcolsep{3pt}
+	\renewcommand{\arraystretch}{1.4}% for the vertical padding
+	\begin{tabularx}{\textwidth}{ | l | x | x | x | x | x | x | }
+		\hline
+		Gruppe & Min   & Max   & Range & Median  & Mean   & Standard Deviation  \\ \hline\hline
+		\multicolumn{7}{| l |}{ Aufgabe 1: Zahlenfolge } 						\\ \hline
+		Alarm  & 19.01 & 37.60 & 18.59 & 23.35   & 25.79  & 5.91                \\ \hline
+		Fade 20 & 18.45 & 37.52 & 19.07 & 25.96   & 27.35  & 5.30               \\ \hline
+		Fade  5 & 16.59 & 43.49 & 26.90 & 26.99   & 27.26  & 7.63               \\ \hline
+		\multicolumn{7}{| l |}{ Aufgabe 2: Stroop-Effekt } 						\\ \hline
+		Alarm  & 13.87 & 32.16 & 18.30 & 19.99   & 22.02  & 6.06                \\ \hline
+		Fade 20 & 17.67 & 83.31 & 65.64 & 21.79   & 25.78  & 16.18               \\ \hline
+		Fade  5 & 16.43 & 48.86 & 32.43 & 20.90   & 24.88  & 9.08               \\ \hline
+		\multicolumn{7}{| l |}{ Aufgabe 3: Boxen zählen } 						\\ \hline
+		Alarm  & 15.34 & 52.65 & 37.32 & 31.72   & 32.07  & 9.48                \\ \hline
+		Fade 20 & 21.41 & 53.85 & 32.43 & 33.54   & 32.71  & 8.23               \\ \hline
+		Fade  5 & 19.37 & 54.15 & 34.79 & 29.34   & 33.47  & 11.52               \\ \hline
+	\end{tabularx}
+\end{table*}
+
+\begin{table*}
+	\caption{Median der Zeiten der Unteraufgaben in einzelnen Aufgaben (in Sekunden). Die Zeiten geben an, welche zeit zwischen den einzelnen Unteraufgaben vergangen ist, entsprechen also der Verarbeitungszeit von einer Entscheidung zur Nächsten. \{S1:S10\} gibt hierbei die jeweilige Unteraufgabe an.}~\label{tab:times_subtasks}
+	
+	\setlength\tabcolsep{3pt}
+	\renewcommand{\arraystretch}{1.4}% for the vertical padding
+	\begin{tabularx}{\textwidth}{ | l | x | x | x | x | x | x | x | x | x | x | }
+		\hline
+		Gruppe 	& S1 & S2 & S3 & S4 & S5 & S6 & S7 & S8 & S9 & S10 \\ \hline\hline
+		\multicolumn{11}{| l |}{ Aufgabe 1: Zahlenfolge } 			\\ \hline
+		Alarm 	& 5.16 & 1.91 & 4.38 & 1.54 & 3.52 & 1.39 & 1.47 & 1.29 & 1.02 & 0.82 \\ \hline
+		Fade 20 & 5.45 & 2.47 & 3.96 & 2.09 & 3.54 & 1.68 & 1.93 & 1.87 & 1.28 & 0.97 \\ \hline
+		Fade 5  & 6.03 & 2.83 & 4.46 & 1.68 & 4.80 & 1.31 & 1.43 & 1.38 & 1.03 & 0.87 \\ \hline	
+		\multicolumn{11}{| l |}{ Aufgabe 2: Stroop-Effekt } 				\\ \hline
+		Alarm 	& 2.94 & 1.88 & 2.08 & 1.94 & 1.74 & 1.72 & 1.63 & 1.81 & 1.79 & 1.68 \\ \hline
+		Fade 20 & 3.07 & 2.38 & 1.81 & 2.02 & 2.01 & 1.81 & 1.81 & 1.78 & 1.70 & 1.83 \\ \hline
+		Fade 5  & 4.13 & 2.10 & 1.98 & 2.21 & 1.89 & 1.79 & 1.97 & 1.58 & 1.71 & 1.78 \\ \hline	
+		\multicolumn{11}{| l |}{ Aufgabe 3: Boxen zählen } 					\\ \hline
+		Alarm 	& 8.81 & 9.54 & 10.16 & - & - & - & - & - & - & - \\ \hline
+		Fade 20 & 9.89 & 10.41 & 8.79 & - & - & - & - & - & - & - \\ \hline
+		Fade 5  & 9.97 & 9.98 & 9.38  & - & - & - & - & - & - & - \\ \hline
 	\end{tabularx}
 \end{table*}
