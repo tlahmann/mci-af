@@ -407,8 +407,7 @@ if (plot) {
     scale_fill_manual(values = c("#fc8d59")) + coord_flip()
   ggsave("rsme.pdf", bp, NULL, NULL, 1, 7, 5)
 
-  ### Plot Gender
-  t <- table(df_results["gender"])
+  ### Plot sleep state
   g <- c("Slept", "Dozed", "Meditated", "Awake")
   v <- c(9, 12, 3, 21)
   df_plot <- data.frame(
