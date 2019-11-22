@@ -245,7 +245,7 @@ if (plot) {
     "group" = df_results$FadeSeconds
   )
   df_plot$group <-
-    factor(df_plot$group, c("Fade 5", "Fade 20", "Alarm"))
+    factor(df_plot$group, c("Alarm", "Fade 20", "Fade 5"))
   df_plot <-
     gather(df_plot, sam, val, Pleasure:Dominance, factor_key = TRUE)
   bp <-
@@ -265,7 +265,7 @@ if (plot) {
     "group" = df_results$FadeSeconds
   )
   df_plot$group <-
-    factor(df_plot$group, c("Fade 5", "Fade 20", "Alarm"))
+    factor(df_plot$group, c("Alarm", "Fade 20", "Fade 5"))
   df_plot <-
     gather(df_plot, sam, val, Pleasure:Dominance, factor_key = TRUE)
   bp <-
