@@ -39,10 +39,25 @@ print(length(df_results))
 ## libs
 library(pastecs)
 # library(reshape)
+library(car) # used for levene + mauchly
+library(coin) # used for wilcoxon
+library(pgirmess) # used for kruskalmc
 library(ggplot2)
 library(scales)
 library(tidyr)
 # library(matrixStats)
+
+
+# Change all occurances of numbers as groups to strings
+df_results["FadeSeconds"] <- data.frame(lapply(df_results["FadeSeconds"], function(x) {
+    gsub("-1", "Alarm", x)
+}))
+df_results["FadeSeconds"] <- data.frame(lapply(df_results["FadeSeconds"], function(x) {
+    gsub("20", "Fade 20", x)
+}))
+df_results["FadeSeconds"] <- data.frame(lapply(df_results["FadeSeconds"], function(x) {
+    gsub("5", "Fade 5", x)
+}))
 
 # print(table(df_results["gender"]))
 options(scipen=100)
@@ -65,7 +80,7 @@ print(stat.desc(df_results[df_results["FadeSeconds"] == i, "countingTime"]))
 print(stat.desc(df_results[df_results["AlarmDuration"] != -1, "AlarmDuration"]))
 
 if(details){
-  for (i in c(5, 20, -1)) {
+  for (i in c("Fade 5", "Fade 20", "Alarm")) {
     for (j in c(
       "o1", "o2", "o3", "o4", "o5", "o6", "o7", "o8", "o9", "o10",
       "m1", "m2", "m3", "m4", "m5", "m6", "m7", "m8", "m9", "m10",
@@ -87,10 +102,64 @@ df_sleep = c(8,8,10,10,10,10,10,11,12,12,12,13,13,14,12.5,12.5,12.5,
             15,15,15,15,15,15,15,15,15,15,15,15,15,17.5,17,17,18,18,18,
             18.5,19,20,20,20,20,20,20,30)
 
-df2 = c("Slept","Slept","Slept","Slept","Slept","Slept","Slept","Slept","Slept",
-        "Dozed",
-        "Meditated",
-        "Awake")
+##################################
+##################################
+##########   Analyze   ###########
+##################################
+##################################
+##################################
+for (analyze in c(
+  "orderingTime",
+  "matchingTime",
+  "countingTime"
+)) {
+  print(paste("Analyzing variable", analyze))
+  
+  shapiro <- TRUE
+  for (group in c("Fade 5", "Fade 20", "Alarm")) {
+    #print(paste("Analyzing group", group))
+    
+    d_t <- df_results[df_results$FadeSeconds == group, ]
+    stt <- shapiro.test(d_t[, analyze])
+    print(paste("Shapiro's test:", stt$p.value))
+    shapiro <- shapiro && stt$p.value > 0.05
+  }
+  rm(d_t)
+  
+  ltt <-
+    leveneTest(df_results[, analyze] ~ factor(FadeSeconds, c("Fade 5", "Fade 20", "Alarm")), data = df_results)
+  print(paste("Levenes's test:", ltt$`Pr(>F)`[1]))
+  
+  cat("\nResult: The Variable ")
+  if (shapiro && ltt$`Pr(>F)`[1] > 0.05) {
+    cat("is parametric\n")
+    r_aov <-
+      aov(df_results[, analyze] ~ factor(FadeSeconds, c("Fade 5", "Fade 20", "Alarm")), data = df_results)
+    r_aovS <- summary(r_aov)
+    print(r_aovS)
+    if (r_aovS[[1]]$`Pr(>F)`[1] < 0.05) {
+      print("Statistically Significant!!")
+    }
+    #rm(r_aov)
+  } else {
+    cat("is NOT parametric.\n\n")
+    r_kru <-
+      kruskal.test(df_results[, analyze] ~ factor(FadeSeconds, c("Fade 5", "Fade 20", "Alarm")), data = df_results)
+    print(r_kru)
+    r_kru$p.value
+    if (r_kru$p.value < 0.05) {
+      r_krumc <-
+        kruskalmc(df_results[, analyze] ~ factor(FadeSeconds, c("Fade 5", "Fade 20", "Alarm")), data = df_results)
+      print(r_krumc)
+      rm(r_krumc)
+    }
+    rm(r_kru)
+  }
+  rm(stt)
+  rm(ltt)
+  cat("\n=========\n\n")
+}
+rm(analyze)
 
 ##################################
 ##################################
@@ -109,17 +178,6 @@ blank_theme <- theme_minimal()+
     )
 
 if (plot) {
-  # Change all occurances of numbers as groups to strings
-  df_results["FadeSeconds"] <- data.frame(lapply(df_results["FadeSeconds"], function(x) {
-      gsub("-1", "Alarm", x)
-  }))
-  df_results["FadeSeconds"] <- data.frame(lapply(df_results["FadeSeconds"], function(x) {
-      gsub("20", "Fade 20", x)
-  }))
-  df_results["FadeSeconds"] <- data.frame(lapply(df_results["FadeSeconds"], function(x) {
-      gsub("5", "Fade 5", x)
-  }))
-
   df2 <- data.frame(group=rep(c("Fade 5", "Fade 20", "Alarm"), each=10),
     task=factor(c("o1", "o2", "o3", "o4", "o5","o6", "o7", "o8", "o9", "o10")),
     val=c(
