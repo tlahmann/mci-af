@@ -321,89 +321,70 @@ if (plot) {
   ggsave("SAMresults.pdf", bp, NULL, NULL, 1, 7, 5)
 
   ## Ordering mistakes histogram
+  # Basic scatter plot
   df_plot <- data.frame(
-    group = df_results["FadeSeconds"],
-    value = df_results["orderingMis"]
+    t = df_results$orderingTime,
+    m = df_results$orderingMis+1,
+    g = df_results$FadeSeconds
   )
-  # Basic histogram
-  p <- ggplot(df_plot, aes(x=orderingMis, fill=FadeSeconds, color=FadeSeconds))  + 
-    geom_histogram(color="grey", binwidth=1, position="dodge") +
-    theme_minimal() +
-    labs(x = "Mistakes", y = "Count", title="Ordering mistakes", fill = "Group", color="Group") +
-    scale_color_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))+
-    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))
-  ggsave("orderingMisHist.pdf", p, NULL, NULL, 1, 7, 5)
+  p <- ggplot(df_plot, aes(x=t, y=m, shape=g, color=g)) + 
+    geom_point(size=5) +
+    scale_y_continuous(trans=log10_trans(),
+        breaks = trans_breaks("log10", function(x) 10^x),
+        labels = trans_format("log10", function(x) round(10^x, digits=1)-1)
+      ) +
+      scale_x_continuous(trans=log10_trans(),
+        breaks = trans_breaks("log10", function(x) 10^x)
+      ) +
+      theme_minimal() +
+      labs(y = "Mistakes", x = "Time (ms)", title="Ordering time and mistakes", color="Group") +
+      guides(color = guide_legend(title = "Group"), shape = guide_legend(title = "Group")) +
+      scale_color_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))
+  ggsave("orderingMisTimeScat.pdf", p, NULL, NULL, 1, 7, 5)
 
   ## Matching mistakes histogram
+  # Basic scatter plot
   df_plot <- data.frame(
-    group = df_results["FadeSeconds"],
-    value = df_results["matchingMis"]
+    t = df_results$matchingTime,
+    m = df_results$matchingMis+1,
+    g = df_results$FadeSeconds
   )
-  # Basic histogram
-  p <- ggplot(df_plot, aes(x=matchingMis, fill=FadeSeconds, color=FadeSeconds))  + 
-    geom_histogram(color="grey", binwidth=1, position="dodge") +
-    theme_minimal() +
-    labs(x = "Mistakes", y = "Count", title="Matching mistakes", fill = "Group", color="Group") +
-    scale_color_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))+
-    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))
-  ggsave("matchingMisHist.pdf", p, NULL, NULL, 1, 7, 5)
+  p <- ggplot(df_plot, aes(x=t, y=m, shape=g, color=g)) + 
+    geom_point(size=5) +
+    scale_y_continuous(trans=log10_trans(),
+        breaks = trans_breaks("log10", function(x) 10^x),
+        labels = trans_format("log10", function(x) round(10^x, digits=1)-1)
+      ) +
+      scale_x_continuous(trans=log10_trans(),
+        breaks = trans_breaks("log10", function(x) 10^x)
+      ) +
+      theme_minimal() +
+      labs(y = "Mistakes", x = "Time (ms)", title="Matching time and mistakes", color="Group") +
+      guides(color = guide_legend(title = "Group"), shape = guide_legend(title = "Group")) +
+      scale_color_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))
+  ggsave("matchingMisTimeScat.pdf", p, NULL, NULL, 1, 7, 5)
 
   ## Counting mistakes histogram
+  # Basic scatter plot
   df_plot <- data.frame(
-    group = df_results["FadeSeconds"],
-    value = df_results["countingMis"]
+    t = df_results$countingTime,
+    m = df_results$countingMis+1,
+    g = df_results$FadeSeconds
   )
-  # Basic histogram
-  p <- ggplot(df_plot, aes(x=countingMis, fill=FadeSeconds, color=FadeSeconds)) + 
-    geom_histogram(color="grey", binwidth=1, position="dodge") +
-    theme_minimal() +
-    labs(x = "Mistakes", y = "Count", title="Counting mistakes", fill = "Group", color="Group") +
-    scale_color_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))+
-    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))
-  ggsave("countingMisHist.pdf", p, NULL, NULL, 1, 7, 5)
-
-  ## Ordering time histogram
-  df_plot <- data.frame(
-    group = df_results["FadeSeconds"],
-    value = df_results["orderingTime"]
-  )
-  # Basic histogram
-  p <- ggplot(df_plot, aes(x=orderingTime, fill=FadeSeconds, color=FadeSeconds)) + 
-    geom_histogram(color="grey", binwidth=2000, position="dodge") +
-    theme_minimal() +
-    labs(x = "Time (ms)", y = "Count", title="Ordering time", fill = "Group", color="Group") +
-    scale_color_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))+
-    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))
-  ggsave("orderingTimeHist.pdf", p, NULL, NULL, 1, 7, 5)
-
-  ## Matching time histogram
-  df_plot <- data.frame(
-    group = df_results["FadeSeconds"],
-    value = df_results["matchingTime"]
-  )
-  # Basic histogram
-  p <- ggplot(df_plot, aes(x=matchingTime, fill=FadeSeconds, color=FadeSeconds)) + 
-    geom_histogram(color="grey", binwidth=2000, position="dodge") +
-    theme_minimal() +
-    labs(x = "Time (ms)", y = "Count", title="Matching time", fill = "Group", color="Group") +
-    scale_color_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))+
-    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))
-  ggsave("matchingTimeHist.pdf", p, NULL, NULL, 1, 7, 5)
-
-  ## Counting time histogram
-  df_plot <- data.frame(
-    group = df_results["FadeSeconds"],
-    value = df_results["countingTime"]
-  )
-  # Basic histogram
-  p <- ggplot(df_plot, aes(x=countingTime, fill=FadeSeconds, color=FadeSeconds)) + 
-    geom_histogram(color="grey", binwidth=2000, position="dodge") +
-    theme_minimal() +
-    labs(x = "Time (ms)", y = "Count", title="Counting time", fill = "Group", color="Group") +
-    scale_color_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))+
-    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))
-  ggsave("countingTimeHist.pdf", p, NULL, NULL, 1, 7, 5)
-
+  p <- ggplot(df_plot, aes(x=t, y=m, shape=g, color=g)) + 
+    geom_point(size=5) +
+    scale_y_continuous(trans=log10_trans(),
+        breaks = trans_breaks("log10", function(x) 10^x),
+        labels = trans_format("log10", function(x) round(10^x, digits=1)-1)
+      ) +
+      scale_x_continuous(trans=log10_trans(),
+        breaks = trans_breaks("log10", function(x) 10^x)
+      ) +
+      theme_minimal() +
+      labs(y = "Mistakes", x = "Time (ms)", title="Counting time and mistakes", color="Group") +
+      guides(color = guide_legend(title = "Group"), shape = guide_legend(title = "Group")) +
+      scale_color_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))
+  ggsave("countingMisTimeScat.pdf", p, NULL, NULL, 1, 7, 5)
 
   ####### Alarm duration
   ## Counting time histogram
