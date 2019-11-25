@@ -67,7 +67,7 @@ print(stat.desc(df_results["RSME"]))
 
 for (j in c("orderingMis", "matchingMis", "countingMis")) {
   print(j)
-  for (i in c(5, 20, -1)) {
+  for (i in c("Alarm", "Fade 20", "Fade 5")) {
     print(i)
     # print(stat.desc(df_results[df_results["FadeSeconds"] == i, j]))
     print(table(df_results[df_results["FadeSeconds"] == i, j]))
