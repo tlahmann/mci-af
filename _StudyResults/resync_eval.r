@@ -322,19 +322,18 @@ if (plot) {
 
   ## Ordering mistakes histogram
   # Basic scatter plot
+  S_sqrt <- function(x){sign(x)*sqrt(abs(x))}
+  IS_sqrt <- function(x){x^2*sign(x)}
+  S_sqrt_trans <- function() trans_new("S_sqrt",S_sqrt,IS_sqrt)
   df_plot <- data.frame(
     t = df_results$orderingTime,
-    m = df_results$orderingMis+1,
+    m = df_results$orderingMis,
     g = df_results$FadeSeconds
   )
   p <- ggplot(df_plot, aes(x=t, y=m, shape=g, color=g)) + 
     geom_point(size=5) +
-    scale_y_continuous(trans=log10_trans(),
-        breaks = trans_breaks("log10", function(x) 10^x),
-        labels = trans_format("log10", function(x) round(10^x, digits=1)-1)
-      ) +
-      scale_x_continuous(trans=log10_trans(),
-        breaks = trans_breaks("log10", function(x) 10^x)
+    scale_y_continuous(trans = "S_sqrt",
+        breaks=seq(0,45,5)
       ) +
       theme_minimal() +
       labs(y = "Mistakes", x = "Time (ms)", title="Ordering time and mistakes", color="Group") +
@@ -346,17 +345,13 @@ if (plot) {
   # Basic scatter plot
   df_plot <- data.frame(
     t = df_results$matchingTime,
-    m = df_results$matchingMis+1,
+    m = df_results$matchingMis,
     g = df_results$FadeSeconds
   )
   p <- ggplot(df_plot, aes(x=t, y=m, shape=g, color=g)) + 
     geom_point(size=5) +
-    scale_y_continuous(trans=log10_trans(),
-        breaks = trans_breaks("log10", function(x) 10^x),
-        labels = trans_format("log10", function(x) round(10^x, digits=1)-1)
-      ) +
-      scale_x_continuous(trans=log10_trans(),
-        breaks = trans_breaks("log10", function(x) 10^x)
+      scale_y_continuous(trans = "S_sqrt",
+        breaks=seq(0,10,2)
       ) +
       theme_minimal() +
       labs(y = "Mistakes", x = "Time (ms)", title="Matching time and mistakes", color="Group") +
@@ -368,17 +363,13 @@ if (plot) {
   # Basic scatter plot
   df_plot <- data.frame(
     t = df_results$countingTime,
-    m = df_results$countingMis+1,
+    m = df_results$countingMis,
     g = df_results$FadeSeconds
   )
   p <- ggplot(df_plot, aes(x=t, y=m, shape=g, color=g)) + 
     geom_point(size=5) +
-    scale_y_continuous(trans=log10_trans(),
-        breaks = trans_breaks("log10", function(x) 10^x),
-        labels = trans_format("log10", function(x) round(10^x, digits=1)-1)
-      ) +
-      scale_x_continuous(trans=log10_trans(),
-        breaks = trans_breaks("log10", function(x) 10^x)
+      scale_y_continuous(trans = "S_sqrt",
+        breaks=seq(0,3,1)
       ) +
       theme_minimal() +
       labs(y = "Mistakes", x = "Time (ms)", title="Counting time and mistakes", color="Group") +
