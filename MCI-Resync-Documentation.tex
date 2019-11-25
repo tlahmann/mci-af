@@ -1,0 +1,154 @@
+% Achtung: Vor dem Verwenden dieser Vorlage unbedingt die readme lesen!
+\documentclass{diplom-mi-eng}
+
+%\usepackage[showframe]{geometry}
+
+% debug only
+%\usepackage{showframe} 
+
+%\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{siunitx}
+\usepackage{framed}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{eurosym}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{xargs}                      % Use more than one optional parameter in a new commands
+\usepackage[pdftex,dvipsnames]{xcolor}  % Coloured text etc.
+
+\newcolumntype{x}{>{\raggedright\arraybackslash}X}
+\newcolumntype{y}{>{\raggedleft\arraybackslash}X}
+
+\DeclareCaptionType{anno}[Auflistung][Liste von Anmerkungen]
+
+\usepackage{ntheorem}
+\theoremseparator{:}
+\newtheorem{hyp}{Hypothese}
+
+% TODO notes
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+\newcommandx{\todoSab}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\newcommandx{\todoLuc}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+\newcommandx{\todoTob}[2][1=]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
+\newcommandx{\todoAll}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
+\newcommand{\todos}{\newpage\listoftodos[Todos]}
+
+% Default ist serifenlose-Schrift (Helvetica), wenn Serifenschrift (Palatino)
+% gewünscht ist, einfach folgende Commands auskommentieren.
+\renewcommand{\sfdefault}{phv}
+\renewcommand{\rmdefault}{phv}
+\renewcommand{\ttdefault}{pcr}
+
+\newcommand{\projectName}{Resync}
+\newcommand{\projectSubline}{Die Überführung ins Bewusstsein}
+% weitere Subtitle Vorschläge (nur crazy Ideen pipapo schnell hingerotzt):
+% - Zurück ins Bewusstsein
+% - Die Schwelle zwischen Wach und Aufmerksam
+% - wach oder wachsam?
+
+
+% Bitte folgende Variablen anpassen:
+\title{\projectName: \projectSubline} 
+\authorA{Sabrina Böhm}
+\emailA{sabrina.boehm@uni-ulm.de}
+\authorB{Luca Porta}
+\emailB{luca.porta@uni-ulm.de}
+\authorC{Tobias Lahmann}
+\emailC{tobias.lahmann@uni-ulm.de}
+\matnr{828398}			% Matrikelnummer
+
+\type{Anwendungsfach} 	%Art der Arbeit, z.B. Diplomarbeit, Masterarbeit,Bachelorarbeit
+\jahr{2019}
+
+\fakultaet{Ingenieurwissenschaften, \\Informatik und Psychologie}
+\institut{Institut für Medieninformatik}
+
+\gutachterA{Prof. Dr. Enrico Rukzio}
+%\gutachterB{Prof. ...}
+\betreuer{Dennis Wolf, M.Sc.}
+
+% Ende User-Variablen
+
+\begin{document}
+\renewcommand{\contentsname}{Inhaltsverzeichnis}
+\frontmatter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\maketitle	% Titelblatt, siehe diplom-mi.cls
+
+\clearpage
+\thispagestyle{empty}
+{	\small\sffamily
+	\flushleft
+	~\vfill
+	Fassung vom \today\\[1cm]
+	\copyrightinfo\\[.5cm]	% Copyright Notice - siehe diplom-mi.cls
+	Satz: PDF-\LaTeXe
+}
+
+
+\setstretch{1.2}	% Zeilenabstand ab hier 1.2
+
+\include{chapters/00abstract}
+
+\tableofcontents
+
+\mainmatter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Ab hier Kapitel einbinden
+\input{chapters/10Introduction}
+\input{chapters/11Motivation}
+\input{chapters/12Approach}
+
+\input{chapters/20RelatedWork}
+\input{chapters/21Sleep}
+\input{chapters/22WakingUp}
+\input{chapters/23Tasks}
+\input{chapters/24VirtualRealityTransition}
+
+\input{chapters/30SolutionApproach}
+\input{chapters/31Aufgaben}
+
+\input{chapters/40Implementation}
+
+\input{chapters/50StudyDesignAndAnalysis}
+\input{chapters/53study}
+\input{chapters/52Results}
+
+\input{chapters/60Discussion}
+\input{chapters/61Demography}
+\input{chapters/62StudyEnv}
+\input{chapters/63Tasks}
+\input{chapters/64Implementation}
+\input{chapters/65Approach}
+\input{chapters/66FutureWork}
+
+\input{chapters/70Conclusion}
+
+% \todos
+
+\appendix		% Ab hier Appendices einbinden
+\include{appendices/95Appendices}
+
+\backmatter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\listoffigures	% Abbildungsverzeichnis
+\listoftables	% Tabellenverzeichnis
+
+% Folgende Zeile blendet alle Quellen ein, auch, wenn diese nicht direkt zitiert wurden
+% \nocite{*}
+%\bibliographystyle{natdin}
+\bibliographystyle{IEEEtranS}	% alternativer Stil
+\bibliography{MCI-Resync-Documentation}
+
+\cleardoublepage
+\clearscrheadfoot
+% \declaration		% Erklärung, siehe diplom-mi-eng.cls
+
+\end{document}

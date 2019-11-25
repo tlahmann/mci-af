@@ -274,3 +274,9 @@ TSWLatexianTemp*
 # ignore pdf while developing
 *.pdf
 !/papers/*.pdf
+!/images/*.pdf
+# Ignore changes in the study results visualizations for the moment
+!/_StudyResults/*.pdf
+
+# Ignore latexindent
+__latexindent_temp.tex
