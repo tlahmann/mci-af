@@ -416,17 +416,27 @@ if (plot) {
   ggsave("subjectiveSleepDuration.pdf", bp, NULL, NULL, 1, 7, 5)
 
   ## Plot RSME Boxplot
-  df_plot <- data.frame("var" = df_results["RSME"],
-                        "g" = "Participant")
-  # Change automatically color by groups
+  df_plot <- data.frame(
+    "rsme" = df_results["RSME"],
+    "group" = df_results$FadeSeconds
+  )
+  df_plot$group <-
+    factor(df_plot$group, c("Alarm", "Fade 20", "Fade 5"))
+  df_plot <-
+    gather(df_plot, sam, val, RSME, factor_key = TRUE)
   bp <-
-    # theme_classic() +
-    ggplot(df_plot, aes(x = g, y = RSME, fill = g)) +
-    geom_boxplot() +
+    ggplot(data = df_plot, aes(x = group, y = val)) +
+    geom_boxplot(aes(fill = group), position = position_dodge(1)) +
     blank_theme +
-    labs(x = "", y = "RSME") +
-    theme(legend.position = "none", text = element_text(size = 20)) +
-    scale_fill_manual(values = c("#fc8d59")) + coord_flip()
+    theme(axis.text.x = element_text(size=14,angle=45,hjust=1))+
+    labs(x = "Sam Dimension", y = "Reaction") +
+    scale_x_discrete(labels=c(
+        "al" = "Alarm", 
+        "fz" = "Fade 20",
+        "ff" = "Fade 5"
+        )) +
+    guides(fill = guide_legend(title = "Group")) +
+    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))
   ggsave("rsme.pdf", bp, NULL, NULL, 1, 7, 5)
 
   ### Plot sleep state
