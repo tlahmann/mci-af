@@ -297,18 +297,18 @@ if (plot) {
 
   #### SAM
   df_plot <- data.frame(
-    "Pleasure:pre" = df_results$SAM_pleasure_pre,
-    "Pleasure:post" = df_results$SAM_pleasure_post,
-    "Arousal:pre" = df_results$SAM_arousal_pre,
-    "Arousal:post" = df_results$SAM_arousal_post,
-    "Dominance:pre" = df_results$SAM_dominance_pre,
-    "Dominance:post" = df_results$SAM_dominance_post,
+    "ppr" = df_results$SAM_pleasure_pre,
+    "ppo" = df_results$SAM_pleasure_post,
+    "apr" = df_results$SAM_arousal_pre,
+    "apo" = df_results$SAM_arousal_post,
+    "dpr" = df_results$SAM_dominance_pre,
+    "dpo" = df_results$SAM_dominance_post,
     "group" = df_results$FadeSeconds
   )
   df_plot$group <-
     factor(df_plot$group, c("Alarm", "Fade 20", "Fade 5"))
   df_plot <-
-    gather(df_plot, sam, val, Pleasure.pre:Dominance.post, factor_key = TRUE)
+    gather(df_plot, sam, val, ppr:dpo, factor_key = TRUE)
   bp <-
     ggplot(data = df_plot, aes(x = sam, y = val)) +
     geom_boxplot(aes(fill = group), position = position_dodge(1)) +
@@ -316,9 +316,17 @@ if (plot) {
     theme(axis.text.x = element_text(size=14,angle=45,hjust=1))+
     #coord_cartesian(ylim = c(0, 9)) +
     labs(x = "Sam Dimension", y = "Reaction") +
+    scale_x_discrete(labels=c(
+        "ppr" = "Pleasure (pre)", 
+        "ppo" = "Pleasure (post)",
+        "apr" = "Arousal (pre)",
+        "apo" = "Arousal (post)",
+        "dpr" = "Dominance (pre)",
+        "dpo" = "Dominance (post)"
+        )) +
     guides(fill = guide_legend(title = "Group")) +
     scale_fill_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))
-  ggsave("SAMresults.pdf", bp, NULL, NULL, 1, 7, 5)
+  ggsave("SAMresults.pdf", bp, NULL, NULL, 1, 9, 5)
 
   ## Ordering mistakes histogram
   # Basic scatter plot
