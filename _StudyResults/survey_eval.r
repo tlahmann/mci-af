@@ -252,9 +252,11 @@ if (plot) {
       geom_bar(stat="identity",
       show.legend = FALSE)+
       blank_theme+
+      # Here the limit should be adapted to the different dimensions
+      ylim(0,18)+
       labs(x = "Agreement", y = "Count")+
       scale_fill_manual(values = c("#d53e4f", "#fc8d59", "#fee08b", "#ffffbf", "#e6f598", "#99d594", "#3288bd"))
-    ggsave(paste(i, ".pdf", sep=""), p, NULL, NULL, 1, 12, 7)
+    ggsave(paste(i, ".pdf", sep=""), p, NULL, NULL, 1, 11, 5)
   }
   rm(i)
 
