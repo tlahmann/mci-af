@@ -378,24 +378,24 @@ if (plot) {
   ggsave("countingMisTimeScat.pdf", p, NULL, NULL, 1, 7, 5)
 
   ####### Alarm duration
-  ## Counting time histogram
-  dt <- df_results[df_results["AlarmDuration"] > 0,]
-  df_plot <- data.frame(
-    group = dt["Participant_ID"],
-    value = dt["AlarmDuration"]
-  )
-  # Basic histogram
-  p <- ggplot(df_plot, aes(x=AlarmDuration)) + 
-    geom_histogram(binwidth=0.5, colour="black", fill="#fc8d59") +
-    theme_minimal() +
-    labs(x = "Time (ms)", y = "Count", title="Alarm duration", fill = "Group") +
-    scale_fill_manual(values = c("#3288bd", "#d53e4f", "#fc8d59"))
-  ggsave("alarmDurationHist.pdf", p, NULL, NULL, 1, 7, 5)
+  ## Alarm duration histogram
+  df_plot <- data.frame("var" = df_results[df_results["AlarmDuration"] > 0,"AlarmDuration"],
+                        "g" = "Alarm duration")
+  # Change automatically color by groups
+  bp <-
+    # theme_classic() +
+    ggplot(df_plot, aes(x = g, y = var, fill = g)) +
+    geom_boxplot() +
+    blank_theme+
+    labs(x = "", y = "Age") +
+    theme(legend.position = "none", text = element_text(size = 20)) +
+    scale_fill_manual(values = c("#fc8d59")) + coord_flip()
+  ggsave("alarmDurationHist.pdf", bp, NULL, NULL, 1, 7, 5)
   rm(dt)
 
   ## Plot subjective Sleep duration
   df_plot <- data.frame("var" = df_sleep,
-                        "g" = "Participant")
+                        "g" = "Sleep Duration")
   # Change automatically color by groups
   bp <-
     # theme_classic() +
