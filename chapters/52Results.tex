@@ -9,7 +9,7 @@ Es waren von den 45 Teilnehmern nach eigenen Angaben 12 weiblich, 33 männlich u
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.75\textwidth]{./_StudyResults/gender}
-	\caption{Geschlechterverteilung der Studienteilnehmer}
+	\caption{Geschlechterverteilung der Studienteilnehmer, es haben 73,3\% männliche, 26,7\% weibliche und 0\% diverse Probanden teilgenommen.}
 	\label{fig:gender}
 \end{figure}
 
@@ -18,7 +18,7 @@ Das Alter der Teilnehmer reichte von 19 bis 30 Jahren, wobei der Median bei 23 u
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.75\textwidth]{./_StudyResults/age}
-	\caption{Boxplot des Alters der Studienteilnehmer}
+	\caption{Boxplot des Alters der Studienteilnehmer.}
 	\label{fig:age}
 \end{figure}
 
@@ -38,7 +38,7 @@ Die Teilnehmer gaben an, dass sie unterdurchschnittlich wenig Erfahrung mit virt
 		\caption{Grafische Repräsentation der Antworten zur Frage "`How much experience do you have with AR?"'.}
 		\label{fig:expAr}
 	\end{subfigure}
-	\caption{Grafische Repräsentation der Antworten zur Fragen "`How much experience do you have with VR?"' und "`How much experience do you have with AR?"'.} % caption for whole figure
+	\caption{Visualisierungen der Erfahrungswerte bezüglich augmentierter und virtueller Realität der Studienteilnehmer vor der Studiendurchführung.} % caption for whole figure
 \end{figure}
 
 \subsection{Umgebungsvariablen}
@@ -51,10 +51,9 @@ Die durchschnittliche Neigung der Stuhllehne lag über alle Durchläufe bei 38,6
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.75\textwidth]{./images/chair}
-	\caption{Winkeleinstellungen vom verwendeten Stuhl in der Studie}
+	\caption{Die möglichen Winkeleinstellungen vom verwendeten Stuhl in der Studie reichen von einer vollständig aufrechten bis zur Liegenden Position. Für die liegende Position existiert zusätzlich eine Fußstütze, zum ausgleichen des Masseschwerpunkts.}
 	\label{fig:chair_backrest}
 \end{figure}
-
 
 \subsubsection{Dauer des Wecker-Tons}
 
@@ -63,7 +62,7 @@ Die Probanden die mit Ton geweckt wurden, hatten einen Button der den Aufwachtei
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.75\textwidth]{./_StudyResults/alarmDurationHist}
-	\caption{Histogramm der Zeit (s), wie lange die Teilnehmer der Studie den Wecker-Ton laufen ließen. Genauigkeit: 500ms}
+	\caption{Boxplot der Zeit, bis der Alarm innerhalb der VR-Umgebung beendet wurde. Diese Aktion war nur der Gruppe "`Alarm"' möglich.}
 	\label{fig:alarmDurationHist}
 \end{figure}
 
@@ -93,7 +92,7 @@ Aus der Gruppe Fade 5 haben am Meisten mit 0 Fehlern abgeschnitten. Die schlecht
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{./_StudyResults/orderingMisTimeScat}
-	\caption{Häufigkeit der Fehler unterteilt in Gruppen in Aufgabe 1: Zahlenfolge. Darstellungsgenauigkeit: 1. Histogramm der Zeit (ms) unterteilt in Gruppen zur Erledigung von Aufgabe 1: Zahlenfolge. Darstellungsgenauigkeit: 2000ms}
+	\caption{Streudiagramm der vergangenen Zeit in Aufgabe 1 bis diese vollständig erledigt war (X-Achse) in Verbindung mit den gemachten Fehlern während der Erledigung (Y-Achse) unterteilt nach Gruppen. Das Maximum der möglichen Fehler ist 45. Zur besseren Darstellung wurde für die Y-Achse eine Skalierung mit $f(y) = \sqrt{y}$ vorgenommen.}
 	\label{fig:orderingMistakeTimeScatterplot}
 \end{figure}
 
@@ -102,12 +101,10 @@ Von circa 73\% wurde diese Aufgabe komplett fehlerfrei gelöst.
 Auch hier wurden Fehlerzahlen die 8 oder höher waren dann erzielt, wenn die Aufgabe so verstanden wurde, dass die Farbe in der das Wort geschrieben stand gewählt wurde.
 Aus Abbildung~\ref{fig:matchingMistakeTimeScatterplot} ist deutlich ablesbar, dass aus den Gruppen Alarm und Fade 5 gleich viele Fehler gemacht haben. Bis auf ein paar Probanden die die Aufgabe nicht komplett richtig bearbeitet haben weißt die dritte Gruppe Fade 20 keine Unterschiede auf.
 
-\todoTob{Darstellung der Abbildungen überarbeitet bzw dennis fragen, außerdem der name der Abbildung gewollt so?}
-
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{./_StudyResults/matchingMisTimeScat}
-	\caption{Häufigkeit der Fehler unterteilt in Gruppen in Aufgabe 2: Stroop-Effekt. Darstellungsgenauigkeit: 1. Histogramm der Zeit (ms) unterteilt in Gruppen zur Erledigung von Aufgabe 2: Stroop-Effekt. Darstellungsgenauigkeit: 2000ms}
+	\caption{Streudiagramm der vergangenen Zeit in Aufgabe 2 bis diese vollständig erledigt war (X-Achse) in Verbindung mit den gemachten Fehlern während der Erledigung (Y-Achse) unterteilt nach Gruppen. Das Maximum der möglichen Fehler ist 10. Zur besseren Darstellung wurde für die Y-Achse eine Skalierung mit $f(y) = \sqrt{y}$ vorgenommen.}
 	\label{fig:matchingMistakeTimeScatterplot}
 \end{figure}
 
@@ -118,7 +115,7 @@ Aus Abbildung~\ref{fig:countingMistakeTimeScatterplot} ist gut erkennbar, dass d
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{./_StudyResults/countingMisTimeScat}
-	\caption{Häufigkeit der Fehler unterteilt in Gruppen in Aufgabe 3: Boxen zählen. Darstellungsgenauigkeit: 1. Histogramm der Zeit (ms) unterteilt in Gruppen zur Erledigung von Aufgabe 3: Boxen zählen. Darstellungsgenauigkeit: 2000ms}
+	\caption{Streudiagramm der vergangenen Zeit in Aufgabe 3 bis diese vollständig erledigt war (X-Achse) in Verbindung mit den gemachten Fehlern während der Erledigung (Y-Achse) unterteilt nach Gruppen. Das Maximum der möglichen Fehler ist 3. Zur besseren Darstellung wurde für die Y-Achse eine Skalierung mit $f(y) = \sqrt{y}$ vorgenommen.}
 	\label{fig:countingMistakeTimeScatterplot}
 \end{figure}
 
@@ -140,7 +137,7 @@ Wenn man die Zwischenschritte aus Aufgabe 1 genauer betrachtet, kann man aus Abb
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{./_StudyResults/timeTask1}
-	\caption{Graph der einzelnen Zeiträume zwischen den Zwischenschritten für Aufgabe 1: Zahlenfolge}
+	\caption{Graph der einzelnen Zeiträume zwischen den Zwischenschritten für Aufgabe 1: Zahlenfolge. Die Visualisierung zeigt die vergangene Zeit zwischen einzelnen Interaktionen in der Aufgabe.}
 	\label{fig:timeTask1}
 \end{figure}
 
@@ -149,7 +146,7 @@ Bei Aufgabe 2 wurden die Zwischenschritte der einzelnen Teilaufgaben ebenso anal
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{./_StudyResults/timeTask2}
-	\caption{Graph der einzelnen Zeiträume zwischen den Zwischenschritten für Aufgabe 2: Stroop-Effekt}
+	\caption{Graph der einzelnen Zeiträume zwischen den Zwischenschritten für Aufgabe 2: Stroop-Effekt. Die Visualisierung zeigt die vergangene Zeit zwischen einzelnen Interaktionen in der Aufgabe.}
 	\label{fig:timeTask2}
 \end{figure}
 
@@ -158,7 +155,7 @@ In der Aufgabe des Boxenzählens wurden ebenso die Zwischenzeiten der Teilaufgab
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{./_StudyResults/timeTask3}
-	\caption{Graph der einzelnen Zeiträume zwischen den Zwischenschritten für Aufgabe 3: Boxen zählen}
+	\caption{Graph der einzelnen Zeiträume zwischen den Zwischenschritten für Aufgabe 3: Boxen zählen. Die Visualisierung zeigt die vergangene Zeit zwischen einzelnen Interaktionen in der Aufgabe.}
 	\label{fig:timeTask3}
 \end{figure}
 
@@ -170,7 +167,7 @@ Das Ausfüllen des SAM Fragebogen wurde einmal vor der Ruhephase und einmal nach
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{./_StudyResults/SAMresults}
-	\caption{Self-Assessment Manikin Ergebnisse \textbf{vor} (pre) und \textbf{nach} (post) der Ruhephase}
+	\caption{Self-Assessment Manikin Ergebnisse \textbf{vor} (pre) und \textbf{nach} (post) der Ruhephase als Boxplots. Die Ergebnisse sind unterteilt nach Gruppen und nach den einzelnen SAM-Dimensionen.}
 	\label{fig:samResults}
 \end{figure}
 
@@ -180,7 +177,7 @@ In Abbildung~\ref{fig:rsme_vis} sind die RSME Ergebnisse abgebildet, welche am E
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.75\textwidth]{./_StudyResults/rsme}
-	\caption{Boxplot der RSME Ergebnisse}
+	\caption{Boxplot der RSME Ergebnisse. Die Zahlenwerte können aus Tabelle~\ref{tab:sc_results_rsme} entnommen werden.}
 	\label{fig:rsme_vis}
 \end{figure}
 
@@ -189,7 +186,7 @@ Laut Befragung der Probanden im Anschluss an die Studie haben 20\% geschlafen, b
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.75\textwidth]{./_StudyResults/slept}
-	\caption{Antwort auf die Frage ob man eingeschlafen ist}
+	\caption{Kreisdiagramm der Antworten zur Frage nach dem Schlafstatus der Studienteilnehmer. Hierbei handelt es sich um die subjektive Antwort des jeweiligen Probanden.}
 	\label{fig:slept}
 \end{figure}
 
@@ -198,8 +195,8 @@ Die empfundene Schlafdauer variiert in einem Zeitintervall zwischen 8 und 30 Min
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.75\textwidth]{./_StudyResults/subjectiveSleepDuration}
-	\caption{Subjektive Einschätzung der Dauer der Schlafphase}
+	\includegraphics[width=\textwidth]{./_StudyResults/subjectiveSleepDuration}
+	\caption{Boxplot der subjektiven Einschätzung der Dauer der Schlafphase.}
 	\label{fig:subjectiveSleepDuration}
 \end{figure}
 
@@ -209,16 +206,16 @@ Auf die Frage, ob die Probanden vor der Studie müde waren kamen sehr breit gemi
 	\centering
 	\begin{subfigure}{0.48\textwidth}
 		\includegraphics[width=\textwidth]{./_StudyResults/tiredBefore}
-		\caption{Tired before}
+		\caption{Balkendiagramm zu "`Vorher müde"'}
 		\label{fig:tiredBefore}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}{0.48\textwidth}
 		\includegraphics[width=\textwidth]{./_StudyResults/tiredAfter}
-		\caption{Tired after}
+		\caption{Balkendiagramm zu "`Nachher müde"'}
 		\label{fig:tiredAfter}
 	\end{subfigure}
-	\caption{Einschätzung zur Frage 'I felt tired before/after the experiment.'} % caption for whole figure
+	\caption{Visualisierung der gegebenen Antworten zur Frage "`I felt tired before/after the experiment."'} % caption for whole figure
 \end{figure}
 
 Als Weiteres fragten wir die Probanden, wie einfach sie den Übergang von einem entspannten Ruhezustand hinzu dem Lösen von Aufgaben fanden. Für die meisten Probanden war es einfach wie in Abbildung~\ref{fig:transitionEasy} abzulesen.
@@ -228,7 +225,7 @@ Als Weiteres fragten wir die Probanden, wie einfach sie den Übergang von einem 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{./_StudyResults/transitionEasy}
-	\caption{Einschätzung zur Frage 'The transition from sleeping/resting to solving tasks was easy for me.'}
+	\caption{Visualisierung der gegebenen Antworten zur Frage 'The transition from sleeping/resting to solving tasks was easy for me.'}
 	\label{fig:transitionEasy}
 \end{figure}
 
@@ -237,7 +234,7 @@ Das Tragen einer VR Brille beim Schlafen störte die meisten Probanden nicht. Au
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{./_StudyResults/comfortableHeadset}
-	\caption{Einschätzung zur Frage 'I felt comfortable trying to sleep with a VR head mounted display.'}
+	\caption{Visualisierung der gegebenen Antworten zur Frage 'I felt comfortable trying to sleep with a VR head mounted display.'}
 	\label{fig:comfortableHeadset}
 \end{figure}
 
@@ -246,7 +243,7 @@ Die Art des Aufweckens der Studie soll nun auf das echte Leben übertragen werde
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{./_StudyResults/imagineWakingUp}
-	\caption{Einschätzung zur Frage 'I can imagine being woken up like in the experiment to prepare for dangerous situations e.g. take the control of a car.'}
+	\caption{Visualisierung der gegebenen Antworten zur Frage 'I can imagine being woken up like in the experiment to prepare for dangerous situations e.g. take the control of a car.'}
 	\label{fig:imagineWakingUp}
 \end{figure}
 
@@ -255,6 +252,6 @@ Falls die VR Brillen weiterentwickelt werden und somit kleiner undd komfortabler
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{./_StudyResults/permanentWearing}
-	\caption{Einschätzung zur Frage 'I can imagine wearing a head mounted display permanently if they become tiny and comfortable.'}
+	\caption{Visualisierung der gegebenen Antworten zur Frage 'I can imagine wearing a head mounted display permanently if they become tiny and comfortable.'}
 	\label{fig:permanentWearing}
 \end{figure}
