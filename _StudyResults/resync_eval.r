@@ -359,7 +359,7 @@ if (plot) {
   p <- ggplot(df_plot, aes(x=t, y=m, shape=g, color=g)) + 
     geom_point(size=5) +
       scale_y_continuous(trans = "S_sqrt",
-        breaks=seq(0,10,2)
+        breaks=seq(0,10,1)
       ) +
       theme_minimal() +
       labs(y = "Mistakes", x = "Time (ms)", title="Matching time and mistakes", color="Group") +
