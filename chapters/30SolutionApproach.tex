@@ -6,7 +6,7 @@ Im Folgenden werden unsere Herangehensweisen an das Problem beschrieben. Wir unt
 
 Wir möchten die Teilnehmer der Studie dazu bringen einen Zustand zu erreichen in dem das fehlerfreie Erledigen von Aufgaben eine gewisse geistige Anstrengung aufweist. Dies ist vergleichbar damit, dass im Straßenverkehr das autonome Fahren dem Fahrer erlaubt seine Aufmerksamkeit von der Straße zu nehmen, seinen Sitz zu kippen und die Augen zu schließen. Sollte der Fahrer daraufhin von seinem Fahrzeug aufgefordert werden in eine Situation einzugreifen und eine Entscheidung zu treffen, wie beispielsweise einen schwierigen Abschnitt der Strecke selbst zu fahren, oder eine Entscheidung zu treffen, muss das Fahrzeug den Fahrer aufwecken und informieren. In diesem Zustand könnten Informationen nur schwierig aufgenommen werden und eine Aufgabe, die in diesem Zeitraum gestellt wird könnte so mit geringerem Erfolg erledigt werden, als wenn der Fahrer voll aufnahmefähig ist.
 
-Des Weiteren können auch andere schwierige Entscheidungen von autonomen Fahrzeugen an den Benutzer übergeben werden. Die `"Moral Machine'' von Awad et al.~\cite{awad2018moral} versucht dieses Thema durch das Trainieren eines neuronalen Netzwerks anzugehen. Hierbei wird die moralische Entscheidung über einen unumgänglichen Tod und ethische Konflikte durch das Netzwerk bewertet~\cite{awad2018moral}. Hierbei ist hervorzuheben, dass jegliche programmierbare Entscheidung den Tod Beteiligter verhindern soll. 
+Des Weiteren können auch andere schwierige Entscheidungen von autonomen Fahrzeugen an den Benutzer übergeben werden. Die `"Moral Machine'' von Awad et al.~\cite{awad2018moral} versucht dieses Thema durch das Trainieren eines neuronalen Netzwerks anzugehen. Hierbei wird die Entscheidung über einen unumgänglichen Tod und ethische Konflikte durch das Netzwerk bewertet~\cite{awad2018moral}. Es ist hervorzuheben, dass jegliche programmierbare Entscheidung den Tod Beteiligter verhindern soll. 
 Es kann nicht gesagt werden, dass menschliche Fahrer in allen Situationen die richtige Entscheidung treffen, jedoch kann es ebenfalls nicht festgelegt werden, wie eine Maschine in einem kritischen Fall reagieren soll, ohne eine komplexe ethische Diskussion anzuregen~\cite{awad2018moral}.
 Bevor man autonome Autos befähigen kann ethische Entscheidungen zu treffen, muss ein globales Gespräch geführt werden um Präferenzen von Anbietern und Nutzern zu vermitteln.
 
@@ -14,7 +14,7 @@ Wir untersuchen in dieser Arbeit nicht die Auswirkungen des Schlafens, oder des 
 
 Um eine möglichst kontrollierbare Testumgebung mit vergleichbaren Ergebnissen zu haben nutzen wir VR in einem separaten Raum der Universität Ulm. Hier werden die Teilnehmer gebeten mit dem VR-HMD in einer initialen Phase zu entspannen. Das Ziel ist es die beschriebene Situation der geringeren Aufnahmefähigkeit und Schläfrigkeit zu erzeugen, wie er auch nach dem Schlafen auftreten kann. 
 
-Im Anschluss an die Ruhephase werden die Nutzer auf unterschiedliche Arten "`aufgeweckt' und ihnen werden drei Aufgaben gestellt. Die von uns untersuchten Arten des Weckens sind Licht und Ton. Wobei die Einstellung des Lichts noch in zwei weitere Gruppen unterteilt ist. Für Gruppe eins wird das licht innerhalb von 5 Sekunden von 0\% Intensität auf 100\% erhöht, bei Gruppe zwei geschieht dies Über einen Zeitraum von 20 Sekunden. 
+Im Anschluss an die Ruhephase werden die Nutzer auf unterschiedliche Arten "`aufgeweckt"' und ihnen werden drei Aufgaben gestellt. Die von uns untersuchten Arten des Weckens sind \textit{Licht} und \textit{Ton}. Wobei die Einstellung des Lichts noch in zwei weitere Gruppen unterteilt ist. Für Gruppe eins wird das licht innerhalb von 5 Sekunden von 0\% Intensität auf 100\% erhöht, bei Gruppe zwei geschieht dies Über einen Zeitraum von 20 Sekunden. 
 Allen drei Gruppen werden im Anschluss die Aufgaben iterativ präsentiert.
 
 Auf dieser Grundlage formulieren und untersuchen wir die folgenden Hypothesen:
@@ -38,7 +38,8 @@ und
 \end{hyp}
 
 \section{Zeitplan}
-Die Daten beziehen sich auf den Zeitpunkt zu dem der jeweilige Schritt abgeschlossen sein sollte.
+Unser Projekt erstreckt sich über den Zeitraum von einem Jahr. Die Folgende Übersicht soll einen Eindruck über die verschiedenen Projektphasen geben. Die Daten beziehen sich auf den Zeitpunkt zu dem der jeweilige Schritt abgeschlossen ist.
+
 \begin{itemize}
 	\item \textbf{Dezember 2018} Recherche bestehender Forschung
 	\item \textbf{Januar - Mai 2019} Beginnen mit der Implementierung und Modellierung der digitalen Umgebung in Unity3D und Vorbereitung für den Studiendurchlauf
@@ -51,9 +52,10 @@ Die Daten beziehen sich auf den Zeitpunkt zu dem der jeweilige Schritt abgeschlo
 \end{itemize}
 
 \section{Testaufbau}
-Sitzend werden Probanden erst in einen entspannten Zustand versetzt. In diesem verweilen sie möglichst ohne Ablenkung, bis sich eine Gelassenheit oder Trägheit einstellt. Diese kann von entspanntem Sitzen bis hin zum Schlaf führen. Eine genaue Zeitspanne hierfür kann zwischen Probanden variieren und muss in Tests bestimmt werden.
 
-Nachfolgend wird der Teilnehmer aus diesem Zustand geleitet und mit einer Aufgabe konfrontiert. Während der Erledigung dieser werden unterschiedliche Parameter aufgezeichnet und später ausgewertet. Die erfassten Parameter sind die folgenden:
+Sitzend werden Probanden erst in einen entspannten Zustand versetzt. In diesem verweilen sie möglichst ohne Ablenkung, bis sich eine Gelassenheit oder Trägheit einstellt. Diese kann von entspanntem Sitzen bis hin zum Schlaf führen.
+
+Nachfolgend wird der Teilnehmer aus diesem Zustand geleitet und mit mehreren Aufgaben konfrontiert. Während der Erledigung dieser werden unterschiedliche Parameter aufgezeichnet und später ausgewertet. Die erfassten Parameter sind die folgenden:
 
 \begin{itemize}
 	\item Zeit in der eine Aufgabe erledigt wird
@@ -61,7 +63,7 @@ Nachfolgend wird der Teilnehmer aus diesem Zustand geleitet und mit einer Aufgab
 	\item Blickrichtung
 \end{itemize}
 
-Die erste Studie umfasst ungefähr 30 Minuten, hierfür werden die Teilnehmer mit fünf Euro entlohnt. Der Ablauf der Studie Umfasst folgende Punkte:
+Die Dauer der Studie umfasst ungefähr 30 Minuten, hierfür werden die Teilnehmer mit fünf Euro entlohnt. Der Ablauf der Studie Umfasst folgende Punkte:
 
 \begin{enumerate}
 	\item \textbf{5 Minuten} Vorbereitung und Einführung in den Studienablauf inklusive der Bedienung der VR-Umgebung
@@ -70,12 +72,11 @@ Die erste Studie umfasst ungefähr 30 Minuten, hierfür werden die Teilnehmer mi
 	\item \textbf{5 Minuten} Fragebögen beantworten
 \end{enumerate}
 
-Es handelt sich um eine between subject Studie. Im ersten Durchlauf erfassen wir die genannten Parameter unter der Betrachtung der Zeit, in der die virtuelle Umgebung erhellt wird. Die genauen Zeiten werden in einer Testphase während des Implementierens eingegrenzt.
-
-Zudem werden die Probanden entweder mit Ton oder durch einen Lichtreiz "`geweckt"'. Auch dieser Parameter wird in einer Testphase experimentell angenähert. Nähere Informationen zum genauen Studienablauf werden im Abschnitt der Studiendurchführung erörtert.
+Es handelt sich um eine \textit{between subject} Studie. Im ersten Durchlauf erfassen wir die genannten Parameter unter der Betrachtung der Zeit, in der die virtuelle Umgebung erhellt wird oder unter Betrachtung der Dauer des Alarm-Tons.
 
 \subsection{Studienumgebung}
 
-Um die Studie durchführen zu können, haben wir unser Equipment in einem kleinen abgeschotteten Hinterzimmer eines Computerlabors aufgebaut. Dadurch dass die Probanden keine stehenden oder gar laufenden Bewegungen vollziehen mussten, reichte ein Bereich, in dem sich der Stuhl geradeso drehen konnte. Der Raum war mit einem Fenster versehen und so kam immer Tageslicht ins Zimmer herein, was die Probanden jedoch durch das Tragen der VR Brille während der Durchführung der Studie nicht wahrnehmen konnten, sondern nur in dem Anfangsgespräch und beim anschließenden Fragebogenausfüllen. Da im Nebenzimmer ebenfalls Studien durchgeführt wurden, waren Störgeräusche nicht immer zu verhindern. So kam es vor, dass manche Probanden ohne jegliche Störgeräusche die Studie absolvieren konnten, wohingegen bei einigen anderen verschiedenste, relativ leise, dennoch hörbare Störungen auftraten. Wir achteten nicht nur darauf, dass die räumlichen Begebenheiten bei jedem Teilnehmer der Studie gleich blieben, sondern auch dass die Art der Begrüßung und des Vorworts stets gleich oder zumindest ähnlich abliefen. Darüberhinaus legten wir auch großen Wert darauf, dass Faktoren wie zum Beispiel die Stuhllokalisation und die Lichteinstellung für alle Probanden gleich waren.
+Um die Studie durchführen zu können, haben wir unser Equipment in einem kleinen abgeschotteten Hinterzimmer eines Computerlabors aufgebaut. Dadurch dass die Probanden keine stehenden oder gar laufenden Bewegungen vollziehen mussten, reichte ein Bereich, in dem sich der Stuhl geradeso drehen konnte. Der Raum war mit einem Fenster versehen und so kam immer Tageslicht ins Zimmer herein, was die Probanden jedoch durch das Tragen der VR Brille während der Durchführung der Studie nicht wahrnehmen konnten. 
 
-
+Wir achteten nicht nur darauf, dass die räumlichen Begebenheiten bei jedem Teilnehmer der Studie gleich blieben, sondern auch dass die Art der Begrüßung und des Vorworts stets gleich abliefen. 
+Darüber hinaus legten wir auch großen Wert darauf, dass Faktoren wie zum Beispiel die Lichtsituation und die Lautstärke der Umgebungsmusik für alle Probanden gleich waren.
